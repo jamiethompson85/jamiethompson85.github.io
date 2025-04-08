@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Inside Google Cloud Agentspace: Overview and UI Walkthrough"
-subtitle: Streamlining Enterprise Search and Unifying Knowledge: Exploring the Agentspace Interface
+subtitle: "Streamlining Enterprise Search and Unifying Knowledge: Exploring the Agentspace Interface"
 #description: ""
 #cover-img: /assets/img/path.jpg
 thumbnail-img: /assets/img/agentspace/AgentspaceUI.png
