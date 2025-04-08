@@ -7,7 +7,7 @@ subtitle: "Streamlining Enterprise Search and Unifying Knowledge: Exploring the 
 thumbnail-img: /assets/img/agentspace/AgentspaceUI.png
 share-img: /assets/img/agentspace/AgentspaceUI.png
 readtime: true
-share-title: "Preparing for Google Cloud's newest certification: Associate Data Practitioner (ADP)"
+share-title: "Inside Google Cloud Agentspace: Overview and UI Walkthrough"
 #share-description: "TXXXXX"
 #share-img: /assets/img/agentspace/AgentspaceUI.png
 tags: [Google Cloud Agentspace, Agentspace, Google Cloud, AI Assistant, Enterprise Search, Generative AI, First Look, UI Walkthrough, Agentspace Overview]
