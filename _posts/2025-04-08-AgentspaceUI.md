@@ -9,7 +9,7 @@ share-img: /assets/img/agentspace/AgentspaceUI.png
 readtime: true
 share-title: "Inside Google Cloud Agentspace: Overview and UI Walkthrough"
 share-description: "Inside Google Cloud Agentspace: Overview and UI Walkthrough"
-share-img: /assets/img/agentspace/AgentspaceUI.png
+share-img: /assets/img/agentspace/agentspacesearchingdata.png
 tags: [Google Cloud Agentspace, Agentspace, Google Cloud, AI Assistant, Enterprise Search, Generative AI, First Look, UI Walkthrough, Agentspace Overview]
 ---
 How much time do your teams lose searching for information? In today's enterprise, critical knowledge is often scattered across cloud storage like Google Drive or SharePoint, collaboration platforms like Slack or Microsoft Teams, critical business systems like Salesforce or SAP, knowledge bases like Confluence, and countless other internal databases and shared folders. Finding that one crucial document, project update, or answer to a burning question can feel like searching for a needle in a digital haystack. 
