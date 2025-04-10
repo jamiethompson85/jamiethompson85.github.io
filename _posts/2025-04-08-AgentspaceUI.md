@@ -4,8 +4,8 @@ title: "Inside Google Cloud Agentspace: Overview and UI Walkthrough"
 subtitle: "Streamlining Enterprise Search and Unifying Knowledge: Exploring the Agentspace Interface"
 #description: ""
 #cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/agentspace/AgentspaceUI.png
-share-img: /assets/img/agentspace/AgentspaceUI.png
+thumbnail-img: /assets/img/agentspace/agentspacesearchingdata.png
+share-img: /assets/img/agentspace/agentspacesearchingdata.png
 readtime: true
 share-title: "Inside Google Cloud Agentspace: Overview and UI Walkthrough"
 share-description: "Inside Google Cloud Agentspace: Overview and UI Walkthrough"
