@@ -71,7 +71,7 @@ Connectors regularly synchronising data also include a health state within the c
 
 In the event you are unable to find a connector for an application/data source, custom connectors can also be developed to ingest data via API. However, it is worth noting that Google is continuing development of connectors so in the first instance, I would recommend discussing your requirements with Google or your Google partner to determine if an existing connector is in development. Whilst they may not be generally available, the time and effort saved developing and securing your own custom connector could be spent testing and influencing the features of Google’s development.
 
-# Actions
+# Agentspace Connector Actions
 While data source connectors primarily handle connectivity and data ingestion into Agentspace out-of-the-box, Actions provide the crucial capability to interact with the source systems.
 
 During private preview, the predefined actions ranged from sending emails based on curated content, creating meetings in your calendar, to raising requests for time off in Workday, or creating and updating Jira tickets. 
