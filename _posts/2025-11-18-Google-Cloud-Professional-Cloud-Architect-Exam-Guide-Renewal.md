@@ -9,7 +9,7 @@ share-img: /assets/img/pca/google-cloud-pca-renewal-guide.png
 readtime: true
 share-title: "Passed the Google Cloud Architect Renewal? What to Expect & How to Master It"
 share-description: "I opted for the new 1-hour Professional Cloud Architect renewal path instead of the full exam. Here is my experience, topic breakdown, and guide to mastering the new format."
-tags: [Google Cloud, Professional Cloud Architect, PCA, Renewal, Certification, Exam Guide, Gen AI, Cloud Career]
+tags: [Google Cloud, GCP, Professional Cloud Architect, PCA, Certification, Exam Guide, Gen AI, Vertex AI, Gemini]
 ---
 
 # Google Cloud Professional Cloud Architect Renewal: What to Expect & Mastering the New 1-Hour Exam
