@@ -1,4 +1,3 @@
-###########################################################
 ### Welcome to Beautiful Jekyll!
 ### This config file is meant for settings that affect your entire website. When you first
 ### set up your website you should go through all these settings and edit them, but after
@@ -288,6 +287,12 @@ exclude:
   - screenshot.png
   - docs/
   - draft/
+  - vendor/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - node_modules/
 
 url: "https://www.cloudbabble.co.uk"
 
@@ -295,13 +300,3 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
-
-# Beautiful Jekyll / Dean Attali
-# 2fc73a3a967e97599c9763d05e564189
-
-# Add these lines (or append to existing exclude:)
-exclude:
-  - vendor
-  - vendor/bundle
-  - vendor/cache
-
