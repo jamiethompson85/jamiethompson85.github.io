@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Google Cloud Professional Cloud Architect Renewal: What to Expect & Mastering the New 1-Hour Exam"
+excerpt: "Due to renew your Google Cloud Architect certification? I opted for the specific 1-hour renewal exam instead of the full recertification. Here is the breakdown of Gen AI vs Core topics, official resources, and my experience mastering this shorter, focused format."
 subtitle: "An experienced architect's guide to the new format: Gen AI topics, case studies, and official prep resources."
 description: "Due to renew your Google Cloud Professional Cloud Architect certification? Read this guide on what to expect from the new 1-hour renewal exam. Includes a topic breakdown (Gen AI vs Core), official resource links, and tips for mastering the new format."
 thumbnail-img: /assets/img/pca/google-cloud-pca-renewal-guide.png
