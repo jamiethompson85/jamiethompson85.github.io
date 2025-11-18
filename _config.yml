@@ -299,3 +299,9 @@ plugins:
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
 
+# Add these lines (or append to existing exclude:)
+exclude:
+  - vendor
+  - vendor/bundle
+  - vendor/cache
+
