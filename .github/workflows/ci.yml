@@ -17,14 +17,11 @@ jobs:
             jekyll/builder:$JEKYLL_VERSION /bin/bash -lc "
               set -e
               cd /srv/jekyll
-              # Ensure bundler is available (safe no-op if already installed)
               gem install bundler --no-document || true
-              # Install gems from Gemfile (if you have one)
               if [ -f Gemfile ]; then
                 bundle install --jobs 4 --retry 3
                 bundle exec jekyll build --future -d _site
               else
-                # Fallback: install jekyll and build if no Gemfile is present
                 gem install jekyll -v 3.8.6 --no-document
                 jekyll build --future -d _site
               fi
