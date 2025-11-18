@@ -1,44 +1,35 @@
 name: Beautiful Jekyll CI
 on: [push, pull_request]
-
 jobs:
   build:
     name: Build Jekyll
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v2
 
-      - name: Setup Ruby 3.2
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.2'
-          bundler-cache: true
-
-      - name: Update RubyGems (ensure compatibility for native gems)
+      - name: Build the site in the jekyll/builder container
         run: |
-          gem update --system
+          export JEKYLL_VERSION=3.8
+          docker run \
+            -v ${{ github.workspace }}:/srv/jekyll \
+            -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+            -e PAGES_REPO_NWO=${{ github.repository }} \
+            jekyll/builder:$JEKYLL_VERSION /bin/bash -lc "
+              set -e
+              cd /srv/jekyll
 
-      - name: Ensure bundler (install a Bundler 2.x fallback if needed)
-        run: |
-          # Try to install a Bundler 2.x compatible with many Jekyll toolchains.
-          gem install bundler -v '2.4.22' --no-document || gem install bundler --no-document
+              # Remove any vendored gems that might include site templates
+              rm -rf vendor/bundle || true
 
-      - name: Build the site
-        run: |
-          set -e
-          if [ -f Gemfile ]; then
-            bundle install --jobs 4 --retry 3
-            bundle exec jekyll build --future -d _site
-          else
-            gem install jekyll -v '3.8.6' --no-document
-            jekyll build --future -d _site
-          fi
+              # Install a Bundler version compatible with this environment if needed
+              gem install bundler -v 2.4.22 --no-document || gem install bundler --no-document || true
 
-      - name: Upload _site (optional debug)
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: site
-          path: _site
+              if [ -f Gemfile ]; then
+                bundle install --jobs 4 --retry 3
+                # Exclude vendored directories explicitly to avoid processing gem templates
+                bundle exec jekyll build --future -d _site --exclude vendor vendor/bundle
+              else
+                gem install jekyll -v 3.8.6 --no-document
+                jekyll build --future -d _site --exclude vendor vendor/bundle
+              fi
+            "
