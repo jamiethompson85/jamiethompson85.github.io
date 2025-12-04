@@ -1,19 +1,18 @@
 ---
 layout: post
-title: "Google Cloud Professional Cloud Architect Renewal: What to Expect & Mastering the New 1-Hour Exam"
-excerpt: "Due to renew your Google Cloud Architect certification? I opted for the specific 1-hour renewal exam instead of the full recertification. Here is the breakdown of Gen AI vs Core topics, official resources, and my experience mastering this shorter, focused format."
-subtitle: "An experienced architect's guide to the new format: Gen AI topics, case studies, and official prep resources."
-description: "Due to renew your Google Cloud Professional Cloud Architect certification? Read this guide on what to expect from the new 1-hour renewal exam. Includes a topic breakdown (Gen AI vs Core), official resource links, and tips for mastering the new format."
-thumbnail-img: /assets/img/pca/google-cloud-pca-renewal-guide.png
-share-img: /assets/img/pca/google-cloud-pca-renewal-guide.png
+title: "Recertifying: Google Cloud Professional Cloud DevOps Engineer (2025 Edition)"
+excerpt: "Is the DevOps Engineer exam strictly Cloud Build and GKE? Not quite. Here is my experience sitting the exam for the 3rd time, covering SRE principles, supply chain security, and why there is no shortcut for renewal."
+subtitle: "A 3x certified engineer's guide to the 2025 exam: SRE, Security, and Ops processes."
+description: "Passed the Google Cloud Professional DevOps Engineer renewal? Read this guide on what to expect. Unlike other exams, there is no 1-hour shortcut. Learn about the focus on SRE, GKE troubleshooting, and secure software supply chains."
+thumbnail-img: /assets/img/devops/google-cloud-devops-renewal-guide.png
+share-img: /assets/img/devops/google-cloud-devops-renewal-guide.png
 readtime: true
-share-title: "Passed the Google Cloud Architect Renewal? What to Expect & How to Master It"
-share-description: "I opted for the new 1-hour Professional Cloud Architect renewal path instead of the full exam. Here is my experience, topic breakdown, and guide to mastering the new format."
-tags: [Google Cloud, GCP, Professional Cloud Architect, PCA, Certification, Exam Guide, Gen AI, Vertex AI, Gemini]
+share-title: "Google Cloud DevOps Renewal: What to Expect & How to Pass (2025)"
+share-description: "I sat the Google Cloud Professional DevOps Engineer exam for the third time. Here is the topic breakdown, the focus on SRE, and my advice for renewals vs first-timers."
+tags: [Google Cloud, GCP, DevOps, SRE, Certification, Exam Guide, GKE, CI/CD, Kubernetes]
 ---
 
 # Google Cloud Professional DevOps Engineer Renewal
-
 Back in June, I sat the **Google Cloud Professional Cloud DevOps Engineer** exam for the third time.
 
 I first earned this credential in 2021, renewed it in 2023, and June 2025 marked my latest renewal. I am only just getting around to writing this up now—life and work have a habit of getting in the way!—but reviewing my notes from the summer, the core themes remain incredibly relevant for anyone looking to sit the exam today.
@@ -82,10 +81,10 @@ This section is significant and often underestimated.
 
 To prepare for this exam (even as a renewal), I used a combination of the following resources:
 
-1.  **[Official Exam Guide](https://services.google.com/fh/files/misc/professional_cloud_devops_engineer_exam_guide_english.pdf):** Always start here to baseline your knowledge.
-2.  **Google Cloud Skills Boost:** The [Professional DevOps Engineer learning path](https://www.cloudskillsboost.google/paths/18) is excellent for refreshing on specific labs (specifically GKE logging).
-3.  **Google SRE Books:** You don't need to read them cover-to-cover, but reading the chapters on SLOs and Error Budgets in the [Site Reliability Engineering book](https://sre.google/sre-book/table-of-contents/) (available for free online) is invaluable.
-4.  **Sample Questions:** Check the [official sample questions](https://docs.google.com/forms/d/e/1FAIpQLSdpk564uiDvdnqqyPoVjgpBp0TEtgScSFuDV7YQvRSumwUyoQ/viewform) to get a feel for the format.
+1. **[Official Exam Guide](https://services.google.com/fh/files/misc/professional_cloud_devops_engineer_exam_guide_english.pdf):** Always start here to baseline your knowledge.
+2. **Google Cloud Skills Boost:** The [Professional DevOps Engineer learning path](https://www.cloudskillsboost.google/paths/18) is excellent for refreshing on specific labs (specifically GKE logging).
+3. **Google SRE Books:** You don't need to read them cover-to-cover, but reading the chapters on SLOs and Error Budgets in the [Site Reliability Engineering book](https://sre.google/sre-book/table-of-contents/) (available for free online) is invaluable.
+4. **Sample Questions:** Check the [official sample questions](https://docs.google.com/forms/d/e/1FAIpQLSdpk564uiDvdnqqyPoVjgpBp0TEtgScSFuDV7YQvRSumwUyoQ/viewform) to get a feel for the format.
 
 ## Exam Strategy: Renewal vs. First Time
 
