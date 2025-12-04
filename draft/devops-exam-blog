@@ -1,10 +1,18 @@
 ---
 layout: post
-title: "Recertifying: Google Cloud Professional Cloud DevOps Engineer (2025 Edition)"
-date: 2025-12-04
-tags: [Google Cloud, DevOps, Professional Certification, GKE, SRE, CI/CD, Renewal]
-read_time: 8
+title: "Google Cloud Professional Cloud Architect Renewal: What to Expect & Mastering the New 1-Hour Exam"
+excerpt: "Due to renew your Google Cloud Architect certification? I opted for the specific 1-hour renewal exam instead of the full recertification. Here is the breakdown of Gen AI vs Core topics, official resources, and my experience mastering this shorter, focused format."
+subtitle: "An experienced architect's guide to the new format: Gen AI topics, case studies, and official prep resources."
+description: "Due to renew your Google Cloud Professional Cloud Architect certification? Read this guide on what to expect from the new 1-hour renewal exam. Includes a topic breakdown (Gen AI vs Core), official resource links, and tips for mastering the new format."
+thumbnail-img: /assets/img/pca/google-cloud-pca-renewal-guide.png
+share-img: /assets/img/pca/google-cloud-pca-renewal-guide.png
+readtime: true
+share-title: "Passed the Google Cloud Architect Renewal? What to Expect & How to Master It"
+share-description: "I opted for the new 1-hour Professional Cloud Architect renewal path instead of the full exam. Here is my experience, topic breakdown, and guide to mastering the new format."
+tags: [Google Cloud, GCP, Professional Cloud Architect, PCA, Certification, Exam Guide, Gen AI, Vertex AI, Gemini]
 ---
+
+# Google Cloud Professional DevOps Engineer Renewal
 
 Back in June, I sat the **Google Cloud Professional Cloud DevOps Engineer** exam for the third time.
 
