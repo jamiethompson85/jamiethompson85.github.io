@@ -37,7 +37,7 @@ Gemini Enterprise is designed to solve these scalability issues. It acts as a ce
 
 ## Why it solves the scale problem:
 
-**One Interface for All Agents:** Users go to one URL. They see a catalog of all agents available to them (HR, IT, Sales) based on their IAM permissions.
+**One Interface for All Agents:** Users go to one URL. They see a catalogue of all agents available to them (HR, IT, Sales) based on their IAM permissions.
 **Zero UI Code:** You deploy the logic (the ADK backend), and Gemini Enterprise renders the UI automatically. You never have to write a React component or fix a CSS bug again.
 **Unified Context:** Because the agents live in the same "space" as Google Workspace, they have native access to Drive/Docs/Gmail context without you writing complex OAuth handshakes for every single agent.Centralized **Governance:** Admins can turn off specific agents, audit logs, and enforce data residency policies globally, rather than chasing down individual Cloud Run deployments.
 
@@ -47,7 +47,7 @@ Gemini Enterprise is designed to solve these scalability issues. It acts as a ce
 | :--- | :--- | :--- |
 | **Setup Effort** | High (DevOps, Frontend, Auth) | Low (Register & Go) |
 | **Maintenance** | High (Patching UI, fixing bugs) | Zero (Managed by Google) |
-| **Discoverability** | Low (Emailing links) | High (Central Catalog) |
+| **Discoverability** | Low (Emailing links) | High (Central Catalogue) |
 | **Use Case** | **Niche:** Highly specialized visual needs (e.g., an agent that renders interactive 3D CAD models). | **Standard:** 95% of internal business agents (Chat, Text, Charts, File Analysis). |
 
 # What is the goal?
@@ -107,7 +107,7 @@ curl -X POST \
 ![OAuth Handshake Sequence](/assets/img/geminienterprise/oauth-infographic.png "OAuth Handshake Sequence Diagram")
 *Figure 3: The OAuth 2.0 "Handshake" Sequence*
 
-Overview This diagram illustrates how we securely give the Python Agent permission to do work on your behalf without ever sharing your actual password with it. Think of this process like giving a valet a key to your car—you give them a specific key (the Access Token) that allows them to drive, but doesn't give them ownership of the car.
+Overview This diagram illustrates how we securely give the Python Agent permission to do work on your behalf without ever sharing your actual password with it. Think of this process like giving a valet a key to your car- you give them a specific key (the Access Token) that allows them to drive, but doesn't give them ownership of the car.
 
 **The OAuth Workflow Explained**
 
@@ -141,7 +141,7 @@ curl -X POST \
 "https://discoveryengine.googleapis.com/v1alpha/projects/PROJECT_ID/locations/global/collections/default_collection/engines/APP_ID/assistants/default_assistant/agents" \
 -d '{
   "displayName": "My Super Agent",
-  "description": "Helps you analyze data.",
+  "description": "Helps you analyse data.",
   "adk_agent_definition": {
     "tool_description": "Use this tool for data analysis tasks...",
     "provisioned_reasoning_engine": {
