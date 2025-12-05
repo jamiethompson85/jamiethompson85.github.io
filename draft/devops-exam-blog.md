@@ -4,8 +4,8 @@ title: "Google Cloud Professional Cloud DevOps Engineer Exam Guide (2025 Edition
 excerpt: "I sat the DevOps Engineer exam for the 3rd time in mid-2025. Here is a breakdown of the current exam focus, covering SRE principles, Supply Chain Security, and the critical SRE calculations that trip most candidates up."
 subtitle: "An updated guide based on my 2025 exam experience: SRE, GKE, and CI/CD Security and more."
 description: "Planning to sit the Google Cloud Professional Cloud DevOps Engineer exam? Here is a detailed breakdown of the key topics, SRE principles, and exam strategy based on my recent sitting in June 2025."
-thumbnail-img: /assets/img/devops/google-cloud-devops-guide-2025.png
-share-img: /assets/img/devops/google-cloud-devops-guide-2025.png
+thumbnail-img: /assets/img/devops/google-cloud-professaional-devops-engineer-exam.png
+share-img: /assets/img/devops/google-cloud-professaional-devops-engineer-exam.png
 readtime: true
 share-title: "Google Cloud DevOps Engineer Exam Guide (2025 Edition)"
 share-description: "I recently passed the Google Cloud DevOps exam for the 3rd time. Here are my notes, study tips, and a breakdown of the key topics you need to know."
