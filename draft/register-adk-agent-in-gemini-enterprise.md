@@ -29,6 +29,9 @@ Technically, you can. The "Do It Yourself" approach involves wrapping your agent
 - **Scalability & Sprawl:** If you have 20 agents, you end up with 20 different Cloud Run services and 20 different URLs for users to bookmark. This fragmentation kills adoption.
 - **Governance Blind Spots:** Custom UIs are harder to audit. It becomes difficult to maintain a centralized view of "who is using what" across the organization.
 
+![Gemini Enterprise Managed UI vs Custom Developed UI](/assets/img/geminienterprise/gemini-ui-vs-custom-us.png "Gemini Enterprise Managed UI vs Custom Developed UI")
+*Figure 1: Gemini Enterprise Managed UI vs Custom Developed UI*
+
 # The Gemini Enterprise Advantage 
 Gemini Enterprise is designed to solve these scalability issues. It acts as a centralized "App Store" for your organization's agents. It handles the UI, authentication, and governance automatically, allowing you to focus strictly on the agent's logic. 
 
@@ -71,9 +74,10 @@ First, register your app with your OAuth 2.0 provider (like Google Cloud) to get
 https://vertexaisearch.cloud.google.com/oauth-redirect
 
 ## ii. Visualize the Flow
-It helps to understand what we are building. We are setting up a flow where Gemini Enterprise acts as the middleman between the user and your agent.
+It helps to understand what we are building. We are setting up a flow where Gemini Enterprise acts as the middleman between the user and your agent on Vertex AI Agent Engine.
 
-# insert image to visualise
+![User to Agent interaction via Gemini Enterprise UI](/assets/img/geminienterprise/user-gemini-enterprise-agent-flow.png "User to Agent interaction via Gemini Enterprise UI")
+*Figure 2: User to Agent interaction via Gemini Enterprise UI*
    
 ## iii. Create the Authorization Resource
 Now, tell Gemini Enterprise about your OAuth credentials. This creates a resource ID that we will link to the agent later.
@@ -99,6 +103,21 @@ curl -X POST \
 
 - **AUTH_ID:** This is an arbitrary ID you define to reference this setup later.
 - **Google defaults:** If using Google, the Auth URI is usually https://accounts.google.com/o/oauth2/v2/auth and the Token URI is https://oauth2.googleapis.com/token.
+
+![OAuth Handshake Sequence](/assets/img/geminienterprise/oauth-infographic.png "OAuth Handshake Sequence Diagram")
+*Figure 3: The OAuth 2.0 "Handshake" Sequence*
+
+Overview This diagram illustrates how we securely give the Python Agent permission to do work on your behalf without ever sharing your actual password with it. Think of this process like giving a valet a key to your car—you give them a specific key (the Access Token) that allows them to drive, but doesn't give them ownership of the car.
+
+**The OAuth Workflow Explained**
+
+**1. User Consent (Steps 1–3):** The process begins when you click "Authorize." You are temporarily redirected to Google to log in and confirm that you trust this application. This ensures that you are the one granting permission.
+
+**2. The Secure Exchange (Steps 4–6):** Once you say "Yes," Google sends a temporary "Authorization Code" to the Gemini Enterprise App. The App immediately exchanges this code for a secure digital key, known as an Access Token. This exchange happens entirely in the background to ensure the key remains secure.
+
+**3. The Handoff & Execution (Steps 7–9):** This is the crucial step. The Gemini App passes the Access Token to the Python Agent. Now holding the "key," the Agent can independently contact the Resource Server to retrieve the data it needs to complete your task.
+
+**Key Takeaway:** The Python Agent never sees your username or password. It only receives a temporary token that allows it to access specific data for a limited time.
 
 # Step 2: Registering the Agent
 This is the main event. We are going to link your ADK deployment to the Gemini Enterprise interface.
