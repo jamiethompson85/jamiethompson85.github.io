@@ -5,7 +5,7 @@ excerpt: "I sat the DevOps Engineer exam for the 3rd time in mid-2025. Here is a
 subtitle: "An updated guide based on my 2025 exam experience: SRE, GKE, and CI/CD Security and more."
 description: "Planning to sit the Google Cloud Professional Cloud DevOps Engineer exam? Here is a detailed breakdown of the key topics, SRE principles, and exam strategy based on my recent sitting in June 2025."
 thumbnail-img: /assets/img/devops/google-cloud-professaional-devops-engineer-exam.png
-share-img: /assets/img/devops/google-cloud-professaional-devops-engineer-exam.png
+share-img: /assets/img/devops/SRE-Reliability-Hierarchy.png
 readtime: true
 share-title: "Google Cloud DevOps Engineer Exam Guide (2025 Edition)"
 share-description: "I recently passed the Google Cloud DevOps exam for the 3rd time. Here are my notes, study tips, and a breakdown of the key topics you need to know."
@@ -47,6 +47,9 @@ This is the heart of the exam. You absolutely must understand the relationship b
 * **Burn Rates:** Be comfortable **calculating burn rates** and determining when to alert based on them.
 * **Error Budgets:** Understand the business consequences of exhausting them (e.g., halting feature releases to focus on reliability).
 
+![SRE Reliability Hierarchy](/assets/img/devops/SRE-Reliability-Hierarchy.png "SRE Reliability Hierarchy Diagram")
+*Figure 1: SRE Reliability Hierarchy Diagram*
+
 > **💡 Pro Tip: Know Your DORA Metrics**
 > The exam loves to test your knowledge of the "Four Keys" of software delivery performance. Memorise these definitions:
 > * **Deployment Frequency:** How often you release to production.
@@ -62,6 +65,9 @@ There is a heavy focus on pipeline architecture and security.
 * **Jenkins:** Don't assume everything is Cloud Build! You may encounter scenarios involving Jenkins deployments, particularly troubleshooting deployments to on-premises environments.
 * **Deployment Strategies:** Be clear on when to use **Blue/Green, A/B testing, Canary deployments, and Rapid Failback**.
 * **GitOps:** Understand branching strategies and how to manage configuration to avoid state drift.
+
+![Secure CI/CD Pipeline Flowchart](/assets/img/devops/secure-cicd-pipeline.png "Secure CI/CD Pipeline Flowchart")
+*Figure 2: Secure CI/CD Pipeline Flowchart*
 
 ### 3. Containerization & GKE
 If you work with GKE, this section will be natural. If not, you need to study up.
