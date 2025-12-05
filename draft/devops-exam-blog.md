@@ -59,7 +59,7 @@ This is the heart of the exam. You absolutely must understand the relationship b
 There is a heavy focus on pipeline architecture and security.
 
 * **Binary Authorization:** This is a critical security control. You should know how to configure attestations to ensure only trusted images are deployed.
-* **Jenkins:** Don't assume everything is Cloud Build! You may encounter scenarios involving **Jenkins deployments**, particularly troubleshooting deployments to on-premises environments.
+* **Jenkins:** Don't assume everything is Cloud Build! You may encounter scenarios involving Jenkins deployments, particularly troubleshooting deployments to on-premises environments.
 * **Deployment Strategies:** Be clear on when to use **Blue/Green, A/B testing, Canary deployments, and Rapid Failback**.
 * **GitOps:** Understand branching strategies and how to manage configuration to avoid state drift.
 
@@ -84,7 +84,7 @@ This section is significant and often underestimated.
 ### 5. Security & Identity
 * **Workload Identity Federation:** Know how to configure this for external CI/CD systems (like GitHub Actions) to access Google Cloud securely without managing service account keys.
 * **Secrets Management:** Understand the trade-offs between Secret Manager and Environment Variables.
-* **Infrastructure as Code:** Be ready to compare **Config Connector and Terraform**, specifically regarding how they handle state and drift.
+* **Infrastructure as Code:** Be ready to compare Config Connector and Terraform, specifically regarding how they handle state and drift.
 
 ## Recommended Training Material
 
@@ -127,4 +127,13 @@ The Professional Cloud DevOps Engineer exam forces you to think not just about *
 
 Good luck with your preparation!
 
-Thanks for taking the time to read this blog. I hope you find it useful. Please feel free to share, subscribe, and follow me on LinkedIn!
+Thanks for taking the time to read this blog, I hope you find it useful in preparing for the **Professional DevOps Engineer exam**. Please feel free to share, [subscribe](https://www.cloudbabble.co.uk/subscribe) to be alerted to future posts, follow me on [LinkedIn](https://linkedin.com/in/jamiethompson85), and react/comment below!
+
+If you're new to Google Cloud certifications, or you're deciding what certification to do next, check out my other blog posts covering:
+
+- [Google Cloud Generative AI Leader Certification (GAIL)](https://www.cloudbabble.co.uk/2025-05-14-GoogleCloudGenerativeAILeaderCertification/)
+- [Google Cloud Digital Leader Certification (CDL)](https://www.cloudbabble.co.uk/2022-12-06-GoogleCloudDigitalLeaderCertification/)
+- [Google Cloud Associate Data Practitioner Certification (ADP)](https://www.cloudbabble.co.uk/2025-01-22-associate-data-practitioner/)
+- [Google Cloud Professional Cloud Architect (PCA) Certification](https://www.cloudbabble.co.uk/2023-02-28-Google-Cloud-Professional-Cloud-Architect/)
+- [Google Cloud Professional Cloud Architect (PCA) Renewal Certification](https://www.cloudbabble.co.uk/2025-11-18-Google-Cloud-Professional-Cloud-Architect-Exam-Guide-Renewal/)
+- [Google Cloud Professional Network Engineer Certification (PNE)](https://www.cloudbabble.co.uk/2024-02-01-GoogleCloudProfessionalCloudNetworkEngineerCertification/)
