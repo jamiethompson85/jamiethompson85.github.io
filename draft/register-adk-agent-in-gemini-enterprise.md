@@ -1,139 +1,182 @@
 ---
-layout: post
-title: "Google Cloud Professional Cloud DevOps Engineer Exam Guide (2025 Edition)"
-excerpt: "I sat the DevOps Engineer exam for the 3rd time in mid-2025. Here is a breakdown of the current exam focus, covering SRE principles, Supply Chain Security, and the critical SRE calculations that trip most candidates up."
-subtitle: "An updated guide based on my 2025 exam experience: SRE, GKE, and CI/CD Security and more."
-description: "Planning to sit the Google Cloud Professional Cloud DevOps Engineer exam? Here is a detailed breakdown of the key topics, SRE principles, and exam strategy based on my recent sitting in June 2025."
-thumbnail-img: /assets/img/devops/google-cloud-professaional-devops-engineer-exam.png
-share-img: /assets/img/devops/google-cloud-professaional-devops-engineer-exam.png
-readtime: true
-share-title: "Google Cloud DevOps Engineer Exam Guide (2025 Edition)"
-share-description: "I recently passed the Google Cloud DevOps exam for the 3rd time. Here are my notes, study tips, and a breakdown of the key topics you need to know."
-tags: [Google Cloud, GCP, DevOps, SRE, Certification, Exam Guide, GKE, Kubernetes, Cloud Operations, Security]
+layout: post 
+title: "How to Register and Use ADK Agents with Gemini Enterprise (2025 Guide)" 
+excerpt: "Built a custom agent with the Google Agent Development Kit? Here is a step-by-step breakdown of how to register it with Gemini Enterprise, handle the tricky OAuth 2.0 authorization flow, and enable secure user context in your python code." 
+subtitle: "A technical guide to connecting backend ADK logic to the Gemini Enterprise frontend." 
+description: "Planning to deploy your custom AI agents to your enterprise users? Here is a detailed guide on registering ADK agents with Gemini Enterprise, covering OAuth configuration, resource registration, and user context handling." 
+thumbnail-img: /assets/img/Gemini Enterprise/adk-registration-guide.png 
+share-img: /assets/img/Gemini Enterprise/adk-registration-guide.png 
+readtime: true 
+share-title: "Guide: Registering ADK Agents with Gemini Enterprise" 
+share-description: "I successfully connected my custom ADK agent to Gemini Enterprise. Here are my notes, curl commands, and tips for handling OAuth tokens securely." 
+tags: [Google Cloud, Gemini Enterprise, ADK, AI Agents, Python, OAuth, Vertex AI]
 ---
+# How to Register and Use ADK Agents (on Agent Engine) with Gemini Enterprise
+So, you’ve built a custom agent using Google's Agent Development Kit (ADK). It’s deployed on Vertex AI's Agent Engine platform, and it’s ready to work. But right now, it’s just code sitting in the cloud. How do you get it into the hands of your users?
 
-# Google Cloud Professional Cloud DevOps Engineer Exam Guide
+The answer is Gemini Enterprise (formerly known as Agentspace).
 
-Back in June, I sat and passed the **Google Cloud Professional Cloud DevOps Engineer** exam.
+Connecting your backend logic to the frontend Gemini Enterprise UI requires precise configuration, involving various resource IDs, security checks, and authentication flows. But don't worry. This guide will walk you through registering your ADK agent, handling the "OAuth dance," and getting your agent ready for prime time.
 
-This marked my third time earning this credential (having first passed in 2021). While the exam has evolved over the years, it remains one of the most practical and valuable certifications in the Google Cloud portfolio. It sits squarely at the intersection of modern software delivery, Site Reliability Engineering (SRE) culture, and platform engineering.
+📝 **A Note on Documentation:** If you have struggled to find clear instructions on this process, you are not alone. The official documentation has lagged slightly behind the actual product releases- no doubt due to the  pace at which these products are being developed at Google! This guide aims to bridge that gap and get you up and running today based on my experiences working with Gemini Enterprise, ADK and Agent Engine.
 
-Whether you are taking this exam for the first time or renewing it like I was, the bar remains high. It requires more than just knowing what the products *do*; you need to know how to use them to fix broken pipelines, troubleshoot crashing clusters, and maintain reliability at scale.
+# The Deployment Dilemma: Custom UI vs. Managed Platform
+Before we dive into the configuration, it is worth addressing a common question: “Why don’t I just build my own UI?”
 
-Here is my guide to the exam based on my recent experience, covering the key topics you need to master.
+Technically, you can. The "Do It Yourself" approach involves wrapping your agent in a custom web app (like Streamlit or React), deploying it to Cloud Run, and securing it with Identity-Aware Proxy (IAP). While this offers pixel-perfect control, it comes with a heavy operational tax:
 
-## What is the Google Cloud Professional Cloud DevOps Engineer certification?
+- **Developer Overhead:** You move from building agents to maintaining software products. You are now responsible for session management, frontend bug fixes, and security patching.
+- **Scalability & Sprawl:** If you have 20 agents, you end up with 20 different Cloud Run services and 20 different URLs for users to bookmark. This fragmentation kills adoption.
+- **Governance Blind Spots:** Custom UIs are harder to audit. It becomes difficult to maintain a centralized view of "who is using what" across the organization.
 
-As per Google’s official definition:
+# The Gemini Enterprise Advantage 
+Gemini Enterprise is designed to solve these scalability issues. It acts as a centralized "App Store" for your organization's agents. It handles the UI, authentication, and governance automatically, allowing you to focus strictly on the agent's logic. 
 
-> "A Professional Cloud DevOps Engineer is responsible for efficient development operations that can balance service reliability and delivery speed. They are skilled at using Google Cloud Platform to build software delivery pipelines, deploy and monitor services, and manage and learn from incidents."
+## Why it solves the scale problem:
 
-In simpler terms, this exam validates that you know how to apply **SRE principles** (like SLOs and Error Budgets) and can build secure, automated CI/CD pipelines using Google Cloud tools.
+**One Interface for All Agents:** Users go to one URL. They see a catalog of all agents available to them (HR, IT, Sales) based on their IAM permissions.
+**Zero UI Code:** You deploy the logic (the ADK backend), and Gemini Enterprise renders the UI automatically. You never have to write a React component or fix a CSS bug again.
+**Unified Context:** Because the agents live in the same "space" as Google Workspace, they have native access to Drive/Docs/Gmail context without you writing complex OAuth handshakes for every single agent.Centralized **Governance:** Admins can turn off specific agents, audit logs, and enforce data residency policies globally, rather than chasing down individual Cloud Run deployments.
 
-## Who is this certification aimed at?
+## Summary Recommendation
 
-This certification is aimed at **DevOps Engineers, SREs, and Platform Engineers**. If your day-to-day involves managing GKE clusters, writing Cloud Build pipelines, configuring monitoring dashboards, or arguing about Error Budgets with product owners, this is the exam for you.
+| Feature | Custom UI (Cloud Run + IAP) | Gemini Enterprise |
+| :--- | :--- | :--- |
+| **Setup Effort** | High (DevOps, Frontend, Auth) | Low (Register & Go) |
+| **Maintenance** | High (Patching UI, fixing bugs) | Zero (Managed by Google) |
+| **Discoverability** | Low (Emailing links) | High (Central Catalog) |
+| **Use Case** | **Niche:** Highly specialized visual needs (e.g., an agent that renders interactive 3D CAD models). | **Standard:** 95% of internal business agents (Chat, Text, Charts, File Analysis). |
 
-It bridges the gap between a developer (writing code) and an operator (keeping it running), with a heavy emphasis on the **Google Cloud implementation of SRE practices**.
+# What is the goal?
+The goal is to take a "headless" agent deployed on Vertex AI Agent Engine and register it so that:
 
-## Key Study Topics & Themes
+1. Users can discover and chat with it in the centralized Gemini Enterprise Web App.
+2. The agent can securely act on behalf of the user (e.g., sending emails or querying private data).
 
-While the [official exam guide](https://cloud.google.com/learn/certification/cloud-devops-engineer) is your source of truth, here are the specific themes that stood out during my recent sitting.
+# Prerequisites
+Before we start sending curl commands, let's make sure your environment is ready.
 
-### 1. Site Reliability Engineering (SRE) Principles
-This is the heart of the exam. You absolutely must understand the relationship between SLIs, SLOs, and Error Budgets.
+- **Admin Access:** You need the agents.manage permission (usually part of the Discovery Engine Admin role) to register agents.
+- **Service Account Roles:** Ensure your discoveryengine service account has Vertex AI User and Vertex AI Viewer roles. This is required for Gemini Enterprise to actually call your agent.
+- **Deployed Agent:** We assume you have already deployed your agent using the ADK and have your ADK_DEPLOYMENT_ID handy.
 
-* **Defining SLOs:** Ensure you know how to choose a valid Service Level Indicator (SLI) for a given user journey.
-* **Burn Rates:** Be comfortable **calculating burn rates** and determining when to alert based on them.
-* **Error Budgets:** Understand the business consequences of exhausting them (e.g., halting feature releases to focus on reliability).
+# Step 1: The OAuth Setup (Optional but Critical)
+Does your agent need to do things on behalf of the user, like checking their Calendar or querying a private BigQuery table? If yes, you need OAuth. If your agent is just a calculator or a public info bot, you can skip to Step 2.
 
-> **💡 Pro Tip: Know Your DORA Metrics**
-> The exam loves to test your knowledge of the "Four Keys" of software delivery performance. Memorise these definitions:
-> * **Deployment Frequency:** How often you release to production.
-> * **Lead Time for Changes:** Time from code commit to running in production.
-> * **Time to Restore Service:** How long it takes to recover from a failure.
-> * **Change Failure Rate:** The percentage of deployments that cause a failure.
-> * *Exam Tip:* High performers optimize for all four. If a question asks how to measure "velocity," look for Frequency and Lead Time. If it asks about "stability," look for Restore Time and Failure Rate.
+## i. Configure your Provider
+First, register your app with your OAuth 2.0 provider (like Google Cloud) to get a Client ID and Client Secret .
 
-### 2. CI/CD & Release Strategies
-There is a heavy focus on pipeline architecture and security.
+🚨 Critical Step: You must add the following URL to your "Allowed Redirect URIs" list in your OAuth application. Gemini Enterprise handles the callback automatically, but only if you whitelist this address:
 
-* **Binary Authorization:** This is a critical security control. You should know how to configure attestations to ensure only trusted images are deployed.
-* **Jenkins:** Don't assume everything is Cloud Build! You may encounter scenarios involving Jenkins deployments, particularly troubleshooting deployments to on-premises environments.
-* **Deployment Strategies:** Be clear on when to use **Blue/Green, A/B testing, Canary deployments, and Rapid Failback**.
-* **GitOps:** Understand branching strategies and how to manage configuration to avoid state drift.
+https://vertexaisearch.cloud.google.com/oauth-redirect
 
-### 3. Containerization & GKE
-If you work with GKE, this section will be natural. If not, you need to study up.
+## ii. Visualize the Flow
+It helps to understand what we are building. We are setting up a flow where Gemini Enterprise acts as the middleman between the user and your agent.
 
-* **Troubleshooting:** Be prepared for scenarios involving **troubleshooting crashing PODs**.
-* **Core Concepts:** Focus heavily on core Kubernetes concepts. In my experience, understanding the fundamentals of K8s is more important than memorizing the nuances between GKE Standard and Autopilot.
-* **Configuration:** You should be comfortable reading and interpreting **Kubernetes YAML configurations**.
-* **Helm vs. K8s Manifests:** While Helm is popular, ensure you do not neglect your understanding of raw Kubernetes manifests and configuration connectors.
+# insert image to visualise
+   
+## iii. Create the Authorization Resource
+Now, tell Gemini Enterprise about your OAuth credentials. This creates a resource ID that we will link to the agent later.
 
-### 4. Logging & Monitoring
-This section is significant and often underestimated.
+Run this command (replacing the capitalised placeholders with your project details):
 
-* **Log Sinks:** Master the logic of "where to send logs."
-    * **Pub/Sub** for streaming to external SIEMs (like Splunk).
-    * **GCS** for long-term retention and audit compliance.
-    * **BigQuery** for analytics.
-* **Filtering:** Know how to filter log fields (e.g., stripping PII) before export to maintain security compliance.
-* **Dashboards:** Be familiar with creating custom metrics from logs and building monitoring dashboards.
+```Bash
+curl -X POST \
+-H "Authorization: Bearer $(gcloud auth print-access-token)" \
+-H "Content-Type: application/json" \
+-H "X-Goog-User-Project: PROJECT_ID" \
+"https://discoveryengine.googleapis.com/v1alpha/projects/PROJECT_ID/locations/global/authorizations?authorizationId=AUTH_ID" \
+-d '{
+  "name": "projects/PROJECT_ID/locations/global/authorizations/AUTH_ID",
+  "serverSide0auth2": {
+    "clientId": "OAUTH_CLIENT_ID",
+    "clientSecret": "OAUTH_CLIENT_SECRET",
+    "authorizationUri": "OAUTH_AUTH_URI",
+    "tokenUri": "OAUTH_TOKEN_URI"
+  }
+}'
+```
 
-### 5. Security & Identity
-* **Workload Identity Federation:** Know how to configure this for external CI/CD systems (like GitHub Actions) to access Google Cloud securely without managing service account keys.
-* **Secrets Management:** Understand the trade-offs between Secret Manager and Environment Variables.
-* **Infrastructure as Code:** Be ready to compare Config Connector and Terraform, specifically regarding how they handle state and drift.
+- **AUTH_ID:** This is an arbitrary ID you define to reference this setup later.
+- **Google defaults:** If using Google, the Auth URI is usually https://accounts.google.com/o/oauth2/v2/auth and the Token URI is https://oauth2.googleapis.com/token.
 
-## Recommended Training Material
+# Step 2: Registering the Agent
+This is the main event. We are going to link your ADK deployment to the Gemini Enterprise interface.
 
-To prepare for this exam, I used a combination of the following resources:
+You will need to construct a curl request that defines how the agent looks to users and how the LLM should understand it .
 
-1.  **[Official Exam Guide](https://cloud.google.com/learn/certification/cloud-devops-engineer):** Always start here to baseline your knowledge.
-2.  **[DevOps Engineer, SRE Skills Path](https://www.skills.google/paths/20):** This is the recently updated "Google Skills" learning path. It consolidates the best labs and courses into a single track and is the most up-to-date resource for the 2025 exam.
-3.  **Google SRE Books:** You don't need to read them cover-to-cover, but reading the chapters on SLOs and Error Budgets in the [Site Reliability Engineering book](https://sre.google/sre-book/table-of-contents/) (available for free online) is invaluable.
-4.  **Sample Questions:** Check the [official sample questions](https://docs.google.com/forms/d/e/1FAIpQLSdpk564uiDvdnqqyPoVjgpBp0TEtgScSFuDV7YQvRSumwUyoQ/viewform) to get a feel for the format.
+## The Key Fields to Know
+- **displayName:** The name users see in the UI (e.g., "Invoice Helper").
+- **description:** What the user sees in the UI to understand the agent's purpose (e.g., "Extract key information from uploaded invoices").
+- **tool_description:** This is for the AI. It is the prompt used by the LLM to route requests to the agent (e.g., "You are an expert invoice data extractor...").
+- **provisioned_reasoning_engine:** This points to your actual code running on Vertex AI .
 
-### Quick Wins: Skill Badges
-If you don't have time for a full course, grab these specific badges to brush up on the hardest topics. They are all included in the skills path linked above:
-* [Implement DevOps Workflows in Google Cloud](https://www.cloudskillsboost.google/course_templates/644): Essential for mastering the CI/CD and GKE sections.
-* [Monitor and Log with Google Cloud Observability](https://www.cloudskillsboost.google/course_templates/647): Critical for the Operations section.
-* [Build Infrastructure with Terraform on Google Cloud](https://www.cloudskillsboost.google/course_templates/654): Highly recommended given the exam's focus on IaC state management.
-* [Monitor Environments with Google Cloud Managed Service for Prometheus](https://www.cloudskillsboost.google/course_templates/653): A newer badge that covers the increasing number of Prometheus-related questions.
+## The Command
 
-## Exam Strategy: Where to Focus
+```Bash
 
-Depending on your background, you may need to adjust your study focus:
+curl -X POST \
+-H "Authorization: Bearer $(gcloud auth print-access-token)" \
+-H "Content-Type: application/json" \
+-H "X-Goog-User-Project: PROJECT_ID" \
+"https://discoveryengine.googleapis.com/v1alpha/projects/PROJECT_ID/locations/global/collections/default_collection/engines/APP_ID/assistants/default_assistant/agents" \
+-d '{
+  "displayName": "My Super Agent",
+  "description": "Helps you analyze data.",
+  "adk_agent_definition": {
+    "tool_description": "Use this tool for data analysis tasks...",
+    "provisioned_reasoning_engine": {
+      "reasoning_engine": "projects/PROJECT_ID/locations/REASONING_LOCATION/reasoningEngines/ADK_DEPLOYMENT_ID"
+    },
+    "authorizations": [
+      "projects/PROJECT_ID/locations/global/authorizations/AUTH_ID"
+    ]
+  }
+}'
+```
+**Note:** The authorizations block is only needed if you completed Step 1.
 
-* **For the "Tool-Heavy" Engineer:** If you know Jenkins and Terraform inside out but haven't worked in an SRE role, spend your time on **Process**. Focus on Error Budgets, Burn Rates, and Incident Management.
-* **For the "Process-Heavy" Engineer:** If you know SRE principles but don't touch the console often, focus on **Product**. Learn the specific details of Cloud Build triggers, Artifact Registry, and GKE networking.
+# Step 3: Test Drive in Gemini Enterprise
+Once the API returns a success message (and a resource name), your agent is live!
 
-> **One Key Difference vs. Cloud Architect:**
-> Unlike the Professional Cloud Architect exam, the DevOps exam does **not** have pre-published case studies (like Cymbal Retail or EHR Healthcare) that you need to memorize beforehand. All scenarios are self-contained within the questions. You don't need to read a 10-page dossier before walking into the test centre!
+**i. Navigate:** Go to the Gemini Enterprise page in the Google Cloud Console.
+**ii. Select App:** Choose the Gemini Enterprise app where you added the agent.
+**iii. Enable Web App:** In the main menu, select Integration and ensure "Enable the Web App" is toggled on.
+**iv. Launch:** Click the web app link provided.
+**vi. Find Your Agent:** You will see your new agent listed under the "Agents" section in the navigation menu.
 
-**Key Tip:** Don't neglect the "Why." The exam tests your judgment. For example, knowing *how* to configure a Log Sink is good; knowing *why* you would send logs to Pub/Sub (speed/integration) versus GCS (cost/retention) is better.
+# The User Experience
+If you set up OAuth, the first time a user interacts with your agent, Gemini Enterprise will prompt them for authorization. They will see an "Authorize" button, followed by the standard OAuth consent screen. Once granted, your agent can act on their behalf! .
 
-## Exam Details
+# <insert image of oauth>
 
-* **Length:** 2 Hours
-* **Questions:** 50-60 Multiple Choice / Multiple Select
-* **Validity:** 2 Years
-* **Format:** Standard Exam (Remote Proctored or Test Centre)
+##💡 Pro Tips for Developers
+**1. Make it Chatty (Status Updates)**
+ADK agents can send real-time feedback to the UI. Instead of the user staring at a blank screen while your agent crunches numbers, you can display messages like "Executing code review..." .
 
-## Conclusion
+In your Python code, you simply update the state dictionary:
 
-The Professional Cloud DevOps Engineer exam forces you to think not just about *building* systems, but about *running* them reliably at scale. It validates that you can take the theoretical concepts of SRE and apply them using Google Cloud's toolset.
+```python
+callback_context.state["ui:status_update"] = "Starting code generation."
+```
 
-Good luck with your preparation!
+**2. Using the User's Identity**
+If you used OAuth, your Python agent can access the user's token via tool_context.state. This allows you to make API calls (like searching the user's Google Drive) securely, impersonating the user who is chatting with the bot .
 
-Thanks for taking the time to read this blog, I hope you find it useful in preparing for the **Professional DevOps Engineer exam**. Please feel free to share, [subscribe](https://www.cloudbabble.co.uk/subscribe) to be alerted to future posts, follow me on [LinkedIn](https://linkedin.com/in/jamiethompson85), and react/comment below!
+```Python
 
-If you're new to Google Cloud certifications, or you're deciding what certification to do next, check out my other blog posts covering:
+# Access token is stored in the temp namespace
+access_token = tool_context.state[f"temp:{AUTH_ID}"]
+```
 
-- [Google Cloud Generative AI Leader Certification (GAIL)](https://www.cloudbabble.co.uk/2025-05-14-GoogleCloudGenerativeAILeaderCertification/)
-- [Google Cloud Digital Leader Certification (CDL)](https://www.cloudbabble.co.uk/2022-12-06-GoogleCloudDigitalLeaderCertification/)
-- [Google Cloud Associate Data Practitioner Certification (ADP)](https://www.cloudbabble.co.uk/2025-01-22-associate-data-practitioner/)
-- [Google Cloud Professional Cloud Architect (PCA) Certification](https://www.cloudbabble.co.uk/2023-02-28-Google-Cloud-Professional-Cloud-Architect/)
-- [Google Cloud Professional Cloud Architect (PCA) Renewal Certification](https://www.cloudbabble.co.uk/2025-11-18-Google-Cloud-Professional-Cloud-Architect-Exam-Guide-Renewal/)
-- [Google Cloud Professional Network Engineer Certification (PNE)](https://www.cloudbabble.co.uk/2024-02-01-GoogleCloudProfessionalCloudNetworkEngineerCertification/)
+**3. Updating Your Agent**
+If you need to change the description or the underlying reasoning engine, use the PATCH command.
+
+Warning: You must provide displayName, description, tool_settings, and reasoning_engine in the update request, even if they haven't changed.
+
+# Conclusion
+The ability to register custom ADK agents turns Gemini Enterprise from a simple chat interface into a powerful enterprise platform. By bridging your custom Python logic with Google's managed UI, you can build tools that are both powerful and user-friendly.
+
+Good luck with your build!
+
+Thanks for reading this guide. If you found it helpful for your Gemini Enterprise deployment, feel free to share and react below!
