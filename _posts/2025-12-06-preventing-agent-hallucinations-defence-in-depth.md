@@ -83,7 +83,7 @@ This informs the agent explicitly that the action failed. We can then prompt the
 We keep the number of tools per agent minimal. A "Support Agent" shouldn't have access to "Sales Tools." Reducing the action space reduces the complexity, which directly lowers the hallucination rate.
 
 ## 3. The Validation Loop: "LLM as a Judge" and ADK Loop Agents
-In heavily regulated industries (Finance, Healthcare, Legal), "mostly right" is functionally equivalent to "wrong." For these high-stakes, deterministic workflows, reliance on a single model pass is insufficient. Instead, an adversarial "LLM as a Judge" pattern is implemented, often utilizing the Loop Agent construct within the Agent Development Kit.
+In heavily regulated industries (Finance, Healthcare, Legal), "mostly right" is functionally equivalent to "wrong." For these high-stakes, deterministic workflows, reliance on a single model pass is insufficient. Instead, an adversarial "LLM as a Judge" pattern is implemented, often utilising the Loop Agent construct within the Agent Development Kit.
 
 This architecture effectively creates a "Four-Eyes Principle" for AI: one agent drafts the response, and a separate, isolated agent must approve it before it reaches the user or next stage.
 
