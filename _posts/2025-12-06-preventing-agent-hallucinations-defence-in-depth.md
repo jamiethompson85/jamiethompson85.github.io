@@ -4,8 +4,8 @@ title: "Defence in Depth: Strategies for Preventing Hallucinations in Agentic AI
 excerpt: "Moving beyond chatbots requires absolute reliability. This post details practical methods for using agentic microservices, the Agent Development Kit, and 'LLM as a Judge' patterns to stop agents from making things up"
 subtitle: "A technical guide to architecting reliable, hallucination-resistant agents using a defence-in-depth strategy."
 description: "In agentic AI, a hallucination isn't just a wrong answer—it's a bad API call. Learn how to prevent this using Google Cloud's ADK, Vertex AI, and a multi-layered defence architecture."
-thumbnail-img: /assets/img/Gemini Enterprise/agent-hallucination-defence.png
-share-img: /assets/img/Gemini Enterprise/agent-hallucination-defence.png
+thumbnail-img: /assets/img/geminienterprise/preventing-halluncinations.png
+share-img: /assets/img/geminienterprise/preventing-halluncinations.png
 readtime: true
 share-title: "Strategy: Preventing Agent Hallucinations on Google Cloud"
 share-description: "Reliability is the biggest hurdle for Agentic AI. Here is my defence-in-depth strategy using Vertex AI and the Agent Dev Kit."
