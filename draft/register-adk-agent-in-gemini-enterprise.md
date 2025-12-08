@@ -141,15 +141,16 @@ This diagram illustrates how we securely give the Python Agent permission to do 
 
 # Step 2: Registering the Agent
 
-This is the main event. We are going to link your ADK deployment to the Gemini Enterprise interface.
+This step establishes the critical link between your ADK backend on Vertex AI Agent Engine and the Gemini Enterprise frontend. To register the agent, you must construct an API request that configures its user-facing identity and the semantic routing logic used by the orchestration layer.
 
-You will need to construct a curl request that defines how the agent looks to users and how the LLM should understand it .
+## Core Configuration Parameters
+- **displayName:** The identifier visible to users within the interface (e.g., "Invoice Helper").
+- **description:** A functional summary displayed to the user, explaining the agent's specific capabilities (e.g., "Extracts key data points from uploaded invoice documents").
+- **tool_description:** The system definition used by the LLM for intent matching. This prompt guides the orchestration layer on when to route specific user requests to this agent.
+- **provisioned_reasoning_engine:** The unique resource identifier (URI) pointing to your execution logic hosted on Vertex AI.
 
-## The Key Fields to Know
-- **displayName:** The name users see in the UI (e.g., "Invoice Helper").
-- **description:** What the user sees in the UI to understand the agent's purpose (e.g., "Extract key information from uploaded invoices").
-- **tool_description:** This is for the AI. It is the prompt used by the LLM to route requests to the agent (e.g., "You are an expert invoice data extractor...").
-- **provisioned_reasoning_engine:** This points to your actual code running on Vertex AI .
+## The Registration Command
+Execute the following request to finalise the registration:
 
 ## The Command
 
@@ -174,10 +175,10 @@ curl -X POST \
   }
 }'
 ```
-**Note:** The authorizations block is only needed if you completed Step 1.
+**Note:** The authorisations block is only needed if you completed Step 1.
 
 # Step 3: Test Drive in Gemini Enterprise
-Once the API returns a success message (and a resource name), your agent is live!
+Once the API returns a success message (and a resource name), your agent is live and can be accessed via Geminin Enterprise!
 
 **i. Navigate:** Go to the Gemini Enterprise page in the Google Cloud Console.
 **ii. Select App:** Choose the Gemini Enterprise app where you added the agent.
@@ -186,7 +187,7 @@ Once the API returns a success message (and a resource name), your agent is live
 **vi. Find Your Agent:** You will see your new agent listed under the "Agents" section in the navigation menu.
 
 # The User Experience
-If you set up OAuth, the first time a user interacts with your agent, Gemini Enterprise will prompt them for authorization. They will see an "Authorize" button, followed by the standard OAuth consent screen. Once granted, your agent can act on their behalf! .
+If you set up OAuth, the first time a user interacts with your agent, Gemini Enterprise will prompt them for authorisation. They will see an "Authorise" button, followed by the standard OAuth consent screen. Once granted, your agent can act on their behalf!
 
 # <insert image of oauth>
 
@@ -201,7 +202,7 @@ callback_context.state["ui:status_update"] = "Starting code generation."
 ```
 
 **2. Using the User's Identity**
-If you used OAuth, your Python agent can access the user's token via tool_context.state. This allows you to make API calls (like searching the user's Google Drive) securely, impersonating the user who is chatting with the bot .
+If you used OAuth, your Python agent can access the user's token via tool_context.state. This allows you to make API calls (like searching the user's Google Drive) securely, impersonating the user who is chatting with the agent.
 
 ```Python
 
