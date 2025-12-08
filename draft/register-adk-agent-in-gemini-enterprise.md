@@ -27,13 +27,13 @@ Technically, you can. The "Do It Yourself" approach involves wrapping your agent
 
 - **Developer Overhead:** You move from building agents to maintaining software products. You are now responsible for session management, frontend bug fixes, and security patching.
 - **Scalability & Sprawl:** If you have 20 agents, you end up with 20 different Cloud Run services and 20 different URLs for users to bookmark. This fragmentation kills adoption.
-- **Governance Blind Spots:** Custom UIs are harder to audit. It becomes difficult to maintain a centralized view of "who is using what" across the organization.
+- **Governance Blind Spots:** Custom UIs are harder to audit. It becomes difficult to maintain a centralised view of "who is using what" across the organisation.
 
 ![Gemini Enterprise Managed UI vs Custom Developed UI](/assets/img/geminienterprise/gemini-ui-vs-custom-us.png "Gemini Enterprise Managed UI vs Custom Developed UI")
 *Figure 1: Gemini Enterprise Managed UI vs Custom Developed UI*
 
 # The Gemini Enterprise Advantage 
-Gemini Enterprise is designed to solve these scalability issues. It acts as a centralized "App Store" for your organization's agents. It handles the UI, authentication, and governance automatically, allowing you to focus strictly on the agent's logic. 
+Gemini Enterprise is designed to solve these scalability issues. It acts as a centralised "App Store" for your organisation's agents. It handles the UI, authentication, and governance automatically, allowing you to focus strictly on the agent's logic. 
 
 ## Why it solves the scale problem:
 
@@ -48,12 +48,12 @@ Gemini Enterprise is designed to solve these scalability issues. It acts as a ce
 | **Setup Effort** | High (DevOps, Frontend, Auth) | Low (Register & Go) |
 | **Maintenance** | High (Patching UI, fixing bugs) | Zero (Managed by Google) |
 | **Discoverability** | Low (Emailing links) | High (Central Catalogue) |
-| **Use Case** | **Niche:** Highly specialized visual needs (e.g., an agent that renders interactive 3D CAD models). | **Standard:** 95% of internal business agents (Chat, Text, Charts, File Analysis). |
+| **Use Case** | **Niche:** Highly specialised visual needs (e.g., an agent that renders interactive 3D CAD models). | **Standard:** 95% of internal business agents (Chat, Text, Charts, File Analysis). |
 
 # What is the goal?
 The goal is to take a "headless" agent deployed on Vertex AI Agent Engine and register it so that:
 
-1. Users can discover and chat with it in the centralized Gemini Enterprise Web App.
+1. Users can discover and chat with it in the centralised Gemini Enterprise Web App.
 2. The agent can securely act on behalf of the user (e.g., sending emails or querying private data).
 
 # Prerequisites
@@ -73,13 +73,13 @@ First, register your app with your OAuth 2.0 provider (like Google Cloud) to get
 
 https://vertexaisearch.cloud.google.com/oauth-redirect
 
-## ii. Visualize the Flow
+## ii. Visualise the Flow
 It helps to understand what we are building. We are setting up a flow where Gemini Enterprise acts as the middleman between the user and your agent on Vertex AI Agent Engine.
 
 ![User to Agent interaction via Gemini Enterprise UI](/assets/img/geminienterprise/user-gemini-enterprise-agent-flow.png "User to Agent interaction via Gemini Enterprise UI")
 *Figure 2: User to Agent interaction via Gemini Enterprise UI*
    
-## iii. Create the Authorization Resource
+## iii. Create the Authorisation Resource
 Now, tell Gemini Enterprise about your OAuth credentials. This creates a resource ID that we will link to the agent later.
 
 Run this command (replacing the capitalised placeholders with your project details):
@@ -113,9 +113,9 @@ This diagram illustrates how we securely give the Python Agent permission to do 
 
 **The OAuth Workflow Explained**
 
-**1. User Consent (Steps 1–3):** The process begins when you click "Authorize." You are temporarily redirected to Google to log in and confirm that you trust this application. This ensures that you are the one granting permission.
+**1. User Consent (Steps 1–3):** The process begins when you click "Authorise." You are temporarily redirected to Google to log in and confirm that you trust this application. This ensures that you are the one granting permission.
 
-**2. The Secure Exchange (Steps 4–6):** Once you say "Yes," Google sends a temporary "Authorization Code" to the Gemini Enterprise App. The App immediately exchanges this code for a secure digital key, known as an Access Token. This exchange happens entirely in the background to ensure the key remains secure.
+**2. The Secure Exchange (Steps 4–6):** Once you say "Yes," Google sends a temporary "Authorisation Code" to the Gemini Enterprise App. The App immediately exchanges this code for a secure digital key, known as an Access Token. This exchange happens entirely in the background to ensure the key remains secure.
 
 **3. The Handoff & Execution (Steps 7–9):** This is the crucial step. The Gemini App passes the Access Token to the Python Agent. Now holding the "key," the Agent can independently contact the Resource Server to retrieve the data it needs to complete your task.
 
