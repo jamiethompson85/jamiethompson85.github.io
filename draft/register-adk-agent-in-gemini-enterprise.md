@@ -113,8 +113,14 @@ curl -X POST \
 }'
 ```
 
-- **AUTH_ID:** This is an arbitrary ID you define to reference this setup later.
-- **Google defaults:** If using Google, the Auth URI is usually https://accounts.google.com/o/oauth2/v2/auth and the Token URI is https://oauth2.googleapis.com/token.
+- **PROJECT_ID:** The associated Google Cloud Project ID.
+- **AUTH_ID:** The ID of the authorisation resource. This is an arbitrary ID you define to reference later when an Agent requires OAuth support.
+- **OAUTH_CLIENT_ID:** OAuth 2.0 client identifier issued to the client.
+- **OAUTH_CLIENT_SECRET:** OAuth 2.0 client secret
+- **OAUTH_AUTH_URI:** Specifies the endpoint for obtaining an authorisation code from a third-party authorisation service for OAuth 2.0. For Google, this is typically https://accounts.google.com/o/oauth2/v2/auth.
+- **OAUTH_TOKEN_URI:** Endpoint URL where the application can exchange an OAuth 2.0 authorisation code for an access token. For Google, this is typically https://oauth2.googleapis.com/token.
+
+The name field of the authorisation resource must be used to reference this authorisation resource later, when registering the corresponding Agent.
 
 ![OAuth Handshake Sequence](/assets/img/geminienterprise/oauth-infographic.png "OAuth Handshake Sequence Diagram")
 *Figure 3: The OAuth 2.0 "Handshake" Sequence*
