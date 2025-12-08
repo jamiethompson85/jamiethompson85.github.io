@@ -81,7 +81,7 @@ Before we start sending curl commands, let's make sure your environment is ready
 - **Service Account Roles:** Ensure your discoveryengine service account has Vertex AI User and Vertex AI Viewer roles. This is required for Gemini Enterprise to actually call your agent.
 - **Deployed Agent:** We assume you have already deployed your agent to Vertex AI Agent Engine and have your Agent Engine Resource Name (AE_RESOURCE_NAME) handy.
 
-*You will see references to 'Discovery Engine' throughout this guide (and Google's documentation). It's not unusual for Google products to be rebranded, and Discovery Engine is a symptom of this. Services like Gemini Enterprise, and Vertex AI Search both use the Discovery Engine API.
+**You will see references to 'Discovery Engine' throughout this guide (and Google's documentation). It's not unusual for Google products to be rebranded, and Discovery Engine is a symptom of this. Services like Gemini Enterprise, and Vertex AI Search both use the Discovery Engine API.*
 
 # Step 1: The OAuth Setup (Optional but Critical)
 Does your agent need to do things on behalf of the user, like checking their Calendar or querying a private BigQuery table, limiting access to only tables the user has access to? If yes, you need OAuth. If your agent is just a calculator or a public info bot, you can skip to Step 2.
