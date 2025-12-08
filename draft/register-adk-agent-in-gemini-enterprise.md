@@ -122,7 +122,7 @@ curl -X POST \
 
 The name field of the authorisation resource must be used to reference this authorisation resource later, when registering the corresponding Agent.
 
-## OAuth 2.0 Handshake Sequence Overview 
+# OAuth 2.0 Handshake Sequence Overview 
 
 This diagram illustrates how we securely give the Python Agent permission to do work on your behalf without ever sharing your actual password with it. Think of this process like giving a valet a key to your car- you give them a specific key (the Access Token) that allows them to drive, but doesn't give them ownership of the car.
 
