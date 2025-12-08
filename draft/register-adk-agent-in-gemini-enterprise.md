@@ -42,13 +42,15 @@ Gemini Enterprise is designed to solve these scalability issues. It acts as a ce
 - **Unified Context:** Because the agents live in the same "space" as Google Workspace, they have native access to Drive/Docs/Gmail context without you writing complex OAuth handshakes for every single agent.
 - **Centralised Governance:** Admins can turn off specific agents, audit logs, and enforce data residency policies globally, rather than chasing down individual Cloud Run deployments.
 
-## Summary Recommendation
+## Custom UI vs Gemini Enteprise UI Comparison
+Deciding whether to build a bespoke interface or leverage the managed platform ultimately comes down to a trade-off between granular control and operational efficiency. The table below outlines the key differences in effort, reach, and maintenance to help you determine the best fit for your agent's deployment.
 
 | Feature | Custom UI (Cloud Run + IAP) | Gemini Enterprise |
 | :--- | :--- | :--- |
 | **Setup Effort** | High (DevOps, Frontend, Auth) | Low (Register & Go) |
 | **Maintenance** | High (Patching UI, fixing bugs) | Zero (Managed by Google) |
 | **Discoverability** | Low (Emailing links) | High (Central Catalogue) |
+| **Scaling & Governance** | Fragmented: 20 agents = 20 separate apps to secure, monitor, and update individually. Hard to audit globally. | Unified: Single control plane. Centralized IAM, audit logs, and data policies apply to all agents automatically. |
 | **Use Case** | **Niche:** Highly specialised visual needs (e.g., an agent that renders interactive 3D CAD models). | **Standard:** 95% of internal business agents (Chat, Text, Charts, File Analysis). |
 
 # What is the goal?
@@ -56,6 +58,21 @@ The goal is to take a "headless" agent deployed on Vertex AI Agent Engine and re
 
 1. Users can discover and chat with it in the centralised Gemini Enterprise Web App.
 2. The agent can securely act on behalf of the user (e.g., sending emails or querying private data).
+
+# Visualising the Flow: From User Command to Agent Execution
+
+It helps to understand the integration we are building. We are setting up a pipeline where Gemini Enterprise acts as the orchestration layer between the user and your custom logic.
+
+As illustrated in the diagram below, the process follows a distinct four-step path:
+
+![User to Agent interaction via Gemini Enterprise UI](/assets/img/geminienterprise/user-gemini-enterprise-agent-flow.png "User to Agent interaction via Gemini Enterprise UI")
+*Figure 2: User to Agent interaction via Gemini Enterprise UI*
+
+- **User:** The flow begins when the user initiates a request or command via text or voice.
+- **Gemini Enterprise UI (The Middleman):** Instead of hitting your code directly, the request hits the managed UI. This layer handles authentication, relays the message, and formats the request.
+- **Vertex AI Agent Engine  Runtime:** This is the runtime environment of the agents. It manages the session state and memories, ensuring that context is preserved across the conversation.
+- **Agent on ADK (Execution):** Finally, the request reaches your custom ADK agent. This is where the physical or digital task is performed (e.g., querying a database, running a calculation or whatever function the agent completes).
+- **The Feedback Loop:** Crucially, notice the Feedback & Response Loop (the orange arrows). Your ADK agent doesn't just return a final answer; it can send intermediate status updates back through the runtime to the UI, keeping the user informed while complex tasks are executing.
 
 # Prerequisites
 Before we start sending curl commands, let's make sure your environment is ready.
@@ -74,13 +91,7 @@ First, register your app with your OAuth 2.0 provider (like Google Cloud) to get
 
 https://vertexaisearch.cloud.google.com/oauth-redirect
 
-## ii. Visualise the Flow
-It helps to understand what we are building. We are setting up a flow where Gemini Enterprise acts as the middleman between the user and your agent on Vertex AI Agent Engine.
-
-![User to Agent interaction via Gemini Enterprise UI](/assets/img/geminienterprise/user-gemini-enterprise-agent-flow.png "User to Agent interaction via Gemini Enterprise UI")
-*Figure 2: User to Agent interaction via Gemini Enterprise UI*
-   
-## iii. Create the Authorisation Resource
+## ii. Create the Authorisation Resource
 Now, tell Gemini Enterprise about your OAuth credentials. This creates a resource ID that we will link to the agent later.
 
 Run this command (replacing the capitalised placeholders with your project details):
@@ -123,6 +134,7 @@ This diagram illustrates how we securely give the Python Agent permission to do 
 **Key Takeaway:** The Python Agent never sees your username or password. It only receives a temporary token that allows it to access specific data for a limited time.
 
 # Step 2: Registering the Agent
+
 This is the main event. We are going to link your ADK deployment to the Gemini Enterprise interface.
 
 You will need to construct a curl request that defines how the agent looks to users and how the LLM should understand it .
