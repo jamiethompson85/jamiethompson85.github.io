@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Agentic PoC Graveyard: Why "Faster Horses" Won't Fix Your ROI"
+title: "The Agentic PoC Graveyard Why "Faster Horses" Won't Fix Your ROI"
 excerpt: "Low-code agents and personal copilots are great for individual efficiency, but they rarely transform the bottom line. To unlock the true potential of Agentic AI, organizations need to stop paving the cow path and start reimagining the journey."
 subtitle: "Why low-code bots are just the beginning, and how to scale for the autonomous enterprise."
 description: "Move beyond simple task automation. Learn how to design end-to-end Agentic workflows on Google Cloud that deliver transformational business value."
