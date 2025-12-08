@@ -62,7 +62,7 @@ Before we start sending curl commands, let's make sure your environment is ready
 
 - **Admin Access:** You need the agents.manage permission (usually part of the Discovery Engine Admin role) to register agents.
 - **Service Account Roles:** Ensure your discoveryengine service account has Vertex AI User and Vertex AI Viewer roles. This is required for Gemini Enterprise to actually call your agent.
-- **Deployed Agent:** We assume you have already deployed your agent using the ADK and have your ADK_DEPLOYMENT_ID handy.
+- **Deployed Agent:** We assume you have already deployed your agent to Vertex AI Agent Engine and have your Agent Engine Resource Name (AE_RESOURCE_NAME) handy.
 
 # Step 1: The OAuth Setup (Optional but Critical)
 Does your agent need to do things on behalf of the user, like checking their Calendar or querying a private BigQuery table? If yes, you need OAuth. If your agent is just a calculator or a public info bot, you can skip to Step 2.
@@ -148,7 +148,7 @@ curl -X POST \
   "adk_agent_definition": {
     "tool_description": "Use this tool for data analysis tasks...",
     "provisioned_reasoning_engine": {
-      "reasoning_engine": "projects/PROJECT_ID/locations/REASONING_LOCATION/reasoningEngines/ADK_DEPLOYMENT_ID"
+      "reasoning_engine": "projects/PROJECT_ID/locations/REASONING_LOCATION/reasoningEngines/AE_RESOURCE_NAME"
     },
     "authorizations": [
       "projects/PROJECT_ID/locations/global/authorizations/AUTH_ID"
