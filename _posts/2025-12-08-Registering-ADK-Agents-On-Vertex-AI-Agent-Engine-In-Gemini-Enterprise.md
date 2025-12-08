@@ -32,7 +32,7 @@ Technically, you can. The "Do It Yourself" approach involves wrapping your agent
 - **Scalability & Sprawl:** If you have 20 agents, you end up with 20 different Cloud Run services and 20 different URLs for users to bookmark. This fragmentation kills adoption.
 - **Governance Blind Spots:** Custom UIs are harder to audit. It becomes difficult to maintain a centralised view of "who is using what" across the organisation.
 
-![Gemini Enterprise Managed UI vs Custom Developed UI](/assets/img/geminienterprise/gemini-ui-vs-custom-us.png "Gemini Enterprise Managed UI vs Custom Developed UI")
+![Gemini Enterprise Managed UI vs Custom Developed UI](/assets/img/geminienterprise/gemini-ui-vs-custom-ui.png "Gemini Enterprise Managed UI vs Custom Developed UI")
 *Figure 2: Gemini Enterprise Managed UI vs Custom Developed UI*
 
 # The Gemini Enterprise Advantage 
