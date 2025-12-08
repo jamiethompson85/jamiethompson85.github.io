@@ -39,7 +39,8 @@ Gemini Enterprise is designed to solve these scalability issues. It acts as a ce
 
 - **One Interface for All Agents:** Users go to one URL. They see a catalogue of all agents available to them (HR, IT, Sales) based on their IAM permissions.
 - **Zero UI Code:** You deploy the logic (the ADK backend), and Gemini Enterprise renders the UI automatically. You never have to write a React component or fix a CSS bug again.
-- **Unified Context:** Because the agents live in the same "space" as Google Workspace, they have native access to Drive/Docs/Gmail context without you writing complex OAuth handshakes for every single agent.Centralized - **Governance:** Admins can turn off specific agents, audit logs, and enforce data residency policies globally, rather than chasing down individual Cloud Run deployments.
+- **Unified Context:** Because the agents live in the same "space" as Google Workspace, they have native access to Drive/Docs/Gmail context without you writing complex OAuth handshakes for every single agent.
+- **Centralised Governance:** Admins can turn off specific agents, audit logs, and enforce data residency policies globally, rather than chasing down individual Cloud Run deployments.
 
 ## Summary Recommendation
 
