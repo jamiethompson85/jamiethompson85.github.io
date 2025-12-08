@@ -4,8 +4,8 @@ title: "How to Register and Use ADK Agents with Gemini Enterprise"
 excerpt: "Built a custom agent with the Google Agent Development Kit? Here is a step-by-step breakdown of how to register it with Gemini Enterprise, handle the tricky OAuth 2.0 authorisation flow, and enable secure user context in your python code." 
 subtitle: "A technical guide to connecting backend ADK logic on Vertex AI Agent Engine, to the Gemini Enterprise frontend." 
 description: "Planning to deploy your custom AI agents to your enterprise users? Here is a detailed guide on registering ADK agents running on Vertex AI with Gemini Enterprise, covering OAuth configuration, resource registration, and user context handling." 
-thumbnail-img: /assets/img/Gemini Enterprise/adk-registration-guide.png 
-share-img: /assets/img/Gemini Enterprise/adk-registration-guide.png 
+thumbnail-img: /assets/img/geminienterprise/ADK-Agent-Engine-Gemini-Registration.png
+share-img: /assets/img/geminienterprise/ADK-Agent-Engine-Gemini-Registration.png 
 readtime: true 
 share-title: "Guide: Registering ADK Agents on Vertex AI Agent Engine with Gemini Enterprise" 
 share-description: "Integrating custom ADK agents into Gemini Enterprise requires a precise configuration sequence. Based on my experience scaling these deployments, I’ve compiled a definitive guide covering the required API registration commands and the security patterns for handling OAuth tokens effectively." 
