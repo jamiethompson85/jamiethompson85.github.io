@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Defence in Depth: Strategies for Preventing Hallucinations in Agentic AI"
-excerpt: "Moving beyond chatbots requires absolute reliability. This post details practical methods for using agentic microservices, the Agent Development Kit, and 'LLM as a Judge' patterns to stop agents from making things up"
-subtitle: "A technical guide to architecting reliable, hallucination-resistant agents using a defence-in-depth strategy."
-description: "In agentic AI, a hallucination isn't just a wrong answer—it's a bad API call. Learn how to prevent this using Google Cloud's ADK, Vertex AI, and a multi-layered defence architecture."
+title: "The Agentic PoC Graveyard: Why "Faster Horses" Won't Fix Your ROI"
+excerpt: "Low-code agents and personal copilots are great for individual efficiency, but they rarely transform the bottom line. To unlock the true potential of Agentic AI, organizations need to stop paving the cow path and start reimagining the journey."
+subtitle: "Why low-code bots are just the beginning, and how to scale for the autonomous enterprise."
+description: "Move beyond simple task automation. Learn how to design end-to-end Agentic workflows on Google Cloud that deliver transformational business value."
 thumbnail-img: /assets/img/Gemini Enterprise/agent-hallucination-defence.png
 share-img: /assets/img/Gemini Enterprise/agent-hallucination-defence.png
 readtime: true
