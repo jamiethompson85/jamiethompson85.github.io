@@ -16,7 +16,7 @@ So, you’ve built a custom agent using Google's Agent Development Kit (ADK). It
 
 The answer is Gemini Enterprise (formerly known as Agentspace).
 
-Connecting your backend logic to the frontend Gemini Enterprise UI requires precise configuration, involving various resource IDs, security checks, and authentication flows. But don't worry. This guide will walk you through registering your ADK agent, handling the "OAuth dance," and getting your agent ready for prime time.
+Connecting your backend logic to the frontend Gemini Enterprise UI requires precise configuration, involving various resource IDs, security checks, and authentication flows. But don't worry. This guide will walk you through registering your ADK agent, determining if OAuth is required, and getting your agent ready for your users.
 
 📝 **A Note on Documentation:** If you have struggled to find clear instructions on this process, you are not alone. The official documentation has lagged slightly behind the actual product releases- no doubt due to the  pace at which these products are being developed at Google! This guide aims to bridge that gap and get you up and running today based on my experiences working with Gemini Enterprise, ADK and Agent Engine.
 
