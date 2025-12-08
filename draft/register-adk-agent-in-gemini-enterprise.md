@@ -1,15 +1,15 @@
 ---
 layout: post 
-title: "How to Register and Use ADK Agents with Gemini Enterprise (2025 Guide)" 
-excerpt: "Built a custom agent with the Google Agent Development Kit? Here is a step-by-step breakdown of how to register it with Gemini Enterprise, handle the tricky OAuth 2.0 authorization flow, and enable secure user context in your python code." 
-subtitle: "A technical guide to connecting backend ADK logic to the Gemini Enterprise frontend." 
-description: "Planning to deploy your custom AI agents to your enterprise users? Here is a detailed guide on registering ADK agents with Gemini Enterprise, covering OAuth configuration, resource registration, and user context handling." 
+title: "How to Register and Use ADK Agents with Gemini Enterprise" 
+excerpt: "Built a custom agent with the Google Agent Development Kit? Here is a step-by-step breakdown of how to register it with Gemini Enterprise, handle the tricky OAuth 2.0 authorisation flow, and enable secure user context in your python code." 
+subtitle: "A technical guide to connecting backend ADK logic on Vertex AI Agent Engine, to the Gemini Enterprise frontend." 
+description: "Planning to deploy your custom AI agents to your enterprise users? Here is a detailed guide on registering ADK agents running on Vertex AI with Gemini Enterprise, covering OAuth configuration, resource registration, and user context handling." 
 thumbnail-img: /assets/img/Gemini Enterprise/adk-registration-guide.png 
 share-img: /assets/img/Gemini Enterprise/adk-registration-guide.png 
 readtime: true 
-share-title: "Guide: Registering ADK Agents with Gemini Enterprise" 
-share-description: "I successfully connected my custom ADK agent to Gemini Enterprise. Here are my notes, curl commands, and tips for handling OAuth tokens securely." 
-tags: [Google Cloud, Gemini Enterprise, ADK, AI Agents, Python, OAuth, Vertex AI]
+share-title: "Guide: Registering ADK Agents on Vertex AI Agent Engine with Gemini Enterprise" 
+share-description: "Integrating custom ADK agents into Gemini Enterprise requires a precise configuration sequence. Based on my experience scaling these deployments, I’ve compiled a definitive guide covering the required API registration commands and the security patterns for handling OAuth tokens effectively." 
+tags: [Google Cloud, Gemini Enterprise, ADK, AI Agents, Python, OAuth, Vertex AI, Agent Engine]
 ---
 # How to Register and Use ADK Agents (on Agent Engine) with Gemini Enterprise
 So, you’ve built a custom agent using Google's Agent Development Kit (ADK). It’s deployed on Vertex AI's Agent Engine platform, and it’s ready to work. But right now, it’s just code sitting in the cloud. How do you get it into the hands of your users?
@@ -42,7 +42,7 @@ Gemini Enterprise is designed to solve these scalability issues. It acts as a ce
 - **Unified Context:** Because the agents live in the same "space" as Google Workspace, they have native access to Drive/Docs/Gmail context without you writing complex OAuth handshakes for every single agent.
 - **Centralised Governance:** Admins can turn off specific agents, audit logs, and enforce data residency policies globally, rather than chasing down individual Cloud Run deployments.
 
-## Custom UI vs Gemini Enteprise UI Comparison
+## Custom UI vs Gemini Enterprise UI Comparison
 Deciding whether to build a bespoke interface or leverage the managed platform ultimately comes down to a trade-off between granular control and operational efficiency. The table below outlines the key differences in effort, reach, and maintenance to help you determine the best fit for your agent's deployment.
 
 | Feature | Custom UI (Cloud Run + IAP) | Gemini Enterprise |
@@ -162,10 +162,10 @@ curl -X POST \
 -H "X-Goog-User-Project: PROJECT_ID" \
 "https://discoveryengine.googleapis.com/v1alpha/projects/PROJECT_ID/locations/global/collections/default_collection/engines/APP_ID/assistants/default_assistant/agents" \
 -d '{
-  "displayName": "My Super Agent",
-  "description": "Helps you analyse data.",
+  "displayName": "Insurance Claim Agent",
+  "description": "Automates the processing of insurance claim submissions.",
   "adk_agent_definition": {
-    "tool_description": "Use this tool for data analysis tasks...",
+    "tool_description": "Use this tool to process customer insurance claims for...",
     "provisioned_reasoning_engine": {
       "reasoning_engine": "projects/PROJECT_ID/locations/REASONING_LOCATION/reasoningEngines/AE_RESOURCE_NAME"
     },
@@ -178,18 +178,16 @@ curl -X POST \
 **Note:** The authorisations block is only needed if you completed Step 1.
 
 # Step 3: Test Drive in Gemini Enterprise
-Once the API returns a success message (and a resource name), your agent is live and can be accessed via Geminin Enterprise!
+Once the API returns a success message (and a resource name), your agent is live and can be accessed via Gemini Enterprise!
 
 **i. Navigate:** Go to the Gemini Enterprise page in the Google Cloud Console.
 **ii. Select App:** Choose the Gemini Enterprise app where you added the agent.
 **iii. Enable Web App:** In the main menu, select Integration and ensure "Enable the Web App" is toggled on.
 **iv. Launch:** Click the web app link provided.
-**vi. Find Your Agent:** You will see your new agent listed under the "Agents" section in the navigation menu.
+**v. Find Your Agent:** You will see your new agent listed under the "Agents" section in the navigation menu.
 
 # The User Experience
 If you set up OAuth, the first time a user interacts with your agent, Gemini Enterprise will prompt them for authorisation. They will see an "Authorise" button, followed by the standard OAuth consent screen. Once granted, your agent can act on their behalf!
-
-# <insert image of oauth>
 
 ##💡 Pro Tips for Developers
 **1. Make it Chatty (Status Updates)**
@@ -215,9 +213,10 @@ If you need to change the description or the underlying reasoning engine, use th
 
 Warning: You must provide displayName, description, tool_settings, and reasoning_engine in the update request, even if they haven't changed.
 
-# Conclusion
-The ability to register custom ADK agents turns Gemini Enterprise from a simple chat interface into a powerful enterprise platform. By bridging your custom Python logic with Google's managed UI, you can build tools that are both powerful and user-friendly.
+# Conclusion: Moving From Pilot to Production
 
-Good luck with your build!
+Registering your ADK agent is more than just a configuration step; it is the bridge that turns a siloed backend agent service into a scalable enterprise asset. By leveraging Gemini Enterprise as your orchestration layer, you do not just remove the operational burden of managing custom UIs and authentication, you also solve the critical challenges of centralised governance and future-proof scalability.
 
-Thanks for reading this guide. If you found it helpful for your Gemini Enterprise deployment, feel free to share and react below!
+Instead of fighting "agent sprawl" across fragmented cloud services, you have established a unified control plane. You now have a deployed, secured, and discoverable agent ready for your users, with the infrastructure in place to manage a fleet of agents as easily as you manage one. Now, it is time to iterate on the intelligence!
+
+Thanks for taking the time to read this blog, I hope you find it useful when integrating ADK agents with Gemini Enterprise. Please feel free to share, [subscribe](https://www.cloudbabble.co.uk/subscribe) to be alerted to future posts, follow me on [LinkedIn](https://linkedin.com/in/jamiethompson85), and react/comment below!
