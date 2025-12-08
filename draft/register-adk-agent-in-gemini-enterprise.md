@@ -139,7 +139,7 @@ This diagram illustrates how we securely give the Python Agent permission to do 
 
 **Key Takeaway:** The Python Agent never sees your username or password. It only receives a temporary token that allows it to access specific data for a limited time.
 
-# Step 2: Registering the Agent
+# Step 2: Registering the Agent with Gemini Enterprise
 
 This step establishes the critical link between your ADK backend on Vertex AI Agent Engine and the Gemini Enterprise frontend. To register the agent, you must construct an API request that configures its user-facing identity and the semantic routing logic used by the orchestration layer.
 
