@@ -16,6 +16,9 @@ So, you’ve built a custom agent using Google's Agent Development Kit (ADK). It
 
 The answer is Gemini Enterprise (formerly known as Agentspace).
 
+![ADK Agents on Agent Engine with Gemini Enterpise UI](/assets/img/geminienterprise/ADK-Agent-Engine-Gemini-Registration.png "ADK Agents on Agent Engine with Gemini Enterpise UI")
+*Figure 1: ADK Agents on Agent Engine with Gemini Enterpise UI*
+
 Connecting your backend logic to the frontend Gemini Enterprise UI requires precise configuration, involving various resource IDs, security checks, and authentication flows. But don't worry. This guide will walk you through registering your ADK agent, determining if OAuth is required, and getting your agent ready for your users.
 
 📝 **A Note on Documentation:** If you have struggled to find clear instructions on this process, you are not alone. The official documentation has lagged slightly behind the actual product releases- no doubt due to the  pace at which these products are being developed at Google! This guide aims to bridge that gap and get you up and running today based on my experiences working with Gemini Enterprise, ADK and Agent Engine.
@@ -30,7 +33,7 @@ Technically, you can. The "Do It Yourself" approach involves wrapping your agent
 - **Governance Blind Spots:** Custom UIs are harder to audit. It becomes difficult to maintain a centralised view of "who is using what" across the organisation.
 
 ![Gemini Enterprise Managed UI vs Custom Developed UI](/assets/img/geminienterprise/gemini-ui-vs-custom-us.png "Gemini Enterprise Managed UI vs Custom Developed UI")
-*Figure 1: Gemini Enterprise Managed UI vs Custom Developed UI*
+*Figure 2: Gemini Enterprise Managed UI vs Custom Developed UI*
 
 # The Gemini Enterprise Advantage 
 Gemini Enterprise is designed to solve these scalability issues. It acts as a centralised "App Store" for your organisation's agents. It handles the UI, authentication, and governance automatically, allowing you to focus strictly on the agent's logic. 
@@ -66,7 +69,7 @@ It helps to understand the integration we are building. We are setting up a pipe
 As illustrated in the diagram below, the process follows a distinct four-step path:
 
 ![User to Agent interaction via Gemini Enterprise UI](/assets/img/geminienterprise/user-gemini-enterprise-agent-flow.png "User to Agent interaction via Gemini Enterprise UI")
-*Figure 2: User to Agent interaction via Gemini Enterprise UI*
+*Figure 3: User to Agent interaction via Gemini Enterprise UI*
 
 - **User:** The flow begins when the user initiates a request or command via text or voice.
 - **Gemini Enterprise UI (The Middleman):** Instead of hitting your code directly, the request hits the managed UI. This layer handles authentication, relays the message, and formats the request.
@@ -129,7 +132,7 @@ The name field of the authorisation resource must be used to reference this auth
 This diagram illustrates how we securely give the Python Agent permission to do work on your behalf without ever sharing your actual password with it. Think of this process like giving a valet a key to your car- you give them a specific key (the Access Token) that allows them to drive, but doesn't give them ownership of the car.
 
 ![OAuth Handshake Sequence](/assets/img/geminienterprise/oauth-infographic.png "OAuth Handshake Sequence Diagram")
-*Figure 3: The OAuth 2.0 "Handshake" Sequence*
+*Figure 4: The OAuth 2.0 "Handshake" Sequence*
 
 **The OAuth Workflow Explained**
 
