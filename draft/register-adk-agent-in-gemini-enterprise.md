@@ -65,7 +65,7 @@ Before we start sending curl commands, let's make sure your environment is ready
 - **Deployed Agent:** We assume you have already deployed your agent to Vertex AI Agent Engine and have your Agent Engine Resource Name (AE_RESOURCE_NAME) handy.
 
 # Step 1: The OAuth Setup (Optional but Critical)
-Does your agent need to do things on behalf of the user, like checking their Calendar or querying a private BigQuery table? If yes, you need OAuth. If your agent is just a calculator or a public info bot, you can skip to Step 2.
+Does your agent need to do things on behalf of the user, like checking their Calendar or querying a private BigQuery table, limiting access to only tables the user has access to? If yes, you need OAuth. If your agent is just a calculator or a public info bot, you can skip to Step 2.
 
 ## i. Configure your Provider
 First, register your app with your OAuth 2.0 provider (like Google Cloud) to get a Client ID and Client Secret .
