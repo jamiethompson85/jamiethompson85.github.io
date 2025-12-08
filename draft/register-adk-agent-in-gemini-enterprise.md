@@ -9,7 +9,7 @@ share-img: /assets/img/Gemini Enterprise/adk-registration-guide.png
 readtime: true 
 share-title: "Guide: Registering ADK Agents on Vertex AI Agent Engine with Gemini Enterprise" 
 share-description: "Integrating custom ADK agents into Gemini Enterprise requires a precise configuration sequence. Based on my experience scaling these deployments, I’ve compiled a definitive guide covering the required API registration commands and the security patterns for handling OAuth tokens effectively." 
-tags: [Google Cloud, Gemini Enterprise, ADK, AI Agents, Python, OAuth, Vertex AI, Agent Engine]
+tags: [Google Cloud, Gemini Enterprise, Generative AI, AI Agents, Vertex AI, Agent Engine, ADK, Discovery Engine, OAuth, Python]
 ---
 # How to Register and Use ADK Agents (on Agent Engine) with Gemini Enterprise
 So, you’ve built a custom agent using Google's Agent Development Kit (ADK). It’s deployed on Vertex AI's Agent Engine platform, and it’s ready to work. But right now, it’s just code sitting in the cloud. How do you get it into the hands of your users?
