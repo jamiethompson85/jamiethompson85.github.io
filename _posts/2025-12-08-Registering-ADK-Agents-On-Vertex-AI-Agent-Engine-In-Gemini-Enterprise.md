@@ -240,11 +240,11 @@ Once filled, click Create.
 # Step 3: Test Drive in Gemini Enterprise
 Once the API returns a success message (and a resource name), your agent is live and can be accessed via Gemini Enterprise!
 
-**i. Navigate:** Go to the Gemini Enterprise page in the Google Cloud Console.
-**ii. Select App:** Choose the Gemini Enterprise app where you added the agent.
-**iii. Enable Web App:** In the main menu, select Integration and ensure "Enable the Web App" is toggled on.
-**iv. Launch:** Click the web app link provided.
-**v. Find Your Agent:** You will see your new agent listed under the "Agents" section in the navigation menu.
+- **i. Navigate:** Go to the Gemini Enterprise page in the Google Cloud Console.
+- **ii. Select App:** Choose the Gemini Enterprise app where you added the agent.
+- **iii. Enable Web App:** In the main menu, select Integration and ensure "Enable the Web App" is toggled on.
+- **iv. Launch:** Click the web app link provided.
+- **v. Find Your Agent:** You will see your new agent listed under the "Agents" section in the navigation menu.
 
 # The User Experience
 If you set up OAuth, the first time a user interacts with your agent, Gemini Enterprise will prompt them for authorisation. They will see an "Authorise" button, followed by the standard OAuth consent screen. Once granted, your agent can act on their behalf!
