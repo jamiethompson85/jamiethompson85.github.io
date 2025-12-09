@@ -23,6 +23,19 @@ Connecting your backend logic to the frontend Gemini Enterprise UI requires prec
 
 📝 **A Note on Documentation:** If you have struggled to find clear instructions on this process, you are not alone. The official documentation has lagged slightly behind the actual product releases- no doubt due to the  pace at which these products are being developed at Google! This guide aims to bridge that gap and get you up and running today based on my experiences working with Gemini Enterprise, ADK and Agent Engine.
 
+# Table of Contents
+
+1. [The Deployment Dilemma: Custom UI vs Managed](#the-deployment-dilemma-custom-ui-vs-managed-platform)
+2. [The Gemini Enterprise Advantage](#the-gemini-enterprise-advantage)
+3. [Architecture: User to Agent Flow](#visualising-the-flow-from-user-command-to-agent-execution)
+4. [Prerequisites](#prerequisites)
+5. [Step 1: The OAuth Setup (Optional)](#step-1-the-oauth-setup-optional-but-critical)
+6. [Step 2: Registering via API (The Code)](#the-registration-command)
+7. [Alternative: Registering via the UI (New!)](#alternative-registration-via-the-gemini-enterprise-ui)
+8. [Step 3: Test Drive & User Experience](#step-3-test-drive-in-gemini-enterprise)
+9. [Pro Tips: Real-time Status Updates](#pro-tips-for-developers)
+10. [Conclusion](#conclusion-moving-from-pilot-to-production)
+
 # The Deployment Dilemma: Custom UI vs. Managed Platform
 Before we dive into the configuration, it is worth addressing a common question: “Why don’t I just build my own UI?”
 
@@ -194,7 +207,7 @@ Once the API returns a success message (and a resource name), your agent is live
 # The User Experience
 If you set up OAuth, the first time a user interacts with your agent, Gemini Enterprise will prompt them for authorisation. They will see an "Authorise" button, followed by the standard OAuth consent screen. Once granted, your agent can act on their behalf!
 
-##💡 Pro Tips for Developers
+## 💡 Pro Tips for Developers
 **1. Make it Chatty (Status Updates)**
 ADK agents can send real-time feedback to the UI. Instead of the user staring at a blank screen while your agent crunches numbers, you can display messages like "Executing code review..." .
 
