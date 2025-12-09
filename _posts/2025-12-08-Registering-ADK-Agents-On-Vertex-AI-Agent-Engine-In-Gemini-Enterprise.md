@@ -195,41 +195,6 @@ curl -X POST \
 ```
 **Note:** The authorisations block is only needed if you completed Step 1.
 
-# Step 3: Test Drive in Gemini Enterprise
-Once the API returns a success message (and a resource name), your agent is live and can be accessed via Gemini Enterprise!
-
-**i. Navigate:** Go to the Gemini Enterprise page in the Google Cloud Console.
-**ii. Select App:** Choose the Gemini Enterprise app where you added the agent.
-**iii. Enable Web App:** In the main menu, select Integration and ensure "Enable the Web App" is toggled on.
-**iv. Launch:** Click the web app link provided.
-**v. Find Your Agent:** You will see your new agent listed under the "Agents" section in the navigation menu.
-
-# The User Experience
-If you set up OAuth, the first time a user interacts with your agent, Gemini Enterprise will prompt them for authorisation. They will see an "Authorise" button, followed by the standard OAuth consent screen. Once granted, your agent can act on their behalf!
-
-## 💡 Pro Tips for Developers
-**1. Make it Chatty (Status Updates)**
-ADK agents can send real-time feedback to the UI. Instead of the user staring at a blank screen while your agent crunches numbers, you can display messages like "Executing code review..." .
-
-In your Python code, you simply update the state dictionary:
-
-```python
-callback_context.state["ui:status_update"] = "Starting code generation."
-```
-
-**2. Using the User's Identity**
-If you used OAuth, your Python agent can access the user's token via tool_context.state. This allows you to make API calls (like searching the user's Google Drive) securely, impersonating the user who is chatting with the agent.
-
-```Python
-
-# Access token is stored in the temp namespace
-access_token = tool_context.state[f"temp:{AUTH_ID}"]
-```
-
-**3. Updating Your Agent**
-If you need to change the description or the underlying reasoning engine, use the PATCH command.
-
-Warning: You must provide displayName, description, tool_settings, and reasoning_engine in the update request, even if they haven't changed.
 
 # Alternative: Registration via the Gemini Enterprise UI
 Historically, registering agents required interacting directly with the API via curl commands. While that remains the gold standard for automated CI/CD pipelines, a new update to Gemini Enterprise has introduced a full UI workflow. You can now register agents manually for testing or ad-hoc setups without writing a single line of code.
@@ -271,6 +236,42 @@ Once filled, click Create.
 
 ![Gemini Enterprise Imported Agent View](/assets/img/geminienterprise/gemini-enterprise-example-imported-agent.png "Gemini Enterprise Imported Agent View Screenshot")
 *Figure 9: Example Gemini Enterprise Imported Agents View Screenshot*
+
+# Step 3: Test Drive in Gemini Enterprise
+Once the API returns a success message (and a resource name), your agent is live and can be accessed via Gemini Enterprise!
+
+**i. Navigate:** Go to the Gemini Enterprise page in the Google Cloud Console.
+**ii. Select App:** Choose the Gemini Enterprise app where you added the agent.
+**iii. Enable Web App:** In the main menu, select Integration and ensure "Enable the Web App" is toggled on.
+**iv. Launch:** Click the web app link provided.
+**v. Find Your Agent:** You will see your new agent listed under the "Agents" section in the navigation menu.
+
+# The User Experience
+If you set up OAuth, the first time a user interacts with your agent, Gemini Enterprise will prompt them for authorisation. They will see an "Authorise" button, followed by the standard OAuth consent screen. Once granted, your agent can act on their behalf!
+
+## 💡 Pro Tips for Developers
+**1. Make it Chatty (Status Updates)**
+ADK agents can send real-time feedback to the UI. Instead of the user staring at a blank screen while your agent crunches numbers, you can display messages like "Executing code review..." .
+
+In your Python code, you simply update the state dictionary:
+
+```python
+callback_context.state["ui:status_update"] = "Starting code generation."
+```
+
+**2. Using the User's Identity**
+If you used OAuth, your Python agent can access the user's token via tool_context.state. This allows you to make API calls (like searching the user's Google Drive) securely, impersonating the user who is chatting with the agent.
+
+```Python
+
+# Access token is stored in the temp namespace
+access_token = tool_context.state[f"temp:{AUTH_ID}"]
+```
+
+**3. Updating Your Agent**
+If you need to change the description or the underlying reasoning engine, use the PATCH command.
+
+Warning: You must provide displayName, description, tool_settings, and reasoning_engine in the update request, even if they haven't changed.
 
 # Conclusion: Moving From Pilot to Production
 
