@@ -218,6 +218,47 @@ If you need to change the description or the underlying reasoning engine, use th
 
 Warning: You must provide displayName, description, tool_settings, and reasoning_engine in the update request, even if they haven't changed.
 
+# Alternative: Registration via the Gemini Enterprise UI
+Historically, registering agents required interacting directly with the API via curl commands. While that remains the gold standard for automated CI/CD pipelines, a new update to Gemini Enterprise has introduced a full UI workflow. You can now register agents manually for testing or ad-hoc setups without writing a single line of code.
+
+Here is how to register your ADK Agent using the new visual interface:
+
+**1. Navigate to Agents** From your Gemini Enterprise App page, select Agents from the left-hand menu and click the + Add agent button.
+
+![Gemini Enterprise Add Agents via UI](/assets/img/geminienterprise/gemini-enterprise-add-agent-via-ui.png "Gemini Enterprise Add Agents via UI Screenshot")
+*Figure 5: Example Gemini Enterprise Add Agents via UI Screenshot*
+
+**2. Select Agent Type** You will be presented with options for various agent sources. Select Custom agent via Agent Engine and click Add. This specifically targets agents built by your organisation that follow your company policies.
+
+![Gemini Enterprise Agent Types](/assets/img/geminienterprise/gemini-enterpsie-choose-agent-type.png "Gemini Enterprise Agent Types Screenshot")
+*Figure 6: Example Gemini Enterprise Agent Types Screenshot*
+
+**3. Configure Authorisations (Optional)** If your agent requires OAuth (as discussed in Step 1 of the API guide), you can configure it here.
+
+- Enter an Authorization name.
+- Input your Client ID, Client Secret, Token URI, and Authorization URI.
+
+Click Next to proceed.
+
+![Gemini Enterprise Agent Authorisation Settings](/assets/img/geminienterprise/gemini-enterprise-agent-authorisations.png "Gemini Enterprise Agent Authorisation Settings Screenshot")
+*Figure 7: Example Gemini Enterprise Agent Authorisation Settings Screenshot*
+
+**4. Agent Configuration** This step mirrors the JSON body we constructed in the API call. You must provide:
+
+- **Agent name:** The display name visible to users in the UI.
+- **Agent description:** This is the critical "tool description" used by the orchestration LLM. It tells Gemini when to route a user's request to this specific agent.
+- **Agent Engine reasoning engine:** Enter the full resource path of your deployed agent (e.g., projects/{project}/locations/{location}/reasoningEngines/{reasoningEngine}).
+
+Once filled, click Create.
+
+![Gemini Enterprise Agent Configuration Settings](/assets/img/geminienterprise/gemini-enterprise-agent-configuration.png "Gemini Enterprise Agent Configuration Settings Screenshot")
+*Figure 8: Example Gemini Enterprise Agent Configurations Settings Screenshot*
+
+**5. Verification** Your new agent will now appear in the Agents list under the Our agents tab. Ensure the Agent state is marked as Enabled, and it is ready for use.
+
+![Gemini Enterprise Imported Agent View](/assets/img/geminienterprise/gemini-enterprise-example-imported-agent.png "Gemini Enterprise Imported Agent View Screenshot")
+*Figure 9: Example Gemini Enterprise Imported Agents View Screenshot*
+
 # Conclusion: Moving From Pilot to Production
 
 Registering your ADK agent is more than just a configuration step; it is the bridge that turns a siloed backend agent service into a scalable enterprise asset. By leveraging Gemini Enterprise as your orchestration layer, you do not just remove the operational burden of managing custom UIs and authentication, you also solve the critical challenges of centralised governance and future-proof scalability.
