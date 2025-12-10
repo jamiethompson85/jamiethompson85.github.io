@@ -51,6 +51,9 @@ Technically, you can. The "Do It Yourself" approach involves wrapping your agent
 # The Gemini Enterprise Advantage 
 Gemini Enterprise is designed to solve these scalability issues. It acts as a centralised "App Store" for your organisation's agents. It handles the UI, authentication, and governance automatically, allowing you to focus strictly on the agent's logic. 
 
+![Gemini Enterprise Managed Agents](/assets/img/geminienterprise/Gemini-Enterprise-Managed-Agents.png "Gemini Enterprise Managed Agents")
+*Figure 3: Gemini Enterprise Managed Agents*
+
 ## Why it solves the scale problem:
 
 - **One Interface for All Agents:** Users go to one URL. They see a catalogue of all agents available to them (HR, IT, Sales) based on their IAM permissions.
@@ -82,7 +85,7 @@ It helps to understand the integration we are building. We are setting up a pipe
 As illustrated in the diagram below, the process follows a distinct four-step path:
 
 ![User to Agent interaction via Gemini Enterprise UI](/assets/img/geminienterprise/user-gemini-enterprise-agent-flow.png "User to Agent interaction via Gemini Enterprise UI")
-*Figure 3: User to Agent interaction via Gemini Enterprise UI*
+*Figure 4: User to Agent interaction via Gemini Enterprise UI*
 
 - **User:** The flow begins when the user initiates a request or command via text or voice.
 - **Gemini Enterprise UI (The Middleman):** Instead of hitting your code directly, the request hits the managed UI. This layer handles authentication, relays the message, and formats the request.
@@ -145,7 +148,7 @@ The name field of the authorisation resource must be used to reference this auth
 This diagram illustrates how we securely give the Python Agent permission to do work on your behalf without ever sharing your actual password with it. Think of this process like giving a valet a key to your car- you give them a specific key (the Access Token) that allows them to drive, but doesn't give them ownership of the car.
 
 ![OAuth Handshake Sequence](/assets/img/geminienterprise/oauth-infographic.png "OAuth Handshake Sequence Diagram")
-*Figure 4: The OAuth 2.0 "Handshake" Sequence*
+*Figure 5: The OAuth 2.0 "Handshake" Sequence*
 
 **The OAuth Workflow Explained**
 
@@ -204,12 +207,12 @@ Here is how to register your ADK Agent using the new visual interface:
 **1. Navigate to Agents** From your Gemini Enterprise App page, select Agents from the left-hand menu and click the + Add agent button.
 
 ![Gemini Enterprise Add Agents via UI](/assets/img/geminienterprise/gemini-enterprise-add-agent-via-ui.png "Gemini Enterprise Add Agents via UI Screenshot")
-*Figure 5: Example Gemini Enterprise Add Agents via UI Screenshot*
+*Figure 6: Example Gemini Enterprise Add Agents via UI Screenshot*
 
 **2. Select Agent Type** You will be presented with options for various agent sources. Select Custom agent via Agent Engine and click Add. This specifically targets agents built by your organisation that follow your company policies.
 
 ![Gemini Enterprise Agent Types](/assets/img/geminienterprise/gemini-enterpsie-choose-agent-type.png "Gemini Enterprise Agent Types Screenshot")
-*Figure 6: Example Gemini Enterprise Agent Types Screenshot*
+*Figure 7: Example Gemini Enterprise Agent Types Screenshot*
 
 **3. Configure Authorisations (Optional)** If your agent requires OAuth (as discussed in Step 1 of the API guide), you can configure it here.
 
@@ -219,7 +222,7 @@ Here is how to register your ADK Agent using the new visual interface:
 Click Next to proceed.
 
 ![Gemini Enterprise Agent Authorisation Settings](/assets/img/geminienterprise/gemini-enterprise-agent-authorisations.png "Gemini Enterprise Agent Authorisation Settings Screenshot")
-*Figure 7: Example Gemini Enterprise Agent Authorisation Settings Screenshot*
+*Figure 8: Example Gemini Enterprise Agent Authorisation Settings Screenshot*
 
 **4. Agent Configuration** This step mirrors the JSON body we constructed in the API call. You must provide:
 
@@ -230,12 +233,12 @@ Click Next to proceed.
 Once filled, click Create.
 
 ![Gemini Enterprise Agent Configuration Settings](/assets/img/geminienterprise/gemini-enterprise-agent-configuration.png "Gemini Enterprise Agent Configuration Settings Screenshot")
-*Figure 8: Example Gemini Enterprise Agent Configurations Settings Screenshot*
+*Figure 9: Example Gemini Enterprise Agent Configurations Settings Screenshot*
 
 **5. Verification** Your new agent will now appear in the Agents list under the Our agents tab. Ensure the Agent state is marked as Enabled, and it is ready for use.
 
 ![Gemini Enterprise Imported Agent View](/assets/img/geminienterprise/gemini-enterprise-example-imported-agent.png "Gemini Enterprise Imported Agent View Screenshot")
-*Figure 9: Example Gemini Enterprise Imported Agents View Screenshot*
+*Figure 10: Example Gemini Enterprise Imported Agents View Screenshot*
 
 # Step 3: Test Drive in Gemini Enterprise
 Once the API returns a success message (and a resource name), your agent is live and can be accessed via Gemini Enterprise!
