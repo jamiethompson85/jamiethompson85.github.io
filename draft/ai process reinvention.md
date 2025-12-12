@@ -14,9 +14,9 @@ tags: [Agentic AI, Business Strategy, ROI, Process Automation, Digital Transform
 
 # The Agentic PoC Graveyard: Why "Faster Horses" Won't Fix Your ROI
 
-The adoption of Generative AI has shifted from a phase of experimental curiosity to one of strategic necessity. Across the enterprise landscape, the directive is consistent: operationalise AI to drive competitive advantage. Organisations are accelerating their adoption of platforms like Gemini Enterprise and deploying co-pilot assistants to every desktop. Yet, despite this investment, a significant number of initiatives are struggling to demonstrate tangible value beyond the Proof of Concept stage.
+The adoption of Generative AI has shifted from a phase of experimental curiosity to one of strategic necessity. Across the enterprise landscape, the directive is consistent: operationalise AI to drive competitive advantage. Organisations are accelerating their adoption of enterprise AI platforms and deploying co-pilot assistants to every desktop. Yet, despite this investment, a significant number of initiatives are struggling to demonstrate tangible value beyond the Proof of Concept stage.
 
-It’s cool, sure. It summarises emails beautifully. But has it fundamentally changed the business? usually, the answer is no.
+It’s cool, sure. It summarises emails beautifully. But has it fundamentally changed the business? Usually, the answer is no.
 
 The reason isn't the technology. The reason is that we are confusing **"Personal Productivity"** with **"Process Reinvention."**
 
@@ -29,6 +29,10 @@ If an employee uses a simple agent to summarise their inbox or format a report, 
 There is a famous (apocryphal) quote attributed to Henry Ford:
 
 > "If I had asked people what they wanted, they would have said faster horses."
+
+![The "Faster Horse" Fallacy](/assets/img/geminienterprise/faster-horses-agentic-reinvention.png "Are you just automating legacy friction, or are you designing the autonomous enterprise of the future?")
+*Figure 1: Are you just automating legacy friction, or are you designing the autonomous enterprise of the future?*
+
 
 When you focus on automating the existing human process, even with the best no-code tools on the market, you are essentially building faster horses. You are keeping the legacy workflow intact and just greasing the wheels. Real value doesn't come from helping a human do a task 10% faster. It comes from asking if the human needs to do that task at all.
 
@@ -47,11 +51,9 @@ To find the real value in Agentic AI, we need to look past the individual user's
 * **The Reality:** **Efficiency.** You’ve removed some friction, but the workflow remains human-centric. The agent is acting as a sophisticated script, waiting for a human to hit "go."
 
 ### 3. The Agentic Reinvention (Transformational Value)
-* **The Approach:** "Why do we have an intake form at all? What is the actual goal?"
-* **The Implementation:** You redesign the entire concept. Instead of a human emailing a form to a client, an Autonomous Agent grounded in your enterprise data proactively engages the client via chat, authenticates them, negotiates requirements based on real-time inventory, and triggers the fulfillment API directly.
-* **The Reality:** **Outcome Design.** You haven't just automated the process; you’ve deleted the old process and replaced it with an intelligent, self-directing system.
-
-
+* **The Approach:** "Why do we have a procurement approval chain for standard inventory?"
+* **The Implementation:** You remove the human buyer from the loop entirely. An Agent monitors real-time inventory sensors and market pricing. When stock dips, it autonomously negotiates price with the supplier’s API, places the order within budget parameters, and schedules the logistics.
+* **The Reality:** **Autonomous Operations.** The process is no longer "Purchase Request -> Approval -> Order." The process is now simply "Inventory Maintained." The human only gets involved if the negotiation fails.
 
 ## Reimagine the Outcome, Don't Just Automate the Task
 
@@ -67,7 +69,7 @@ We must look beyond simple conversational interfaces. The true capability lies i
 
 Do not confuse the novelty of personal automation with enterprise transformation. While saving individual employees time offers incremental gains, the true return on investment comes from fundamentally reimagining the workflow.
 
-The organizations that define this era will not be those with the highest volume of chatbots, but those with the foresight to redesign their operational architecture for autonomous agents.
+The organisations that define this era will not be those with the highest volume of chatbots, but those with the foresight to redesign their operational architecture for autonomous agents.
 
 Add-on: Comparison Graphic Data
 Since you mentioned a checklist graphic earlier, here is the text content you can use to create a simple comparison table or infographic for the post:
