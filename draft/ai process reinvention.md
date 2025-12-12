@@ -1,15 +1,15 @@
 ---
 layout: post
 title: "The Agentic PoC Graveyard: Why 'Faster Horses' Won't Fix Your ROI"
-excerpt: "Low-code agents and personal copilots are great for individual efficiency, but they rarely transform the bottom line. To unlock the true potential of Agentic AI, organizations need to stop paving the cow path and start reimagining the journey."
+excerpt: "Low-code agents and personal copilots are great for individual efficiency, but they rarely transform the bottom line. To unlock the true potential of Agentic AI, organisations need to stop automating inefficiency and start reimagining the journey."
 subtitle: "Why low-code bots are just the beginning, and how to scale for the autonomous enterprise."
 description: "Move beyond simple task automation. Learn how to design end-to-end Agentic workflows that deliver transformational business value."
-thumbnail-img: /assets/img/Gemini Enterprise/agentic-roi-strategy.png
-share-img: /assets/img/Gemini Enterprise/agentic-roi-strategy.png
+thumbnail-img: /assets/img/geminienterprise/faster-horses-agentic-reinvention.png
+share-img: /assets/img/geminienterprise/faster-horses-agentic-reinvention.png
 readtime: true
 share-title: "The Agentic PoC Graveyard: Why 'Faster Horses' Won't Fix Your ROI"
-share-description: "Stop paving the cow path. Real ROI comes from autonomous process reinvention, not just personal productivity bots."
-tags: [Agentic AI, Business Strategy, ROI, Process Automation, Digital Transformation, Autonomous Agents, Gemini Enterprise]
+share-description: "Stop automating inefficiency. Real ROI comes from autonomous process reinvention, not just personal productivity bots."
+tags: [Agentic AI, Business Strategy, ROI, Process Automation, Digital Transformation, Autonomous Agents, GenAI]
 ---
 
 # The Agentic PoC Graveyard: Why "Faster Horses" Won't Fix Your ROI
@@ -38,7 +38,14 @@ When you focus on automating the existing human process, even with the best no-c
 
 ## The Sliding Scale of Ambition
 
-To find the real value in Agentic AI, we need to look past the individual user's inbox and look at the end-to-end business flow. Here is how the hierarchy of value breaks down:
+To find the real value in Agentic AI, we need to look past the individual user's inbox and examine the end-to-end business flow.
+
+Too often, enterprises stop at the "task" level, giving a user a tool to write an email faster. While this provides immediate gratification, it ignores the systemic inefficiencies that necessitated the email in the first place. We need to view AI adoption not as a single deployment, but as a maturity curve where value scales in direct proportion to autonomy.
+
+![The Sliding Scale of Agentic Ambition](/assets/img/geminienterprise/sliding-scale-of-agentic-ambition.png "The Hierarchy of Agentic Value")
+*Figure 2: Moving up the value chain requires shifting focus from saving individual hours to reimagining end-to-end business flows.*
+
+Here is how the hierarchy of value breaks down:
 
 ### 1. The Personal Productivity Bot (Incremental Value)
 * **The Approach:** "I want to save 3 hours a week on admin."
@@ -65,21 +72,11 @@ While low-code personal agents are a great starting point to get your workforce 
 
 We must look beyond simple conversational interfaces. The true capability lies in **Reasoning Engines**—systems capable of executing complex logic and triggering autonomous functions without human intervention.
 
+![Tactical Assistants vs. Strategic Reasoning Engines](/assets/img/geminienterprise/personal-bots-vs-enterprise-agents.png "Tactical Assistants vs. Strategic Reasoning Engines")
+*Figure 3: A side-by-side look at why low-code personal bots fail to scale, while enterprise agents grounded in data drive business transformation.*
+
 ## The Verdict
 
 Do not confuse the novelty of personal automation with enterprise transformation. While saving individual employees time offers incremental gains, the true return on investment comes from fundamentally reimagining the workflow.
 
 The organisations that define this era will not be those with the highest volume of chatbots, but those with the foresight to redesign their operational architecture for autonomous agents.
-
-Add-on: Comparison Graphic Data
-Since you mentioned a checklist graphic earlier, here is the text content you can use to create a simple comparison table or infographic for the post:
-
-Personal Bots vs. Enterprise Agents
-| Feature | Personal Bots (Low Code) | Enterprise Agents (Process Reinvention) |
-| :--- | :--- | :--- |
-| **Primary Goal** | Individual Efficiency | Business Transformation |
-| **Scope** | Single Task (e.g., "Write Email") | End-to-End Outcome (e.g., "Onboard Client") |
-| **Human Role** | The Driver (Agent assists) | The Architect (Agent executes) |
-| **Data Access** | User's Context (Docs/Inbox) | Enterprise Grounding (Databases/APIs) |
-| **ROI Potential** | Linear (Hours saved) | Exponential (Capacity created) |
-| **Google Cloud Tool** | Vertex AI Agent Builder (No-Code) | Vertex AI Reasoning Engine (High-Code) |
