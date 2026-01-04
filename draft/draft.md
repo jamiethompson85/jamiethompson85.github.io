@@ -88,15 +88,18 @@ In the modern stack, monitoring has evolved into Observability. We no longer jus
 | **Key GCP Tool** | Cloud Monitoring Dashboards & Alerts. | Query Insights, Cloud Trace, Spanner Key Visualiser and Index Advisors. |
 
 **Active Monitoring vs. SLOs**
-You aren't just looking at CPU metrics anymore; you are managing Service Level Objectives (SLOs). The exam tests your ability to distinguish between the metric, the goal, and the contract.
+You aren't just looking at CPU metrics anymore; you are managing Service Level Objectives (SLOs). This starts by identifying Critical User Journeys (CUJs), for example, a customer completing a checkout or a trader executing a high-frequency order. Once you understand the journey, you identify the Service Level Indicators (SLIs), the specific database metrics like "99th percentile query latency," that impact that journey. From there, you set an SLO as your internal target.
 
 | Term | What it is | Database Context Example |
 | :--- | :--- | :--- |
 | **SLI (Indicator)** | The specific metric used to measure performance. | "The time taken to execute a `SELECT` query" or "Successful vs. failed connection attempts." |
 | **SLO (Objective)** | The internal target for that metric over a period of time. | "99% of queries must complete in under 100ms over a rolling 30-day period." |
+| **Error Budget** | The "allowable" pain (100% minus the SLO). | "You have ~7 hours of 'slow' performance allowed per month before you must freeze new feature releases." |
 | **SLA (Agreement)** | The external business contract (with financial consequences). | "If the database is available less than 99.9% of the month, the provider owes a 10% credit." |
 
-Architect's Edge: If your 99th percentile latency exceeds 100ms, your observability stack should tell you which specific Spanner partition is "hot" or which Bigtable app profile is experiencing replication lag before it breaches your SLO and impacts the customer.
+Architect's Logic: If your 99th percentile latency exceeds 100ms, your observability stack should tell you which specific Spanner partition is "hot" or which Bigtable app profile is experiencing replication lag before it breaches your SLO and impacts the customer.
+
+*NB If you want to dive deeper into the world of SRE, error budgets, and reliability engineering, check out my Google Cloud Professional Cloud DevOps Engineer Exam Guide. While the Database exam focuses on the data, the DevOps exam is where you master the frameworks for managing these objectives at scale.*
 
 UPTO HERE- INSERT SECTION 6 ON VECTOB DATABASES, EMBEDDINGS ETC TO ACCOMODATE GENAI UPDATES
 
