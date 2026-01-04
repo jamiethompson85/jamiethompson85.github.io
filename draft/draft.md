@@ -42,16 +42,63 @@ Global scale requires a deep understanding of consistency models. You must maste
 ### 2. Managing Complex Migrations
 Migration is now a high-stakes engineering project. The exam expects you to handle heterogeneous migrations (e.g., Oracle to AlloyDB) using Database Migration Service (DMS). This involves mastering Change Data Capture (CDC) for minimal downtime and troubleshooting parallelism to optimise throughput without crashing source systems.
 
+![Database Migration Service (DMS) Change Data Capture (CDC) Database Migration](/assets/img/pcdbe/DMS-CDC-Migration.png "Database Migration Service (DMS) Change Data Capture (CDC) Database Migration")
+*Figure 1: Database Migration Service (DMS) Change Data Capture (CDC) Database Migration*
 
 ### 3. Data Residency & Compliance
 Data is highly regulated, and you are the enforcer. You need to leverage Resource Location Policies and Assured Workloads to ensure data stays within specific borders and implement Point-in-Time Recovery (PITR) to protect against ransomware or accidental deletion.
 
-### 4. Security at Every Layer
-Security is baked into the database layer. This means moving to short-lived tokens for database authentication rather than static passwords, and using VPC Service Controls to create a perimeter that prevents data exfiltration.
+<insert data residency and compliance diagram>
+
+### 4. Security at Every Layer: The Zero Trust Database Architect
+Security has evolved from a peripheral concern to a core architectural pillar. The updated exam adopts a "Zero Trust" mentality—you never implicitly trust a user or a network packet just because it's "inside" your cloud environment. You must prove your ability to architect security across three critical pillars:
+
+**Pillar 1: Identity as the New Perimeter**
+Static, long-lived credentials are a liability. The exam focuses heavily on modernizing authentication:
+
+- **IAM Database Auth:** Moving away from native database passwords to relying on Google Cloud identity.
+- **Cloud SQL/AlloyDB Auth Proxy & connectors:** Understanding how these tools provide secure, encrypted connections and handle the lifecycle of ephemeral short-lived tokens so applications don't have to.
+- **Secret Manager:** When legacy authentication is unavoidable, knowing how to tightly manage, audit, and rotate secrets programmatically.
+
+**Pillar 2: Network Isolation & Exfiltration Prevention**
+It is not enough to just put a database on a private IP. You need to prevent data from leaving the approved boundary:
+
+- **VPC Service Controls (VPC-SC):** This is critical for the exam. You need to understand how to define a service perimeter that acts as a bulkhead, preventing valid credentials from moving data across unguarded boundaries (e.g., stopping a Spanner export to a public bucket outside your organization).
+- **Private Service Connect (PSC) vs. Private Service Access (PSA):** Knowing the nuances of connecting to managed services privately without traversing the public internet.
+
+**Pillar 3: Data Encryption & Sovereignty**
+Google encrypts everything by default, but who holds the keys?
+
+- **CMEK (Customer-Managed Encryption Keys):** You must understand the operational overhead and compliance benefits of managing your own encryption keys in Cloud KMS, including the ability to instantly revoke access to data during an emergency.
+- **Cloud Audit Logs:** Configuring Data Access logs to answer the question: "Who read this specific row of highly sensitive PII?"
 
 ### 5. Proactive Observability & Performance Tuning
-Monitoring has evolved into Observability. You aren't just looking at CPU charts; you are using Query Insights to find the exact line of code causing a lock, setting up Service Level Objectives (SLOs) for database latency, and using Cloud Monitoring to correlate database performance with application-side metrics to identify root causes faster.
+In the modern stack, monitoring has evolved into Observability. We no longer just care if the database is up; we care why a specific query is slow and how it relates to the application's user experience.
 
+**The Diagnostic Toolkit**
+- **Query Insights:** This is the "X-ray" for Cloud SQL and AlloyDB. It allows you to see the exact query string, the user who ran it, and the "wait events" (like lock contention or I/O bottlenecks) causing the delay.
+- **Cloud Trace:** This is the bridge between code and data. While Query Insights tells you what is slow in the database, Cloud Trace lets you see how that latency impacts the entire request life cycle—from the initial user click in the frontend to the final row fetch in the backend.
+
+| Concept | Traditional Monitoring | Modern Observability |
+| :--- | :--- | :--- |
+| **Core Question** | "Is the system healthy?" (The "What") | "Why is this happening?" (The "How") |
+| **Data Scope** | Predetermined metrics (CPU, Disk, RAM). | Unified Telemetry (Logs, Metrics, Traces). |
+| **Visibility** | **Known Unknowns:** Alerts for failures you've seen before. | **Unknown Unknowns:** Exploring novel failure modes in real-time. |
+| **Approach** | **Reactive:** Threshold-based alerts (e.g., CPU > 80%). | **Proactive:** Using Query Insights to find hidden bottlenecks. |
+| **Key GCP Tool** | Cloud Monitoring Dashboards & Alerts. | Query Insights, Cloud Trace, Spanner Key Visualiser and Index Advisors. |
+
+**Active Monitoring vs. SLOs**
+You aren't just looking at CPU metrics anymore; you are managing Service Level Objectives (SLOs). The exam tests your ability to distinguish between the metric, the goal, and the contract.
+
+| Term | What it is | Database Context Example |
+| :--- | :--- | :--- |
+| **SLI (Indicator)** | The specific metric used to measure performance. | "The time taken to execute a `SELECT` query" or "Successful vs. failed connection attempts." |
+| **SLO (Objective)** | The internal target for that metric over a period of time. | "99% of queries must complete in under 100ms over a rolling 30-day period." |
+| **SLA (Agreement)** | The external business contract (with financial consequences). | "If the database is available less than 99.9% of the month, the provider owes a 10% credit." |
+
+Architect's Edge: If your 99th percentile latency exceeds 100ms, your observability stack should tell you which specific Spanner partition is "hot" or which Bigtable app profile is experiencing replication lag before it breaches your SLO and impacts the customer.
+
+UPTO HERE- INSERT SECTION 6 ON VECTOB DATABASES, EMBEDDINGS ETC TO ACCOMODATE GENAI UPDATES
 
 ## Who is this certification aimed at?
 This is for Database Administrators (DBAs), Data Engineers, and Solutions Architects. If you spend your time deciding between PostgreSQL on Cloud SQL vs. AlloyDB, troubleshooting migration parallelism in DMS, tuning Spanner schemas to avoid hotspots, or configuring Bigtable app profiles to manage replication consistency and traffic routing, this is your certification.
