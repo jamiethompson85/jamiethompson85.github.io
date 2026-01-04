@@ -38,7 +38,22 @@ Instead of asking you to write a query, the exam covers tasks like:
 - **Migration:** "How do we move 5TB of data from an on-premises Oracle instance to AlloyDB without taking the application offline?"
 - **Security:** "How do we ensure that only the application's service account can access this specific Spanner instance?"
 - **Performance:** "Why is this Bigtable cluster experiencing high latency during peak hours, and should we add more nodes or change the row key design?"
-- 
+
+## Who is this certification aimed at?
+This is for Database Administrators (DBAs), Data Engineers, and Solutions Architects. If you spend your time deciding between PostgreSQL on Cloud SQL vs. AlloyDB, troubleshooting migration parallelism in DMS, tuning Spanner schemas to avoid hotspots, or configuring Bigtable app profiles to manage replication consistency and traffic routing, this is your certification.
+
+## Official Exam Domains & Weighting
+To prepare effectively, you should understand how Google weights the different areas of the exam. 
+
+| Section | Weighting | Key Focus Areas |
+| :--- | :--- | :--- |
+| **1. Design innovative, scalable, and highly available cloud database solutions** | **~32%** | Sizing compute and storage; evaluating HA/DR tradeoffs; SQL vs NoSQL vs Vector requirements; and GenAI/LLM use cases. |
+| **2. Manage a solution that can span multiple database technologies** | **~25%** | IAM and user access; performance monitoring and vitals; backup/recovery (RTO/RPO/PITR); and automation. |
+| **3. Migrate data solutions** | **~23%** | Migration strategies (zero/near-zero downtime); DDL/DML conversion; and migration tool selection. |
+| **4. Deploy scalable and highly available databases in Google Cloud** | **~20%** | Provisioning and testing HA/DR; multi-regional replication; and read replica scaling. |
+
+---
+ 
 ## The Current Landscape: Engineering Global Data Platforms
 Modern Database Engineering is no longer about "tending" to an instance, it's more broad and encompasses Platform Architecture. As Database Engineer, your scope has expanded from simple query optimisation to building globally distributed, compliant, and always on data infrastructure that serves as the foundation for the modern enterprise.
 
@@ -55,6 +70,13 @@ Global scale requires a deep understanding of consistency models. You must maste
 
 ### 2. Managing Complex Migrations
 Migration is now a high-stakes engineering project. The exam expects you to handle heterogeneous migrations (e.g., Oracle to AlloyDB) using Database Migration Service (DMS). This involves mastering Change Data Capture (CDC) for minimal downtime and troubleshooting parallelism to optimise throughput without crashing source systems.
+
+### 2. Managing Complex Migrations
+Migration has evolved from a simple "lift-and-shift" into a high-stakes engineering project. The exam focuses heavily on heterogeneous migrations such as moving from Oracle to AlloyDB using the Database Migration Service (DMS). To succeed, you must master the following operational pillars:
+
+* **CDC & Lifecycle Management:** You are expected to manage the end-to-end lifecycle of a migration, specifically utilising **Change Data Capture (CDC)** to achieve near-zero downtime. This involves knowing how to start, stop, and restart pipelines while maintaining the continuous stream of changes from the source.
+* **Parallelism & Throughput Tuning:** Mastering performance is about balance. You must know how to configure maximum parallelism to optimise data transfer speeds without exceeding the connection limits or resource capacity of your source production systems.
+* **Resilient Troubleshooting:** The exam tests your ability to resolve failures within automated pipelines. This includes ensuring **schema parity** and data integrity across different database engines and identifying where a conversion might break during the initial load or continuous replication phase.
 
 ![Database Migration Service (DMS) Change Data Capture (CDC) Database Migration](/assets/img/pcdbe/DMS-CDC-Migration.png "Database Migration Service (DMS) Change Data Capture (CDC) Database Migration")
 *Figure 1: Database Migration Service (DMS) Change Data Capture (CDC) Database Migration*
@@ -148,28 +170,9 @@ To support GenAI, you must understand **Vector Embeddings**, numerical represent
 | **Extending SQL with AI** | **Vertex AI Integration** | Call LLMs directly via SQL to eliminate ETL pipelines. |
 
 ---
-
-## Who is this certification aimed at?
-This is for Database Administrators (DBAs), Data Engineers, and Solutions Architects. If you spend your time deciding between PostgreSQL on Cloud SQL vs. AlloyDB, troubleshooting migration parallelism in DMS, tuning Spanner schemas to avoid hotspots, or configuring Bigtable app profiles to manage replication consistency and traffic routing, this is your certification.
-
-## Official Exam Domains & Weighting
-To prepare effectively, you should understand how Google weights the different areas of the exam. 
-
-| Section | Weighting | Key Focus Areas |
-| :--- | :--- | :--- |
-| **1. Design innovative, scalable, and highly available cloud database solutions** | **~32%** | Sizing compute and storage; evaluating HA/DR tradeoffs; SQL vs NoSQL vs Vector requirements; and GenAI/LLM use cases. |
-| **2. Manage a solution that can span multiple database technologies** | **~25%** | IAM and user access; performance monitoring and vitals; backup/recovery (RTO/RPO/PITR); and automation. |
-| **3. Migrate data solutions** | **~23%** | Migration strategies (zero/near-zero downtime); DDL/DML conversion; and migration tool selection. |
-| **4. Deploy scalable and highly available databases in Google Cloud** | **~20%** | Provisioning and testing HA/DR; multi-regional replication; and read replica scaling. |
-
----
-
+THESE NEED TO BE CONSOLIDATED INTO ABOVE SECTIONS AS THEY CURRENTLY DUPLICATE A LOT OF CONTENT
 ## Key Study Topics & Themes																								  
 
-### 1. Database Migration Service (DMS) & Migration Strategy
-* **Troubleshooting:** Resolving failures within automated migration pipelines to maintain schema parity and data integrity across complex, heterogeneous environments.
-* **Performance:** Know how to use max parallelism to optimise throughput.
-* **Operations:** Master the lifecycle of a migration: (stopping, restarting, and managing Change Data Capture (CDC).
 
 ### 2. Scaling the "Big Four": Spanner, Bigtable, AlloyDB and Cloud SQL
 * **Cloud Spanner:** Focusing on advanced schema design. You must master the use of UUID v4 or bit-reversed sequences to avoid hotspots and understand which components can autoscale versus those requiring manual intervention.
