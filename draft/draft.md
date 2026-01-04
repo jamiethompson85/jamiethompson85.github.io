@@ -48,7 +48,8 @@ Migration is now a high-stakes engineering project. The exam expects you to hand
 ### 3. Data Residency & Compliance
 Data is highly regulated, and you are the enforcer. You need to leverage Resource Location Policies and Assured Workloads to ensure data stays within specific borders and implement Point-in-Time Recovery (PITR) to protect against ransomware or accidental deletion.
 
-<insert data residency and compliance diagram>
+![Data Residency and Compliance Overview](/assets/img/pcdbe/data-residency-and-compliance.png "Data Residency and Compliance Overview")
+*Figure 2: Data Residency and Compliance Overview*
 
 ### 4. Security at Every Layer: The Zero Trust Database Architect
 Security has evolved from a peripheral concern to a core architectural pillar. The updated exam adopts a "Zero Trust" mentality—you never implicitly trust a user or a network packet just because it's "inside" your cloud environment. You must prove your ability to architect security across three critical pillars:
