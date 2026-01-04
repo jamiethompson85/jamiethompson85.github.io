@@ -14,7 +14,7 @@ tags: [Google Cloud, GCP, Databases, Cloud SQL, Spanner, Bigtable, AlloyDB, Cert
 
 # Google Cloud Professional Database Engineer Exam Guide
 
-This morning, I sat the Google Cloud Professional Database Engineer exam to renew my credential ahead of its January 2026 expiry. Deciding to book it during my annual leave allows me to enjoy my time off without the certification hanging over my head, and it avoids the stress of fitting an exam into my schedule during the January return-to-work
+To wrap up the year, I managed to squeeze in a last minute renewal of the Professional Database Engineer certification during my annual leave, just ahead of its January expiry. It was a choice between getting it done now or having it loom over my head as I try to juggle new projects in the New Year.
 
 When I first passed this exam back in December 2023, it was widely considered one of the more approachable professional level certifications, essentially a "Cloud SQL exam." Fast forward to now, and I can tell you that is no longer the case. The exam has matured into a broad, nuanced assessment that requires a much deeper understanding of Google’s entire database portfolio.
 
@@ -26,11 +26,18 @@ As per the [official exam page](https://cloud.google.com/learn/certification/clo
 > "A Professional Cloud Database Engineer designs, creates, manages, and troubleshoots Google Cloud databases... they translate business and technical requirements into scalable and cost-effective database solutions."
 
 ## The Current Landscape: Engineering Global Data Platforms
-Modern Database Engineering is no longer about "tending" to an instance, it is about Platform Architecture. As an architect, your scope has expanded from simple query optimisation to building globally distributed, compliant, and always on data infrastructure that serves as the bedrock for the modern enterprise.
+Modern Database Engineering is no longer about "tending" to an instance, it's more broad and encompasses Platform Architecture. As an architect, your scope has expanded from simple query optimisation to building globally distributed, compliant, and always on data infrastructure that serves as the foundation for the modern enterprise.
 
 ### 1. Architecting for Global Scale
 Global scale requires a deep understanding of consistency models. You must master how Spanner uses TrueTime for external consistency across continents and how to design Bigtable replication and routing policies that prevent data collisions while maintaining low latency local reads.
 
+| Feature | Cloud Bigtable | Cloud Spanner |
+| :--- | :--- | :--- |
+| **Consistency Model** | **Eventual Consistency** (with multi-cluster routing) or **Read-your-writes** (with single-cluster routing). | **External Consistency** (Strong global consistency). |
+| **Conflict Strategy** | **Last-Writer-Wins (LWW):** Uses timestamps to pick a winner. | **Synchronous Replication:** Transactions are not committed until a majority of replicas agree. |
+| **The "Tie-Breaker"** | **Timestamps:** The highest timestamp (server or client-side) clobbers older data. | **TrueTime:** A global clock API with bounded uncertainty that ensures transaction ordering. |
+| **Risk of Data Loss** | **Higher:** If two writes hit different clusters simultaneously, one will be discarded during replication. | **Near Zero:** Transactions are ACID-compliant and globally serialized. |
+| **Primary Use Case** | High-throughput IoT, AdTech, and "Fast Data" where sub-10ms latency is more critical than 100% strict consistency. | Financial systems, Global ERPs, and "Critical Data" where integrity and ordering are non-negotiable. |
 
 ### 2. Managing Complex Migrations
 Migration is now a high-stakes engineering project. The exam expects you to handle heterogeneous migrations (e.g., Oracle to AlloyDB) using Database Migration Service (DMS). This involves mastering Change Data Capture (CDC) for minimal downtime and troubleshooting parallelism to optimise throughput without crashing source systems.
