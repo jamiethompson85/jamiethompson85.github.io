@@ -57,7 +57,7 @@ To prepare effectively, you should understand how Google weights the different a
 ## Modern Database Engineering: Architecting Resilient, Global-Scale Data Platforms
 Modern Database Engineering is no longer about "tending" to an instance, it's more broad and encompasses Platform Architecture. As a Database Engineer, your scope has expanded from simple query optimisation to building globally distributed, compliant, and always on data infrastructure that serves as the foundation for the modern enterprise.
 
-### 1. Architecting for Global Scale & High Availability
+### Domain 1. Architecting for Global Scale & High Availability
 Global scale requires a deep understanding of consistency models. As a Database Engineer, you must master how Spanner uses TrueTime for external consistency across continents, but also how to leverage AlloyDB and Cloud SQL Enterprise Plus features to build resilient, multi-regional architectures.
 
 * **Born Global (Spanner & Bigtable):** These services handle global distribution natively. You must design Bigtable routing policies to balance latency against consistency and understand Spanner’s synchronous replication, which ensures that a transaction is not committed until a majority of replicas agree, providing "Zero RPO" at a global scale.
@@ -71,45 +71,35 @@ Global scale requires a deep understanding of consistency models. As a Database 
 | **Risk of Data Loss** | **Higher:** Concurrent writes to different clusters may clobber data. | **Near Zero:** ACID-compliant and globally serialized. | **Low (but non-zero):** Potential for data loss if the primary fails before a cross-region sync. |
 | **Primary Use Case** | High-throughput IoT, AdTech, and "Fast Data." | Global Financial systems and ERPs (Integrity is non-negotiable). | Enterprise applications and HTAP (Analytical + Transactional) workloads. |
 
-
-| Feature | Cloud Bigtable | Cloud Spanner |
-| :--- | :--- | :--- |
-| **Consistency Model** | **Eventual Consistency** (multi-cluster) or **Read-your-writes** (single-cluster). | **External Consistency** (Strong global consistency). |
-| **Conflict Strategy** | **Last-Writer-Wins (LWW):** Uses timestamps to pick a winner. | **Synchronous Replication:** Transactions are not committed until a majority of replicas agree. |
-| **The "Tie-Breaker"** | **Timestamps:** The highest timestamp (server or client-side). | **TrueTime:** A global clock API with bounded uncertainty ensuring order. |
-| **Risk of Data Loss** | **Higher:** Concurrent writes to different clusters may result in discarded data. | **Near Zero:** Transactions are ACID-compliant and globally serialized. |
-| **Primary Use Case** | High-throughput IoT, AdTech, and "Fast Data" where latency > consistency. | Financial systems, Global ERPs, and "Critical Data" where integrity is non-negotiable. |
-
-### 2. Managing Complex Migrations
+### Domain 2. Managing Complex Migrations
 Migration is now a high-stakes engineering project. The exam expects you to handle heterogeneous migrations (e.g., Oracle to AlloyDB) using Database Migration Service (DMS). This involves mastering Change Data Capture (CDC) for minimal downtime and troubleshooting parallelism to optimise throughput without crashing source systems.
 
-### 2. Managing Complex Migrations
-Migration has evolved from a simple "lift-and-shift" into a high-stakes engineering project. The exam focuses heavily on heterogeneous migrations such as moving from Oracle to AlloyDB using the Database Migration Service (DMS). To succeed, you must master the following operational pillars:
+To succeed, you must master the following operational pillars:
 
-* **CDC & Lifecycle Management:** You are expected to manage the end-to-end lifecycle of a migration, specifically utilising **Change Data Capture (CDC)** to achieve near-zero downtime. This involves knowing how to start, stop, and restart pipelines while maintaining the continuous stream of changes from the source.
+* **CDC & Lifecycle Management:** You are expected to manage the end-to-end lifecycle of a migration, specifically utilising Change Data Capture (CDC) to achieve near-zero downtime. This involves knowing how to start, stop, and restart pipelines while maintaining the continuous stream of changes from the source.
 * **Parallelism & Throughput Tuning:** Mastering performance is about balance. You must know how to configure maximum parallelism to optimise data transfer speeds without exceeding the connection limits or resource capacity of your source production systems.
-* **Resilient Troubleshooting:** The exam tests your ability to resolve failures within automated pipelines. This includes ensuring **schema parity** and data integrity across different database engines and identifying where a conversion might break during the initial load or continuous replication phase.
+* **Resilient Troubleshooting:** The exam tests your ability to resolve failures within automated pipelines. This includes ensuring schema parity and data integrity across different database engines and identifying where a conversion might break during the initial load or continuous replication phase.
 
 ![Database Migration Service (DMS) Change Data Capture (CDC) Database Migration](/assets/img/pcdbe/DMS-CDC-Migration.png "Database Migration Service (DMS) Change Data Capture (CDC) Database Migration")
 *Figure 1: Database Migration Service (DMS) Change Data Capture (CDC) Database Migration*
 
-### 3. Data Residency & Compliance: Beyond the Checkbox
+### Domain 3. Data Residency & Compliance
 Data is highly regulated, and as the Database Engineer, you are the enforcer. The exam expects you to manage three distinct layers of compliance to ensure data integrity and legal adherence.
 
 #### **Layer 1: Sovereign Controls with Assured Workloads**
 It is no longer just about where the data sits; it is about who can touch it.
-* **Data Residency:** Using **Resource Location Policies** to restrict data-at-rest to specific regions (e.g., `europe-west2`).
-* **Personnel Access Controls:** Leveraging **Assured Workloads** to ensure only authorized Google personnel in specific jurisdictions can provide support for your environment.
+* **Data Residency:** Using Resource Location Policies to restrict data-at-rest to specific regions (e.g., `europe-west2`).
+* **Personnel Access Controls:** Leveraging Assured Workloads to ensure only authorised Google personnel in specific jurisdictions can provide support for your environment.
 
 #### **Layer 2: Resilience with Point-in-Time Recovery (PITR)**
-PITR is your ultimate safety net against "the human element"—ransomware or accidental `DROP TABLE` commands.
+PITR is your ultimate safety net against "the human element," ransomware or accidental `DROP TABLE` commands.
 * **Version Retention:** Understanding the storage trade-offs of keeping "stale" data versions to allow for microsecond-precision recovery within a 7-day window.
 
 ![Data Residency and Compliance Overview](/assets/img/pcdbe/data-residency-and-compliance.png "Data Residency and Compliance Overview")
 *Figure 2: Data Residency and Compliance Overview*
 
 ### 4. Security at Every Layer
-Security has evolved from a peripheral concern to a core architectural pillar. The updated exam adopts a "Zero Trust" mentality—you never implicitly trust a user or a network packet just because it's "inside" your cloud environment. 
+Security has evolved from a peripheral concern to a core architectural pillar. The exam adopts a "Zero Trust" mentality, you never implicitly trust a user or a network packet just because it's "inside" your cloud environment. 
 
 **Pillar 1: Identity as the New Perimeter**
 * **IAM Database Auth:** Moving away from static, legacy passwords to relying on Google Cloud identity and short-lived tokens.
@@ -117,12 +107,11 @@ Security has evolved from a peripheral concern to a core architectural pillar. T
 * **Secret Manager:** When legacy authentication is unavoidable, knowing how to tightly manage and rotate secrets programmatically.
 																																														
 **Pillar 2: Network Isolation & Exfiltration Prevention**
-* **VPC Service Controls (VPC-SC):** Defining a service perimeter that acts as a bulkhead, preventing valid credentials from moving data across unauthorized boundaries.
-* **Private Connectivity:** Mastering **Private Service Connect (PSC)** vs. **PSA** to keep traffic off the public internet.
+* **VPC Service Controls (VPC-SC):** Defining a service perimeter that acts as a bulkhead, preventing valid credentials from moving data across unauthorised boundaries.
+* **Private Connectivity:** Mastering Private Service Connect (PSC) vs. Private Services Access (PSA) to keep traffic off the public internet.
 
 **Pillar 3: Data Encryption & Sovereignty (CMEK)**
-* **Customer-Managed Encryption Keys (CMEK):** Mastering **Cloud KMS** to manage your own keys. By controlling rotation and revocation, you maintain absolute sovereignty over your data.
-																																																							
+* **Customer-Managed Encryption Keys (CMEK):** Mastering Cloud KMS to manage your own keys. By controlling rotation and revocation, you maintain absolute sovereignty over your data.
 * **Cloud Audit Logs:** Configuring Data Access logs to answer the question: "Who read this specific row of sensitive PII?"
 
 ### 5. Proactive Observability & Performance Tuning
