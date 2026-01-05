@@ -225,27 +225,17 @@ AI is now a co-pilot for the database engineer/architect, assisting in the manag
 - **Gemini in Databases:** Leveraged for AI-assisted troubleshooting, query plan explanations, and performance optimisation.
 - **DMS Schema Conversions:** Gemini is integrated into the Database Migration Service to assist in heterogeneous migrations, such as automatically rewriting complex Oracle PL/SQL triggers into PostgreSQL-compatible code.
 - **Natural Language to SQL (NL2SQL):** AlloyDB AI allows conversational queries (e.g., "Top sales in London last quarter?") to be translated into SQL automatically via Gemini.
-																				   
+
 | Pattern / Requirement | Recommended Service | Architectural Reasoning |
 | :--- | :--- | :--- |
-| **Global Scale + Consistency** | **Cloud Spanner** | Best for "Zero RPO" and global write-heavy workloads. |
-| **High-Throughput NoSQL** | **Cloud Bigtable** | Optimized for sub-10ms latency; utilizes "Last-Writer-Wins." |
-| **PostgreSQL + Vector Search** | **AlloyDB** | Select for HTAP workloads requiring **ScaNN** indices. |
-| **Minimising Migration Downtime** | **DMS** | Leverages CDC to keep target in-sync until cutover. |
-| **Extending SQL with AI** | **Vertex AI Integration** | Call LLMs directly via SQL to eliminate ETL pipelines. |
-
----
-
-## Decision Tree Cheat Sheet: The Architect’s Choice
-
-| Requirement | Preferred Service | Architect's Edge (The "Why") |
-| :--- | :--- | :--- |
-| **Global Scale + Strong Consistency** | **Cloud Spanner** | Choose for "Zero RPO" and horizontal scaling. |
-| **PB Scale NoSQL + Low Latency** | **Cloud Bigtable** | Focus on sub-10ms latency for IoT. |
-| **High-End PostgreSQL + Analytics** | **AlloyDB** | Select for HTAP workloads requiring high throughput. |
-| **General Purpose SQL** | **Cloud SQL** | Use **Enterprise Plus** for sub-second failover. |
-| **Serverless Mobile/Web Store** | **Firestore** | Ideal for hierarchical data and real-time sync. |
-| **In-Memory Speed** | **Memorystore** | Essential for caching and session management. |
+| **Global Scale + Strong Consistency** | **Cloud Spanner** | Best for "Zero RPO" and global write-heavy workloads; provides effortless horizontal scaling. |
+| **PB Scale NoSQL + Low Latency** | **Cloud Bigtable** | Optimised for sub-10ms latency (IoT/AdTech); utilises "Last-Writer-Wins" and massive throughput. |
+| **High-End PostgreSQL + AI/Analytics** | **AlloyDB** | Select for HTAP workloads requiring **ScaNN** indices for fast Vector Search and high transaction throughput. |
+| **General Purpose SQL (Relational)** | **Cloud SQL** | Use **Enterprise Plus** for mission-critical apps requiring sub-second failover and enhanced performance. |
+| **Serverless Mobile / Web Store** | **Firestore** | Ideal for hierarchical (document) data, real-time synchronisation, and offline support. |
+| **In-Memory Speed & Caching** | **Memorystore** | Essential for sub-millisecond caching, session management, and reducing primary DB load. |
+| **Minimising Migration Downtime** | **DMS** | Leverages CDC to keep the target in-sync with the source (Oracle/SQL Server/PG) until the final cutover. |
+| **Extending SQL with GenAI** | **Vertex AI Integration** | Call LLMs/Gemini directly via SQL (`ML.PREDICT`) to eliminate the latency and complexity of ETL pipelines. |
 
 ---
 
