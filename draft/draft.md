@@ -54,11 +54,23 @@ To prepare effectively, you should understand how Google weights the different a
 
 ---
  
-## Architecting Resilient, Global-Scale Data Platforms
+## Modern Database Engineering: Architecting Resilient, Global-Scale Data Platforms
 Modern Database Engineering is no longer about "tending" to an instance, it's more broad and encompasses Platform Architecture. As a Database Engineer, your scope has expanded from simple query optimisation to building globally distributed, compliant, and always on data infrastructure that serves as the foundation for the modern enterprise.
 
-### 1. Architecting for Global Scale
-Global scale requires a deep understanding of consistency models. You must master how Spanner uses TrueTime for external consistency across continents and how to design Bigtable replication and routing policies that prevent data collisions while maintaining low latency local reads.
+### 1. Architecting for Global Scale & High Availability
+Global scale requires a deep understanding of consistency models. As a Database Engineer, you must master how Spanner uses TrueTime for external consistency across continents, but also how to leverage AlloyDB and Cloud SQL Enterprise Plus features to build resilient, multi-regional architectures.
+
+* **Born Global (Spanner & Bigtable):** These services handle global distribution natively. You must design Bigtable routing policies to balance latency against consistency and understand Spanner’s synchronous replication, which ensures that a transaction is not committed until a majority of replicas agree, providing "Zero RPO" at a global scale.
+* **Engineered for Global Scale (AlloyDB & Cloud SQL):** The exam now tests your ability to scale traditional relational engines. This includes configuring Cross-Region Read Replicas for disaster recovery and using AlloyDB’s secondary clusters to provide global read access with minimal lag. You must understand the trade-offs: while these offer global reach, they rely on asynchronous replication, meaning they favour availability over strict global consistency.
+
+| Feature | Cloud Bigtable | Cloud Spanner | AlloyDB / Cloud SQL |
+| :--- | :--- | :--- | :--- |
+| **Consistency Model** | **Eventual** (multi-cluster) or **Read-your-writes** (single-cluster). | **External Consistency** (Strong global consistency). | **Strong** (Local cluster) / **Eventual** (Cross-region replicas). |
+| **Conflict Strategy** | **Last-Writer-Wins (LWW):** Highest timestamp wins. | **Synchronous Replication:** Majority consensus before commit. | **Primary-Led:** The primary instance handles all writes; replicas follow. |
+| **The "Tie-Breaker"** | **Timestamps:** (Server or client-side). | **TrueTime:** Atomic clock/GPS API for global ordering. | **Replication Lag:** The "speed of light" delay between regions. |
+| **Risk of Data Loss** | **Higher:** Concurrent writes to different clusters may clobber data. | **Near Zero:** ACID-compliant and globally serialized. | **Low (but non-zero):** Potential for data loss if the primary fails before a cross-region sync. |
+| **Primary Use Case** | High-throughput IoT, AdTech, and "Fast Data." | Global Financial systems and ERPs (Integrity is non-negotiable). | Enterprise applications and HTAP (Analytical + Transactional) workloads. |
+
 
 | Feature | Cloud Bigtable | Cloud Spanner |
 | :--- | :--- | :--- |
