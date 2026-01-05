@@ -204,16 +204,6 @@ You aren't just looking at CPU metrics anymore; you are managing Service Level O
 
 *NB: If you want to dive deeper into the world of SRE, error budgets, and reliability engineering, check out my [Google Cloud Professional Cloud DevOps Engineer Exam Guide](https://www.cloudbabble.co.uk/2025-12-05-GoogleCloudDevOpsEngineerExamGuide/).*
 
-Your two pieces of content cover the same fundamental concepts—Vector Search, Vertex AI integration, and Gemini/Operational AI—but they serve different purposes. The first block is a high-level summary (bullet points), while the second block (Domain 6) is a detailed, exam-ready deep dive with technical specifics and a summary table.
-
-Should they be merged?
-Yes. You should merge them to avoid redundancy, but you should prioritize the "Domain 6" version as your base. It contains the specific technical "hooks" (like ScaNN, ML.PREDICT, and pgvector) that are more likely to appear on the exam.
-
-However, the first block has a very strong point about "AI as a co-pilot for platform architecture" and the RAG (Retrieval-Augmented Generation) workflow terminology that the Domain 6 version lacks.
-
-Suggested Integrated Version
-Here is how to merge them into a single, cohesive "Domain 6" that keeps the best of both:
-
 ### Domain 6. AI & Modern Trends: The "Intelligent" Database
 The Professional Database Engineer exam has fully embraced the intersection of data and Generative AI. You must understand how to turn a standard database into a Vector Store to support RAG (Retrieval-Augmented Generation) workflows and how to bridge the gap between structured SQL and natural language.
 
