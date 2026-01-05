@@ -14,7 +14,7 @@ tags: [Google Cloud, GCP, Databases, Cloud SQL, Spanner, Bigtable, AlloyDB, Cert
 
 # Google Cloud Professional Database Engineer Exam Guide
 
-To wrap up the year, I managed to squeeze in a last minute renewal of the Professional Database Engineer certification during my annual leave, just ahead of its January expiry. It was a choice between getting it done now or having it loom over my head as I try to juggle new projects in the New Year.
+To wrap up the year, I managed to squeeze in a last minute renewal of the Professional Database Engineer certification during my annual leave, just ahead of its January expiry.
 
 When I first passed this exam back in December 2023, it was widely considered one of the more approachable professional level certifications, essentially a "Cloud SQL exam." Fast forward to now, and I can tell you that is no longer the case. The exam has matured into a broad, nuanced assessment that requires a much deeper understanding of Google’s entire database portfolio.
 
