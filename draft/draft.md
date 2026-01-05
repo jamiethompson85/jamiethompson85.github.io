@@ -230,18 +230,7 @@ AI is now a co-pilot for the database engineer/architect, assisting in the manag
 - **Natural Language to SQL (NL2SQL):** AlloyDB AI allows conversational queries (e.g., "Top sales in London last quarter?") to be translated into SQL automatically via Gemini.
 
 ---
-
-## Exam Strategy: Thinking Like a Platform Architect
-The latest version of the exam has shifted away from surface-level configuration in favour of deep trade off analysis. Here is how to navigate the trickiest scenarios:
-
-1. **Cost vs. Performance**
-If a question asks for the "most cost-effective" solution, look for Cloud SQL or Bigtable with Autoscaling. If it asks for "highest availability," look for Spanner or Multi-region configurations, even if they are more expensive.
-
-2. **Migration Engineering Challenges**
-When managing migrations from Oracle to PostgreSQL via DMS, schema conversion is a critical focus area. It is essential to master the nuances of mapping complex data types and managing Change Data Capture (CDC) lag. In scenarios where the source system is under high load, architectural best practices often dictate limiting parallelism or using a read-only standby as the migration source.
-
-3. **Security Perimeters**
-Understanding why an application cannot reach a database is a core competency. Architects must be able to diagnose VPC Service Control violations or Private Service Access peering issues. A key takeaway is that IAM roles are insufficient if the underlying networking perimeter is locked down; security must be validated at both the identity and network layers.																																																									
+																																																							
 ## Recommended Training Material
 Don't just watch videos; engage with the documentation and labs that focus on systemic design.																						  
 
