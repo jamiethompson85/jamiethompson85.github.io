@@ -4,8 +4,8 @@ title: "Google Cloud Professional Database Engineer Exam Guide"
 excerpt: "The PCDBE exam has matured significantly. It is no longer just a 'Cloud SQL test,' but a high-stakes deep dive into globally distributed architectures, zero-downtime migrations, and the integration of Generative AI into the data stack."
 subtitle: "Bridging the Gap: From Database Administration to Intelligent Platform Architecture"
 description: "A comprehensive, architect-level study guide for the Google Cloud Professional Database Engineer certification. This update explores critical focus areas including DMS migration troubleshooting, Spanner global consistency, Bigtable performance tuning, and leveraging Gemini for operational AI."
-thumbnail-img: /assets/img/database/google-cloud-professional-database-engineer-exam.png
-share-img: /assets/img/database/gcp-database-decision-tree.png
+thumbnail-img: /assets/img/pcdbe/pcdbe.png
+share-img: /assets/img/pcdbe/pcdbe.png
 readtime: true
 share-title: "How to Pass the Google Cloud Database Engineer Exam (2026 Renewal Guide)"
 share-description: "My renewal experience for the GCP Database Engineer exam. Discover why this is no longer just a Cloud SQL exam and how to master the 'Big 4' (Spanner, Bigtable, AlloyDB, Cloud SQL) along with modern Vector Search and Zero Trust security patterns."
