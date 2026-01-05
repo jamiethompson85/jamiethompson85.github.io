@@ -237,6 +237,11 @@ AI is now a co-pilot for the database engineer/architect, assisting in the manag
 | **Minimising Migration Downtime** | **DMS** | Leverages CDC to keep the target in-sync with the source (Oracle/SQL Server/PG) until the final cutover. |
 | **Extending SQL with GenAI** | **Vertex AI Integration** | Call LLMs/Gemini directly via SQL (`ML.PREDICT`) to eliminate the latency and complexity of ETL pipelines. |
 
+![Architecture Pattern Database Service Matrix](/assets/img/pcdbe/ArchitecturePatternDatabaseServiceMatrix.png "Architecture Pattern Database Service Matrix")
+*Figure 2: Architecture Pattern Database Service Matrix*
+
+
+
 ---
 
 ## Exam Strategy: Thinking Like a Platform Architect
