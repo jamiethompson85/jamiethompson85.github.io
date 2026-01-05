@@ -54,8 +54,8 @@ To prepare effectively, you should understand how Google weights the different a
 
 ---
  
-## The Current Landscape: Engineering Global Data Platforms
-Modern Database Engineering is no longer about "tending" to an instance, it's more broad and encompasses Platform Architecture. As Database Engineer, your scope has expanded from simple query optimisation to building globally distributed, compliant, and always on data infrastructure that serves as the foundation for the modern enterprise.
+## Architecting Resilient, Global-Scale Data Platforms
+Modern Database Engineering is no longer about "tending" to an instance, it's more broad and encompasses Platform Architecture. As a Database Engineer, your scope has expanded from simple query optimisation to building globally distributed, compliant, and always on data infrastructure that serves as the foundation for the modern enterprise.
 
 ### 1. Architecting for Global Scale
 Global scale requires a deep understanding of consistency models. You must master how Spanner uses TrueTime for external consistency across continents and how to design Bigtable replication and routing policies that prevent data collisions while maintaining low latency local reads.
