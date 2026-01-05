@@ -7,8 +7,8 @@ description: "A comprehensive, architect-level study guide for the Google Cloud 
 thumbnail-img: /assets/img/database/google-cloud-professional-database-engineer-exam.png
 share-img: /assets/img/database/gcp-database-decision-tree.png
 readtime: true
-share-title: "Google Cloud Professional Database Engineer Exam Guide"
-share-description: "My renewal experience for the GCP Database Engineer exam. Discover why this is no longer just a Cloud SQL exam and how to master the "Big 4" (Spanner, Bigtable, AlloyDB, Cloud SQL) along with modern Vector Search and Zero Trust security patterns."
+share-title: "How to Pass the Google Cloud Database Engineer Exam (2026 Renewal Guide)"
+share-description: "My renewal experience for the GCP Database Engineer exam. Discover why this is no longer just a Cloud SQL exam and how to master the 'Big 4' (Spanner, Bigtable, AlloyDB, Cloud SQL) along with modern Vector Search and Zero Trust security patterns."
 tags: [Google Cloud, PCDBE, Cloud SQL, Spanner, Bigtable, AlloyDB, DMS, Vector Search, Gemini, Database Migration, Certification, Exam Guide]
 ---
 
