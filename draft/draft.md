@@ -98,7 +98,7 @@ PITR is your ultimate safety net against "the human element," ransomware or acci
 ![Data Residency and Compliance Overview](/assets/img/pcdbe/data-residency-and-compliance.png "Data Residency and Compliance Overview")
 *Figure 2: Data Residency and Compliance Overview*
 
-### 4. Security at Every Layer
+### Domain 4. Security at Every Layer
 Security has evolved from a peripheral concern to a core architectural pillar. The exam adopts a "Zero Trust" mentality, you never implicitly trust a user or a network packet just because it's "inside" your cloud environment. 
 
 **Pillar 1: Identity as the New Perimeter**
@@ -114,7 +114,7 @@ Security has evolved from a peripheral concern to a core architectural pillar. T
 * **Customer-Managed Encryption Keys (CMEK):** Mastering Cloud KMS to manage your own keys. By controlling rotation and revocation, you maintain absolute sovereignty over your data.
 * **Cloud Audit Logs:** Configuring Data Access logs to answer the question: "Who read this specific row of sensitive PII?"
 
-### 5. Proactive Observability & Performance Tuning
+### Domain 5. Proactive Observability & Performance Tuning
 In the modern stack, monitoring has evolved into Observability. We no longer just care if the database is up; we care why a specific query is slow and how it relates to the application's user experience.
 
 | Concept | Traditional Monitoring | Modern Observability |
@@ -125,11 +125,11 @@ In the modern stack, monitoring has evolved into Observability. We no longer jus
 | **Approach** | **Reactive:** Threshold-based alerts (e.g., CPU > 80%). | **Proactive:** Using Insights to find bottlenecks. |
 | **Key GCP Tool** | Cloud Monitoring Dashboards & Alerts. | Query Insights, Cloud Trace, Spanner Key Visualiser. |
 
-**The Diagnostic Toolkit**
+#### The Diagnostic Toolkit
 - **Query Insights:** This is the "X-ray" for Cloud SQL and AlloyDB. It allows you to see the exact query string, the user who ran it, and the "wait events" (like lock contention or I/O bottlenecks) causing the delay.
 - **Cloud Trace:** This is the bridge between code and data. While Query Insights tells you what is slow in the database, Cloud Trace lets you see how that latency impacts the entire request life cycle—from the initial user click in the frontend to the final row fetch in the backend.
 
-#### Active Monitoring vs. SLOs**
+#### Active Monitoring vs. SLOs
 You aren't just looking at CPU metrics anymore; you are managing Service Level Objectives (SLOs). This starts by identifying Critical User Journeys (CUJs), for example, a customer completing a checkout. Once you understand the journey, you identify the Service Level Indicators (SLIs), the specific database metrics like "99th percentile query latency," that impact that journey. From there, you set an SLO as your internal target.
 
 | Term | What it is | Database Context Example |
@@ -143,7 +143,7 @@ You aren't just looking at CPU metrics anymore; you are managing Service Level O
 
 *NB: If you want to dive deeper into the world of SRE, error budgets, and reliability engineering, check out my [Google Cloud Professional Cloud DevOps Engineer Exam Guide](https://www.cloudbabble.co.uk/2025-12-05-GoogleCloudDevOpsEngineerExamGuide/).*
 																				   
-### 6. AI & Modern Trends: The "Intelligent" Database
+### Domain 6. AI & Modern Trends: The "Intelligent" Database
 
 The Professional Database Engineer exam has fully embraced the intersection of data and Generative AI. Prior to the exam, you want to familiarise yourself with how to turn a standard database into a **Vector Store** and how to bridge the gap between structured SQL and natural language.
 
