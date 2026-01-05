@@ -73,6 +73,9 @@ While the "Big 4" handle the bulk of enterprise data, a well-rounded Database En
 - **Memorystore:** A fully managed in-memory data store for Redis and Memcached. In a high-performance stack, Memorystore is utilised for sub-millisecond caching, session management, and reducing the read-load on your primary relational databases.
 - **BigQuery:** Though primarily an enterprise data warehouse, the modern engineer must be able to bridge the gap between operational databases and analytics. This involves mastering BigQuery Federation to query external data in-place or utilising Datastream for Change Data Capture (CDC) to power real-time analytical dashboards.
 
+![Architecture Pattern Database Service Matrix](/assets/img/pcdbe/ArchitecturePatternDatabaseServiceMatrix.png "Architecture Pattern Database Service Matrix")
+*Figure 1: Architecture Pattern Database Service Matrix*
+
 ---
 
 ### Domain 1. Architecting for Global Scale & High Availability
@@ -124,7 +127,7 @@ You are expected to manage the end-to-end lifecycle of a migration, specifically
 - **Sync Logic:** Maintaining the continuous stream of changes from the source to the target until the final cutover.
 
 ![Database Migration Service (DMS) Change Data Capture (CDC) Database Migration](/assets/img/pcdbe/DMS-CDC-Migration.png "Database Migration Service (DMS) Change Data Capture (CDC) Database Migration")
-*Figure 1: Database Migration Service (DMS) Change Data Capture (CDC) Database Migration*
+*Figure 2: Database Migration Service (DMS) Change Data Capture (CDC) Database Migration*
 
 #### 3. Parallelism & Throughput Tuning
 Mastering performance is about balance. You must know how to configure maximum parallelism to:
@@ -149,7 +152,7 @@ PITR is your ultimate safety net against "the human element," ransomware or acci
 * **Version Retention:** Understanding the storage trade-offs of keeping "stale" data versions to allow for microsecond-precision recovery within a 7-day window.
 
 ![Data Residency and Compliance Overview](/assets/img/pcdbe/data-residency-and-compliance.png "Data Residency and Compliance Overview")
-*Figure 2: Data Residency and Compliance Overview*
+*Figure 3: Data Residency and Compliance Overview*
 
 ### Domain 4. Security at Every Layer
 Security has evolved from a peripheral concern to a core architectural pillar. The exam adopts a "Zero Trust" mentality, you never implicitly trust a user or a network packet just because it's "inside" your cloud environment. 
@@ -225,22 +228,6 @@ AI is now a co-pilot for the database engineer/architect, assisting in the manag
 - **Gemini in Databases:** Leveraged for AI-assisted troubleshooting, query plan explanations, and performance optimisation.
 - **DMS Schema Conversions:** Gemini is integrated into the Database Migration Service to assist in heterogeneous migrations, such as automatically rewriting complex Oracle PL/SQL triggers into PostgreSQL-compatible code.
 - **Natural Language to SQL (NL2SQL):** AlloyDB AI allows conversational queries (e.g., "Top sales in London last quarter?") to be translated into SQL automatically via Gemini.
-
-| Pattern / Requirement | Recommended Service | Architectural Reasoning |
-| :--- | :--- | :--- |
-| **Global Scale + Strong Consistency** | **Cloud Spanner** | Best for "Zero RPO" and global write-heavy workloads; provides effortless horizontal scaling. |
-| **PB Scale NoSQL + Low Latency** | **Cloud Bigtable** | Optimised for sub-10ms latency (IoT/AdTech); utilises "Last-Writer-Wins" and massive throughput. |
-| **High-End PostgreSQL + AI/Analytics** | **AlloyDB** | Select for HTAP workloads requiring **ScaNN** indices for fast Vector Search and high transaction throughput. |
-| **General Purpose SQL (Relational)** | **Cloud SQL** | Use **Enterprise Plus** for mission-critical apps requiring sub-second failover and enhanced performance. |
-| **Serverless Mobile / Web Store** | **Firestore** | Ideal for hierarchical (document) data, real-time synchronisation, and offline support. |
-| **In-Memory Speed & Caching** | **Memorystore** | Essential for sub-millisecond caching, session management, and reducing primary DB load. |
-| **Minimising Migration Downtime** | **DMS** | Leverages CDC to keep the target in-sync with the source (Oracle/SQL Server/PG) until the final cutover. |
-| **Extending SQL with GenAI** | **Vertex AI Integration** | Call LLMs/Gemini directly via SQL (`ML.PREDICT`) to eliminate the latency and complexity of ETL pipelines. |
-
-![Architecture Pattern Database Service Matrix](/assets/img/pcdbe/ArchitecturePatternDatabaseServiceMatrix.png "Architecture Pattern Database Service Matrix")
-*Figure 2: Architecture Pattern Database Service Matrix*
-
-
 
 ---
 
