@@ -43,12 +43,11 @@ Because this was a beta, the format differed slightly from what the final Genera
 
 | Component | Beta Version | General Availability (GA) |
 | :--- | :--- | :--- |
-| **Part 1 Exam Duration** | **3 hours (180 minutes)** | **2 hours (120 minutes)** |
+| **Part 1 Exam Duration** | 3 hours (180 minutes) | 2 hours (120 minutes) |
 | **Question Count** | 75 questions | 50–60 questions |
 | **Part 2 Challenge Labs** | 3 options presented (must pass 2) | 3 options presented (must pass 2) |
 | **Registration Fee** | $120 USD (40% beta discount) | $200 USD (standard retail) |
-| **Part 1 Result Notification** | Log into CertMetrics directly | Expected within 7–10 business days |
-| **Credential Validity** | **1 year** | **1 year** |
+| **Credential Validity** | 1 year | 1 year |
 
 *\*Note: Unlike standard Google Cloud certifications that grant you two years of peace, this badge is only valid for **1 year**. Given the rapid evolution of agentic protocols, security tooling, and the fact that we get a new Gemini model drop almost weekly lately, an annual renewal makes total sense—a two-year-old agent architecture in this ecosystem might as well belong in a museum.\**
 
