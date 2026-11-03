@@ -18,9 +18,9 @@ In September, I sat the beta exam for Google Cloud’s latest credential: the **
 
 Google has taken a fundamentally new direction with this track. Rather than relying solely on traditional multiple-choice questions, this is Google Cloud’s first **hybrid certification**. Earning the badge requires clearing two distinct stages: a proctored theoretical exam (Part 1), followed by a hands-on lab assessment delivered through Google Skills (Part 2).
 
-Between building applications with Google’s Agent Development Kit (ADK), working across the Gemini Enterprise ecosystem in my day job, and using Antigravity regularly, I was keen to see how my hands-on experience stacked up against Google's expectations. 
+Between building applications with Google’s Agent Development Kit (ADK), working across the Gemini Enterprise ecosystem in my day job, and using Antigravity regularly, I was keen to see how my hands-on experience stacked up against Google's expectations.
 
-After completing the proctored exam and subsequently clearing the challenge labs, I am now **officially certified Google Cloud Professional Agentic Architect**, taking me to **14 active Google Cloud certifications** in total. 
+After completing the proctored exam and subsequently clearing the challenge labs, I am now **officially certified as a Google Cloud Professional Agentic Architect**, taking me to **14 active Google Cloud certifications** in total.
 
 Here is the breakdown of how the hybrid format works, the OnVUE testing experience, navigating the transition from Part 1 to Part 2, and what to expect when you step into the live challenge labs.
 
@@ -30,10 +30,10 @@ Here is the breakdown of how the hybrid format works, the OnVUE testing experien
 
 With no local test centres nearby, remote proctoring has been my default for years. If you’ve taken Google Cloud certifications previously, you’ll be well accustomed to Kryterion’s Webassessor portal and Sentinel software. Sitting Part 1 of this exam was my first experience with Pearson VUE’s OnVUE platform following Google’s delivery migration, and the operational differences were noticeable from the start:
 
-* **Mobile-first check-in flow:** OnVUE offloads identity and environment verification directly to your phone. Once you launch the session on your laptop, you scan a QR code to capture high-res photos of your ID, snap a verification selfie, and submit four clear angle shots of your workspace (front, back, left, right) before placing the phone out of arm's reach.
-* **Rescheduling flexibility:** Client deliverables ramped up right before my initial test date, forcing me to push my slot back. OnVUE’s rescheduling was remarkably painless compared to Webassessor—there was wide availability across alternative time slots, and the system let me adjust the booking right up to the start time without friction.
-* **The queue and proctor sweep:** I logged in 15 minutes ahead of my scheduled window to run automated system, mic, and webcam checks. Once my phone photos were submitted, I entered a queue at position 13, taking just under 15 minutes for a proctor to connect. While Webassessor leaned heavily on background biometric profiles, OnVUE proctors are much more hands-on—requiring me to lift my laptop for an active 360-degree sweep of the entire room, including the space underneath the desk and behind the laptop screen, before unlocking the test.
-* **The clean-desk reality:** While the delivery platform has changed, the remote testing discipline hasn't. The strict clean-desk policy hasn’t changed: second monitors must be unplugged and turned away, paper and clutter completely cleared, and your workspace kept entirely bare throughout the session.
+- **Mobile-first check-in flow:** OnVUE offloads identity and environment verification directly to your phone. Once you launch the session on your laptop, you scan a QR code to capture high-res photos of your ID, snap a verification selfie, and submit four clear angle shots of your workspace (front, back, left, right) before placing the phone out of arm's reach.
+- **Rescheduling flexibility:** Client deliverables ramped up right before my initial test date, forcing me to push my slot back. OnVUE’s rescheduling was remarkably painless compared to Webassessor—there was wide availability across alternative time slots, and the system let me adjust the booking right up to the start time without friction.
+- **The queue and proctor sweep:** I logged in 15 minutes ahead of my scheduled window to run automated system, mic, and webcam checks. Once my phone photos were submitted, I entered a queue at position 13, taking just under 15 minutes for a proctor to connect. While Webassessor leaned heavily on background biometric profiles, OnVUE proctors are much more hands-on—requiring me to lift my laptop for an active 360-degree sweep of the entire room, including the space underneath the desk and behind the laptop screen, before unlocking the test.
+- **The clean-desk reality:** While the delivery platform has changed, the remote testing discipline hasn't. You still need an entirely cleared workspace: second monitors unplugged and turned away, paper and clutter completely cleared, and your desk kept entirely bare throughout the session.
 
 ---
 
@@ -50,25 +50,24 @@ Because this was a beta, the format differed slightly from what the final Genera
 | **Part 1 Result Notification** | Log into CertMetrics directly | Expected within 7–10 business days |
 | **Credential Validity** | **1 year** | **1 year** |
 
-*Note: Unlike most Google Cloud professional certifications which carry a 2-year validity, this one is valid for **1 year**. Given the rapid evolution of agentic protocols, security tooling, and the fact that we get a new Gemini model drop almost weekly lately, a 12-month shelf life makes sense.* 
+*\*Note: Unlike standard Google Cloud certifications that grant you two years of peace, this badge is only valid for **1 year**. Given the rapid evolution of agentic protocols, security tooling, and the fact that we get a new Gemini model drop almost weekly lately, an annual renewal makes total sense—a two-year-old agent architecture in this ecosystem might as well belong in a museum.\**
 
 ### The Exam Experience: Question Pool Dynamic
 
 With an uncalibrated beta question pool, the questions largely fell into two styles:
 
 1. **System design problems:** Questions that test genuine design trade-offs across multi-agent handoffs, token management, and evaluation pipelines. The key is methodically stepping through the data path between the caller, gateway, agent runtime, and backend tools.
-
 2. **Obvious eliminations:** Questions where several distractors flagrantly violate basic Google Cloud security principles. You can cross them off immediately if an option suggests controlling hard security via system prompts, assigning excessive service account roles, or bypassing code sandboxing.
 
-Pacing felt comfortable. With 75 questions across 180 minutes, you have roughly 2.4 minutes per question. I wrapped up Part 1 with about 40 minutes remaining, even after reviewing flagged questions. For GA, Professional Certification are usually ~50 questions across 120 minutes.
+Pacing felt comfortable. With 75 questions across 180 minutes, you have roughly 2.4 minutes per question. I wrapped up Part 1 with about 40 minutes remaining, even after reviewing flagged questions. For GA, Professional Certification exams are usually ~50 questions across 120 minutes.
 
 ---
 
 ## The Transition: From Part 1 to Part 2 via CertMetrics
 
-While I expect automated email notifications will be in place once the certification rolls out to General Availability, that wasn't the case during the beta run- I never actually received an email confirming I had cleared the theoretical exam. 
+While I expect automated email notifications will be in place once the certification rolls out to General Availability, that wasn't the case during the beta run—I never actually received an email confirming I had cleared the theoretical exam.
 
-If you've completed Part 1 and find yourself waiting around for email confirmation, don't wait on it. Head straight to the source:
+If you've completed Part 1 and find yourself waiting around for an inbox ping, don't wait on it. Head straight to the source:
 
 1. Log directly into the **Google Cloud CertMetrics** portal.
 2. Check your exam history to see if your result has updated to a pass.
@@ -79,18 +78,18 @@ If you've completed Part 1 and find yourself waiting around for email confirmati
 
 ## Part 2: The Hands-On Challenge Labs
 
-Once you launch Part 2 on skills.google, you enter the practical evaluation phase. 
+Once you launch Part 2 on skills.google, you enter the practical evaluation phase.
 
 ### Lab Structure & Rules
-* **3 Challenge Labs Presented- Pass Any 2:** You are presented with a selection of three distinct challenge labs. To achieve certification, you need to successfully **pass two of them**.
-* **100% Completion Bar:** Just like standard Google Cloud challenge labs, there is no partial credit. Passing a lab requires achieving a **100% score**, progressing through all milestone assessment checks.
-* **Lab Durations:** Google’s estimated completion times ranged from **45 minutes up to 1 hour 30 minutes** depending on the lab complexity. However, the actual allotted lab timer is greater than this, giving you plenty of time if you need to troubleshoot or wait for services to initialize (although this wasn’t an issue for my labs).
-* **Standard Challenge Lab Format:** If you have completed challenge labs on skills.google before, the process is the same: an objective brief, architecture constraints, and an automated tracking script that evaluates your environment as you complete each phase.
+- **3 Challenge Labs Presented — Pass Any 2:** You are presented with a selection of three distinct challenge labs. To achieve certification, you need to successfully **pass two of them**.
+- **100% Completion Bar:** Just like standard Google Cloud challenge labs, there is no partial credit. Passing a lab requires achieving a **100% score**, progressing through all milestone assessment checks.
+- **Lab Durations:** Google’s estimated completion times ranged from **45 minutes up to 1 hour 30 minutes** depending on the lab complexity. However, the actual allotted lab timer is greater than this, giving you plenty of time if you need to troubleshoot or wait for services to initialize (although this wasn’t an issue for my labs).
+- **Standard Challenge Lab Format:** If you have completed challenge labs on skills.google before, the process is the same: an objective brief, architecture constraints, and an automated tracking script that evaluates your environment as you complete each phase.
 
 ### Practical Tips for the Challenge Labs
-* **Exact Naming Is Non-Negotiable:** Like every challenge lab on skills.google, the automated background grading scripts look for exact string matches. Whether you are provisioning services in the console or running scripts, copy and paste the resource names, IDs, and variables directly from the lab brief. A single typo will fail a milestone check even if the underlying build is functioning.
-* **Respect Propagation Time:** Avoid hitting "Check My Progress" the millisecond a resource shows as created. Cloud control planes and service bindings can take a minute or two to settle across the environment. Rushing the verification check can result in a false-negative score.
-* **Read the Whole Brief First:** It's tempting to jump straight into the first objective, but later tasks often impose constraints on earlier setups. Spend the first five minutes reading through all phases of the scenario so you don't build yourself into a corner that requires re-deploying resources on the clock.
+- **Exact Naming Is Non-Negotiable:** Like every challenge lab on skills.google, the automated background grading scripts look for exact string matches. Whether you are provisioning services in the console or running scripts, copy and paste the resource names, IDs, and variables directly from the lab brief. A single typo will fail a milestone check even if the underlying build is functioning.
+- **Respect Propagation Time:** Avoid hitting "Check My Progress" the millisecond a resource shows as created. Cloud control planes and service bindings can take a minute or two to settle across the environment. Rushing the verification check can result in a false-negative score.
+- **Read the Whole Brief First:** It's tempting to jump straight into the first objective, but later tasks often impose constraints on earlier setups. Spend the first five minutes reading through all phases of the scenario so you don't build yourself into a corner that requires re-deploying resources on the clock.
 
 ---
 
@@ -114,12 +113,14 @@ Whether you are answering architectural questions in Part 1 or implementing reso
 
 ### 1. The Gemini Enterprise Ecosystem & Low-Code Agents (~13%)
 
+In my day job, I work across the entire **Gemini Enterprise ecosystem** from end to end—spanning the front-facing Gemini Enterprise app experience and customer experience (CX) workflows down through the core agent platform, Vertex AI Agent Builder, tool extensions, grounded data stores, and runtime governance via Agent Gateway. Having that production muscle memory meant this section felt second nature to me, but if your background is purely in infrastructure or custom software engineering, you cannot afford to skip Google's low-code and managed toolchain.
+
 To clear this domain, you should be comfortable with:
 
-* **End-to-End Architectural Integration:** Understand how user-facing interfaces (such as the Gemini Enterprise app or custom web front-ends) link down into the agent runtime. Know how conversational agents, tool extensions, and grounded search collaborate, and where the architectural boundary sits between low-code configuration and custom code implementations.
-* **Conversational Flow & CX State Management:** Review how state-based multi-turn dialogues are structured in Agent Designer / CX Agent Studio consoles. Be clear on how pages, transition routes, conditional event handlers, and fallback flows operate to guide user intent and handle unexpected inputs.
-* **Enterprise Grounding & Data Stores:** Know how to configure managed data stores across structured, unstructured, and multimodal repositories (text documents, audio, and video). Understand how chunking strategies, semantic search, and metadata filtering prevent hallucinations and keep responses strictly grounded.
-* **Tool Extensions & API Contracts:** Understand how low-code agents invoke external business logic. Review how OpenAPI schemas define tool contracts, how authentication is passed to downstream APIs, and how Agent Gateway enforces ingress and egress policies around tool invocation.
+- **End-to-End Architectural Integration:** Understand how user-facing interfaces (such as the Gemini Enterprise app or custom web front-ends) link down into the agent runtime. Know how conversational agents, tool extensions, and grounded search collaborate, and where the architectural boundary sits between low-code configuration and custom code implementations.
+- **Conversational Flow & CX State Management:** Review how state-based multi-turn dialogues are structured in Agent Studio / CX consoles. Be clear on how pages, transition routes, conditional event handlers, and fallback flows operate to guide user intent and handle unexpected inputs.
+- **Enterprise Grounding & Data Stores:** Know how to configure managed data stores across structured, unstructured, and multimodal repositories (text documents, audio, and video). Understand how chunking strategies, semantic search, and metadata filtering prevent hallucinations and keep responses strictly grounded.
+- **Tool Extensions & API Contracts:** Understand how low-code agents invoke external business logic. Review how OpenAPI schemas define tool contracts, how authentication is passed to downstream APIs, and how Agent Gateway enforces ingress and egress policies around tool invocation.
 
 ### 2. Using Coding Agents for Application Development (~17%)
 
@@ -127,36 +128,40 @@ This domain shifts the focus from building user-facing conversational apps to de
 
 To clear this section, make sure you understand:
 
-* **Antigravity Customization (Rules vs. Skills):** Know how to govern agent behavior across workspace, directory, and global scopes. **Rules** enforce non-negotiable architectural boundaries and coding constraints (e.g., via `AGENTS.md` or `.agents/rules/`), whereas **Skills**, plugins, extension hooks, and subagents provide reusable, procedural task workflows.
-* **Model Context Protocol (MCP) & Tool Access:** Understand how coding agents connect to external environments, file systems, databases, and enterprise services through standard MCP client/server integrations.
-* **Execution Sandboxing & Isolation:** Recognize the security risks of autonomous dynamic execution. Be clear on when and how coding agents must be confined to isolated execution environments—such as GKE Agent Sandboxes, Cloud Workstations, or Antigravity's hosted sandboxes—to run untrusted shell scripts and dynamic tests safely.
-* **Enterprise Tooling with Agents CLI:** Understand how to augment Antigravity using the Agents CLI to script, scale, govern, and optimize coding agents consistently across a team.
+- **Antigravity Customization (Rules vs. Skills):** Know how to govern agent behavior across workspace, directory, and global scopes. **Rules** enforce non-negotiable architectural boundaries and coding constraints (e.g., via `AGENTS.md` or `.agents/rules/`), whereas **Skills**, plugins, extension hooks, and subagents provide reusable, procedural task workflows.
+- **Model Context Protocol (MCP) & Tool Access:** Understand how coding agents connect to external environments, file systems, databases, and enterprise services through standard MCP client/server integrations.
+- **Execution Sandboxing & Isolation:** Recognize the security risks of autonomous dynamic execution. Be clear on when and how coding agents must be confined to isolated execution environments—such as GKE Agent Sandboxes, Cloud Workstations, or Antigravity's hosted sandboxes—to run untrusted shell scripts and dynamic tests safely.
+- **Enterprise Tooling with Agents CLI:** Understand how to augment Antigravity using the Agents CLI to script, scale, govern, and optimize coding agents consistently across a team.
 
 ### 3. Custom Agent Architecture & ADK (~33%)
+
 Section 3 represents a third of the entire syllabus. You need to know how to structure and code multi-agent systems using the **Agent Development Kit (ADK)**.
 
-* **Multi-agent topologies:** Understand the architectural differences between a centralized orchestrator (supervisor delegating tasks to specialized sub-agents) and decentralized handoffs using Agent-to-Agent (A2A) protocols across different domain teams.
-* **State management and keys:** Know how state flows through an agent runtime. Review how **output keys** and **state prefixes** are configured so that parallel sub-agents don’t accidentally overwrite shared context or stomp on conversational history.
-* **Session state vs. long-term memory:** Be clear on the operational boundary between short-term conversational turns (sessions) and durable user context. Understand how **Memory Bank** extracts and persists semantic facts across distinct user interactions.
-* **Agent workload identity:** Review how cryptographic identities are assigned to autonomous runtimes. Understand where **SPIFFE-based identities** and Principal Access Boundaries (PAB) fit when an agent needs to prove its identity to access backend cloud infrastructure.
+- **Multi-Agent Topologies:** Understand the architectural differences between a centralized orchestrator (supervisor delegating tasks to specialized sub-agents) and decentralized handoffs using Agent-to-Agent (A2A) protocols across different domain teams.
+- **State Management and Keys:** Know how state flows through an agent runtime. Review how **output keys** and **state prefixes** are configured so that parallel sub-agents don’t accidentally overwrite shared context or stomp on conversational history.
+- **Session State vs. Long-Term Memory:** Be clear on the operational boundary between short-term conversational turns (sessions) and durable user context. Understand how **Memory Bank** extracts and persists semantic facts across distinct user interactions.
+- **Agent Workload Identity:** Review how cryptographic identities are assigned to autonomous runtimes. Understand where **SPIFFE-based identities** and Principal Access Boundaries (PAB) fit when an agent needs to prove its identity to access backend cloud infrastructure.
 
-### 4. Security, Gateways, and Governance (~20%)
-Security is the most critical design constraint when moving agents from internal prototypes to production systems.
+### 4. Evaluating and Deploying Agentic Workflows (~22%)
 
-* **Agent Gateway topology:** Understand where Agent Gateway sits in your network architecture. Know how to configure ingress (protecting your agent from untrusted client calls) and egress (restricting which external APIs, databases, or MCP tools the agent can invoke).
-* **Model Armor & Content Safety:** Study how Model Armor hooks into the gateway pipeline. Understand how to configure templates to catch prompt injection, detect jailbreak attempts, and block unsafe content before user inputs reach the model.
-* **Sensitive Data Protection (SDP):** Know how SDP combines with Model Armor to dynamically mask, tokenize, or redact PII before it gets logged in telemetry or forwarded to downstream tools.
-* **Delegated authorization (User OAuth vs. Service Account):** Pay close attention to credential delegation. When an agent calls an external API, it should rarely use a broad, ambient service account identity. Instead, it should execute the tool using the **end user's delegated OAuth token**, ensuring the agent cannot execute actions the calling user does not have permission to perform.
-
-### 5. Evaluations, Observability, and Token Optimization (~17%)
 Traditional software assertions break down when dealing with non-deterministic LLMs. You need to know how to measure agent behavior systematically.
 
-* **Tool trajectory evaluation:** Evaluating the final text response of an agent is insufficient. You must evaluate the **trajectory**—verifying that the agent invoked the correct sequence of tools, passed valid argument schemas, and reached the resolution without entering looping cycles.
-* **Handling live data drift in evals:** A frequent challenge with agent evaluation suites is that testing against live APIs causes tests to fail due to changing production data rather than logic bugs. Understand how to design resilient evaluation pipelines using mock data layers, synthetic fixtures, or LLM-as-a-judge patterns to evaluate decision-making independently of live API churn.
-* **Context caching:** Long system prompts, complex tool schemas, and multi-turn histories balloon latency and costs. Review how **context caching** dramatically reduces inference costs and time-to-first-token by caching shared, immutable prompt prefixes.
-* **OpenTelemetry (OTel):** Know how to instrument agent runtimes with distributed tracing to track end-to-end latency across reasoning loops, vector retrieval, and external tool calls.
+- **Tool Trajectory Evaluation:** Evaluating the final text response of an agent is insufficient. You must evaluate the **trajectory**—verifying that the agent invoked the correct sequence of tools, passed valid argument schemas, and reached the resolution without entering looping cycles.
+- **Handling Live Data Drift in Evals:** A frequent challenge with agent evaluation suites is that testing against live APIs causes tests to fail due to changing production data rather than logic bugs. Understand how to design resilient evaluation pipelines using mock data layers, synthetic fixtures, or LLM-as-a-judge patterns to evaluate decision-making independently of live API churn.
+- **Context Caching:** Long system prompts, complex tool schemas, and multi-turn histories balloon latency and costs. Review how **context caching** dramatically reduces inference costs and time-to-first-token by caching shared, immutable prompt prefixes.
+- **OpenTelemetry (OTel):** Know how to instrument agent runtimes with distributed tracing to track end-to-end latency across reasoning loops, vector retrieval, and external tool calls.
+
+### 5. Securing and Governing Agentic Workflows (~15%)
+
+Security is the most critical design constraint when moving agents from internal prototypes to production systems.
+
+- **Agent Gateway Topology:** Understand where Agent Gateway sits in your network architecture. Know how to configure ingress (protecting your agent from untrusted client calls) and egress (restricting which external APIs, databases, or MCP tools the agent can invoke).
+- **Model Armor & Content Safety:** Study how Model Armor hooks into the gateway pipeline. Understand how to configure templates to catch prompt injection, detect jailbreak attempts, and block unsafe content before user inputs reach the model.
+- **Sensitive Data Protection (SDP):** Know how SDP combines with Model Armor to dynamically mask, tokenize, or redact PII before it gets logged in telemetry or forwarded to downstream tools.
+- **Delegated Authorization (User OAuth vs. Service Account):** Pay close attention to credential delegation. When an agent calls an external API, it should rarely use a broad, ambient service account identity. Instead, it should execute the tool using the **end user's delegated OAuth token**, ensuring the agent cannot execute actions the calling user does not have permission to perform.
 
 ### 6. Edge and Hybrid Models (Gemma)
+
 While Gemini handles large-scale cloud reasoning, understand when to deploy lightweight open models like **Gemma** at the edge or on local hardware. Focus on how to secure local runtimes, protect model weights, and enforce local tool-execution boundaries.
 
 ---
@@ -165,7 +170,7 @@ While Gemini handles large-scale cloud reasoning, understand when to deploy ligh
 
 I actually really liked the format of this exam. Pairing a comprehensive theory test with time-constrained, hands-on challenge labs makes total sense for this domain. It shifts the credential away from high-level slide architecture and anchors it squarely in the gritty details of implementing and productionising agentic solutions on Google Cloud from a true engineering perspective.
 
-While having a solid grasp of the theory is obviously important, the sheer breadth of topics covered means you simply cannot fluke your way through on whitepapers alone. You need real, hands-on experience across the entire stack. That means writing custom agents and multi-agent topologies in ADK, getting comfortable with enterprise security controls like Agent Gateway and delegated auth, and understanding the practical realities of moving an agent into production. 
+While having a solid grasp of the theory is obviously important, the sheer breadth of topics covered means you simply cannot fluke your way through on whitepapers alone. You need real, hands-on experience across the entire stack. That means writing custom agents and multi-agent topologies in ADK, getting comfortable with enterprise security controls like Agent Gateway and delegated auth, and understanding the practical realities of moving an agent into production.
 
 Above all, don't overlook evaluations. Knowing how to systematically measure tool trajectories, catch hallucinations or looping behaviours, and implement resilient evaluation patterns is critical before you let an autonomous system anywhere near an enterprise environment.
 
@@ -186,5 +191,3 @@ If you are planning your Google Cloud certification journey or deciding which tr
 - [Google Cloud Professional Network Engineer Certification (PNE)](https://www.cloudbabble.co.uk/2024-02-01-GoogleCloudProfessionalCloudNetworkEngineerCertification/)
 - [Google Cloud Associate Data Practitioner Certification (ADP)](https://www.cloudbabble.co.uk/2025-01-22-associate-data-practitioner/)
 - [Google Cloud Digital Leader Certification (CDL)](https://www.cloudbabble.co.uk/2022-12-06-GoogleCloudDigitalLeaderCertification/)
-
-
