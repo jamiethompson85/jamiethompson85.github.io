@@ -52,24 +52,23 @@ Because this was a beta, the format differed slightly from what the final Genera
 
 *Note: Unlike most Google Cloud professional certifications which carry a 2-year validity, this one is valid for **1 year**. Given the rapid evolution of agentic protocols, security tooling, and the fact that we get a new Gemini model drop almost weekly lately, a 12-month shelf life makes sense.* 
 
-### The Exam Experience: A Tale of Two Difficulties
-Beta question pools contain uncalibrated questions, which creates a noticeable dynamic:
+### The Exam Experience: Question Pool Dynamic
 
-1. **The deep scenario questions:** Multi-paragraph architectures covering multi-agent handoffs, data leakage boundaries, evaluation pipelines, and token exhaustion. Map out the flow of data and identity between the client, gateway, runtime, and backend tool carefully.
+With an uncalibrated beta question pool, the questions largely fell into two styles:
 
-2. **The obvious distractors:** On many questions, two or three options represent glaring anti-patterns you can eliminate right away. For example, ruling out options that:
-   * Rely on natural language prompt instructions to enforce hard business or transaction limits, rather than implementing deterministic egress controls in Agent Gateway or IAM boundaries.
-   * Grant an agent broad administrative service account roles to "simplify" tool execution, bypassing least privilege.
-   * Disable execution sandboxing to speed up dynamic code execution.
+1. **System design problems:** Questions that test genuine design trade-offs across multi-agent handoffs, token management, and evaluation pipelines. The key is methodically stepping through the data path between the caller, gateway, agent runtime, and backend tools.
 
-Pacing felt comfortable. With 75 questions across 180 minutes, you have roughly 2.4 minutes per question. I wrapped up Part 1 with about 40 minutes remaining, even after reviewing flagged questions.
+2. **Obvious eliminations:** Questions where several distractors flagrantly violate basic Google Cloud security principles. You can cross them off immediately if an option suggests controlling hard security via system prompts, assigning excessive service account roles, or bypassing code sandboxing.
+
+Pacing felt comfortable. With 75 questions across 180 minutes, you have roughly 2.4 minutes per question. I wrapped up Part 1 with about 40 minutes remaining, even after reviewing flagged questions. For GA, Professional Certification are usually ~50 questions across 120 minutes.
+
 ---
 
 ## The Transition: From Part 1 to Part 2 via CertMetrics
 
-While I expect automated email notifications will be in place once the certification rolls out to General Availability, that certainly wasn't the case during my beta run- I never actually received an email confirming I had cleared the theoretical exam. 
+While I expect automated email notifications will be in place once the certification rolls out to General Availability, that wasn't the case during the beta run- I never actually received an email confirming I had cleared the theoretical exam. 
 
-If you've completed Part 1 and find yourself waiting around for an inbox, don't wait on it. Head straight to the source:
+If you've completed Part 1 and find yourself waiting around for email confirmation, don't wait on it. Head straight to the source:
 
 1. Log directly into the **Google Cloud CertMetrics** portal.
 2. Check your exam history to see if your result has updated to a pass.
@@ -85,14 +84,13 @@ Once you launch Part 2 on skills.google, you enter the practical evaluation phas
 ### Lab Structure & Rules
 * **3 Challenge Labs Presented- Pass Any 2:** You are presented with a selection of three distinct challenge labs. To achieve certification, you need to successfully **pass two of them**.
 * **100% Completion Bar:** Just like standard Google Cloud challenge labs, there is no partial credit. Passing a lab requires achieving a **100% score**, progressing through all milestone assessment checks.
-* **Lab Durations:** Google’s estimated completion times ranged from **45 minutes up to 1 hour 30 minutes** depending on the lab complexity. However, the actual allotted lab timer is greater than this, giving you plenty of time if you need to troubleshoot or wait for services to initialize (although this wasn’t an issue for my labs)..
-* **Standard Challenge Lab Format:** If you have completed challenge labs on skills.google before, the mechanics will feel immediately familiar: an objective brief, architecture constraints, and an automated tracking script that evaluates your environment as you complete each phase.
+* **Lab Durations:** Google’s estimated completion times ranged from **45 minutes up to 1 hour 30 minutes** depending on the lab complexity. However, the actual allotted lab timer is greater than this, giving you plenty of time if you need to troubleshoot or wait for services to initialize (although this wasn’t an issue for my labs).
+* **Standard Challenge Lab Format:** If you have completed challenge labs on skills.google before, the process is the same: an objective brief, architecture constraints, and an automated tracking script that evaluates your environment as you complete each phase.
 
 ### Practical Tips for the Challenge Labs
 * **Exact Naming Is Non-Negotiable:** Like every challenge lab on skills.google, the automated background grading scripts look for exact string matches. Whether you are provisioning services in the console or running scripts, copy and paste the resource names, IDs, and variables directly from the lab brief. A single typo will fail a milestone check even if the underlying build is functioning.
 * **Respect Propagation Time:** Avoid hitting "Check My Progress" the millisecond a resource shows as created. Cloud control planes and service bindings can take a minute or two to settle across the environment. Rushing the verification check can result in a false-negative score.
 * **Read the Whole Brief First:** It's tempting to jump straight into the first objective, but later tasks often impose constraints on earlier setups. Spend the first five minutes reading through all phases of the scenario so you don't build yourself into a corner that requires re-deploying resources on the clock.
-* **Console and SDK Familiarity:** Because there are no step-by-step guides, you don't have time to browse reference documentation looking for basic UI paths or command syntax. Practical speed comes from knowing where tools sit in the console and being comfortable working through standard build workflows.
 
 ---
 
@@ -105,8 +103,8 @@ The technical requirements for both parts map directly across five documented do
 | **Section 1** | Building agents using low-code tools | ~13% |
 | **Section 2** | Using coding agents for application development | ~17% |
 | **Section 3** | Developing custom agents | ~33% |
-| **Section 4** | Evaluating and deploying agentic workflows | ~17% |
-| **Section 5** | Securing and governing agentic workflows | ~20% |
+| **Section 4** | Evaluating and deploying agentic workflows | ~22% |
+| **Section 5** | Securing and governing agentic workflows | ~15% |
 
 ---
 
@@ -118,16 +116,10 @@ Whether you are answering architectural questions in Part 1 or implementing reso
 
 To clear this domain, you should be comfortable with:
 
-* **End-to-End Architectural Integration:** Understand how user-facing interfaces (like the Gemini Enterprise app or custom web front-ends) hand off requests down into the managed agent layer, and know where the demarcation line sits between low-code configuration and custom code implementations.
-* **Conversational Flow & CX State Management:** Review how state-based multi-turn dialogues are structured in Agent Studio / CX consoles. Be clear on how pages, transition routes, conditional event handlers, and fallback routes operate when guiding user intent.
-* **Enterprise Grounding & Data Stores:** Know how to configure managed data stores using Vertex AI Search across both structured and unstructured repositories. Understand how chunking strategies, semantic search, and metadata filtering prevent hallucinations and ensure enterprise answers remain strictly grounded.
-* **Tool Extensions & API Contracts:** Understand how low-code agents invoke external business logic. Review how OpenAPI schemas define tool contracts, how authentication is passed to downstream APIs, and how Agent Gateway enforces ingress/egress policies around tool invocation.
-
-
-
-* **End-to-End Architecture:** Understand how the front-end application layer links into the agent runtime. Know how conversational agents, tool extensions, and grounded search collaborate to surface enterprise data safely.
-* **Agent Studio & CX Workflows:** Review how state-based conversation flows (pages, transition routes, and event handlers) are structured in Customer Experience (CX) Agent Studio and Gemini Enterprise Agent Designer.
-* **Enterprise Grounding:** Understand how Agent Search indexes and grounds responses in structured and unstructured internal repositories, including multimodal inputs (documents, audio, video).
+* **End-to-End Architectural Integration:** Understand how user-facing interfaces (such as the Gemini Enterprise app or custom web front-ends) link down into the agent runtime. Know how conversational agents, tool extensions, and grounded search collaborate, and where the architectural boundary sits between low-code configuration and custom code implementations.
+* **Conversational Flow & CX State Management:** Review how state-based multi-turn dialogues are structured in Agent Designer / CX Agent Studio consoles. Be clear on how pages, transition routes, conditional event handlers, and fallback flows operate to guide user intent and handle unexpected inputs.
+* **Enterprise Grounding & Data Stores:** Know how to configure managed data stores across structured, unstructured, and multimodal repositories (text documents, audio, and video). Understand how chunking strategies, semantic search, and metadata filtering prevent hallucinations and keep responses strictly grounded.
+* **Tool Extensions & API Contracts:** Understand how low-code agents invoke external business logic. Review how OpenAPI schemas define tool contracts, how authentication is passed to downstream APIs, and how Agent Gateway enforces ingress and egress policies around tool invocation.
 
 ### 2. Coding Agents & Development Platforms: Google Antigravity (~17%)
 
