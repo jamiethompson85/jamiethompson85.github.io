@@ -9,7 +9,7 @@ share-img: /assets/img/paa/professional-agentic-architect-certification.png
 readtime: true
 share-title: "How to Pass the Google Cloud Professional Agentic Architect Certification (Exam Theory & Hands-on Challenge Labs Guide)"
 share-description: "Field notes and hands-on guide for Google Cloud's new Professional Agentic Architect hybrid certification. Practical insights on passing the theory exam, and completing the hands-on challenge labs on skills.google."
-tags: [Google Cloud, PCAA, Agentic AI, ADK, Antigravity, Gemini Enterprise, Agent Studio, Agent Gateway, Model Armor, Challenge Labs, Certification, Exam Guide]
+tags: [Google Cloud, PAA, Agentic AI, ADK, Antigravity, Gemini Enterprise, Agent Studio, Agent Gateway, Model Armor, Challenge Labs, Certification, Exam Guide]
 ---
 
 # Google Cloud Professional Agentic Architect Exam Guide
@@ -43,9 +43,9 @@ Because this was a beta, the format differed slightly from what the final Genera
 
 | Component | Beta Version | General Availability (GA) |
 | :--- | :--- | :--- |
-| **Part 1 Exam Duration** | 3 hours (180 minutes) | 2 hours (120 minutes) |
+| **Exam Duration** | 3 hours (180 minutes) | 2 hours (120 minutes) |
 | **Question Count** | 75 questions | 50–60 questions |
-| **Part 2 Challenge Labs** | 3 options presented (must pass 2) | 3 options presented (must pass 2) |
+| **Challenge Labs** | 3 options presented (must pass 2) | 3 options presented (must pass 2) |
 | **Registration Fee** | $120 USD (40% beta discount) | $200 USD (standard retail) |
 | **Credential Validity** | 1 year | 1 year |
 
