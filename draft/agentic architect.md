@@ -82,8 +82,6 @@ Whether you are answering architectural questions in the exam, or implementing r
 
 ### 1. The Gemini Enterprise Ecosystem & Low-Code Agents (~13%)
 
-In my day job, I work across the entire **Gemini Enterprise ecosystem** from end to end—spanning the front-facing Gemini Enterprise app experience and customer experience (CX) workflows down through the core agent platform, Vertex AI Agent Builder, tool extensions, grounded data stores, and runtime governance via Agent Gateway. Having that production muscle memory meant this section felt second nature to me, but if your background is purely in infrastructure or custom software engineering, you cannot afford to skip Google's low-code and managed toolchain.
-
 To clear this domain, you should be comfortable with:
 
 - **End-to-End Architectural Integration:** Understand how user-facing interfaces (such as the Gemini Enterprise app or custom web front-ends) link down into the agent runtime. Know how conversational agents, tool extensions, and grounded search collaborate, and where the architectural boundary sits between low-code configuration and custom code implementations.
