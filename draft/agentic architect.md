@@ -31,9 +31,9 @@ Here is the breakdown of the OnVUE testing setup, what the Part 1 question dynam
 With no local test centres nearby, remote proctoring has been my default for years. If you’ve taken Google Cloud certifications previously, you’ll be well accustomed to Kryterion’s Webassessor portal and Sentinel software. Sitting Part 1 of this exam was my first experience with Pearson VUE’s OnVUE platform following Google’s delivery migration, and the operational differences were noticeable from the start:
 
 - **Mobile-first check-in flow:** OnVUE offloads identity and environment verification directly to your phone. Once you launch the session on your laptop, you scan a QR code to capture high-res photos of your ID, snap a verification selfie, and submit four clear angle shots of your workspace (front, back, left, right) before placing the phone out of arm's reach.
-- **The queue and proctor sweep:** I logged in 15 minutes ahead of my scheduled window to run automated system, mic, and webcam checks. Once my phone photos were submitted, I entered a queue at position 13, taking just under 15 minutes for a proctor to connect. While Webassessor leaned heavily on background biometric profiles, OnVUE proctors are much more hands-on—requiring me to lift my laptop for an active 360-degree sweep of the entire room, including the space underneath the desk and behind the laptop screen, before unlocking the test.
+- **The queue and proctor sweep:** I logged in 15 minutes ahead of my scheduled window to run automated system, mic, and webcam checks. Once my phone photos were submitted, I entered a queue at position 13, taking just under 15 minutes for a proctor to connect. While Webassessor leaned heavily on background biometric profiles, OnVUE proctors are much more hands-on- requiring me to lift my laptop for an active 360-degree sweep of the entire room, including the space underneath the desk and behind the laptop screen, before unlocking the test.
 - **The clean-desk reality:** While the delivery platform has changed, the remote testing discipline hasn't. You still need an entirely cleared workspace: second monitors unplugged and turned away, paper and clutter completely cleared, and your desk kept entirely bare throughout the session.
-- **Rescheduling flexibility:** Client deliverables ramped up right before my initial test date, forcing me to push my slot back. OnVUE’s rescheduling was remarkably painless compared to Webassessor—there was wide availability across alternative time slots, and the system let me adjust the booking right up to the start time without friction.
+- **Rescheduling flexibility:** Client deliverables ramped up right before my initial test date, forcing me to push my slot back. OnVUE’s rescheduling was remarkably painless compared to Webassessor- there was wide availability across alternative time slots, and the system let me adjust the booking right up to the start time without friction.
 
 ---
 
@@ -97,7 +97,7 @@ To clear this section, make sure you understand:
 
 - **Antigravity Customisation (Rules vs. Skills):** Know how to govern agent behavior across workspace, directory, and global scopes. **Rules** enforce non-negotiable architectural boundaries and coding constraints (e.g., via `AGENTS.md` or `.agents/rules/`), whereas **Skills**, plugins, extension hooks, and subagents provide reusable, procedural task workflows.
 - **Model Context Protocol (MCP) & Tool Access:** Understand how coding agents connect to external environments, file systems, databases, and enterprise services through standard MCP client/server integrations.
-- **Execution Sandboxing & Isolation:** Recognise the security risks of autonomous dynamic execution. Be clear on when and how coding agents must be confined to isolated execution environments—such as GKE Agent Sandboxes, Cloud Workstations, or Antigravity's hosted sandboxes—to run untrusted shell scripts and dynamic tests safely.
+- **Execution Sandboxing & Isolation:** Recognise the security risks of autonomous dynamic execution. Be clear on when and how coding agents must be confined to isolated execution environments- such as GKE Agent Sandboxes, Cloud Workstations, or Antigravity's hosted sandboxes- to run untrusted shell scripts and dynamic tests safely.
 - **Enterprise Tooling with Agents CLI:** Understand how to augment Antigravity using the Agents CLI to script, scale, govern, and optimise coding agents consistently across a team.
 
 ### 3. Custom Agent Architecture & ADK (~33%)
@@ -113,7 +113,7 @@ Section 3 represents a third of the entire syllabus. You need to know how to str
 
 Traditional software assertions break down when dealing with non-deterministic LLMs. You need to know how to measure agent behavior systematically.
 
-- **Tool Trajectory Evaluation:** Evaluating the final text response of an agent is insufficient. You must evaluate the **trajectory**—verifying that the agent invoked the correct sequence of tools, passed valid argument schemas, and reached the resolution without entering looping cycles.
+- **Tool Trajectory Evaluation:** Evaluating the final text response of an agent is insufficient. You must evaluate the **trajectory**- verifying that the agent invoked the correct sequence of tools, passed valid argument schemas, and reached the resolution without entering looping cycles.
 - **Handling Live Data Drift in Evals:** A frequent challenge with agent evaluation suites is that testing against live APIs causes tests to fail due to changing production data rather than logic bugs. Understand how to design resilient evaluation pipelines using mock data layers, synthetic fixtures, or LLM-as-a-judge patterns to evaluate decision-making independently of live API churn.
 - **Context Caching:** Long system prompts, complex tool schemas, and multi-turn histories balloon latency and costs. Review how **context caching** dramatically reduces inference costs and time-to-first-token by caching shared, immutable prompt prefixes.
 - **OpenTelemetry (OTel):** Know how to instrument agent runtimes with distributed tracing to track end-to-end latency across reasoning loops, vector retrieval, and external tool calls.
@@ -131,7 +131,7 @@ Security is the most critical design constraint when moving agents from internal
 
 ## The Transition: From Part 1 to Part 2 via CertMetrics
 
-Once you've cleared the architectural theory, you enter the operational handoff to the hands-on labs. While I expect automated email notifications will be in place once the certification rolls out to General Availability, that wasn't the case during the beta run—I never actually received an email confirming I had cleared the theoretical exam.
+Once you've cleared the architectural theory, you enter the operational handoff to the hands-on labs. While I expect automated email notifications will be in place once the certification rolls out to General Availability, that wasn't the case during the beta run- I never actually received an email confirming I had cleared the theoretical exam.
 
 If you've completed Part 1 and find yourself waiting around for an inbox ping, don't wait on it. Head straight to the source:
 
@@ -147,7 +147,7 @@ If you've completed Part 1 and find yourself waiting around for an inbox ping, d
 Once you launch Part 2 on skills.google, you enter the practical evaluation phase.
 
 ### Lab Structure & Rules
-- **3 Challenge Labs Presented — Pass Any 2:** You are presented with a selection of three distinct challenge labs. To achieve certification, you need to successfully **pass two of them**.
+- **3 Challenge Labs Presented -  Pass Any 2:** You are presented with a selection of three distinct challenge labs. To achieve certification, you need to successfully **pass two of them**.
 - **100% Completion Bar:** Just like standard Google Cloud challenge labs, there is no partial credit. Passing a lab requires achieving a **100% score**, progressing through all milestone assessment checks.
 - **Lab Durations:** Google’s estimated completion times ranged from **45 minutes up to 1 hour 30 minutes** depending on the lab complexity. However, the actual allotted lab timer is greater than this, giving you plenty of time if you need to troubleshoot or wait for services to initialise (although this wasn’t an issue for my labs).
 - **Standard Challenge Lab Format:** If you have completed challenge labs on skills.google before, the process is the same: an objective brief, architecture constraints, and an automated tracking script that evaluates your environment as you complete each phase.
