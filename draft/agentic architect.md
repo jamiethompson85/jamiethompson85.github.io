@@ -49,7 +49,7 @@ Because this was a beta, the format differed slightly from what the final Genera
 | **Registration Fee** | $120 USD (40% beta discount) | $200 USD (standard retail) |
 | **Credential Validity** | 1 year | 1 year |
 
-*\*Note: Unlike standard Google Cloud certifications that grant you two years of peace, this badge is only valid for **1 year**. Given the rapid evolution of agentic protocols, security tooling, and the fact that we get a new Gemini model drop almost weekly lately, an annual renewal makes total sense—a two-year-old agent architecture in this ecosystem might as well belong in a museum.\**
+*\*Note: Unlike standard Google Cloud certifications that grant you two years of peace, this badge is only valid for **1 year**. Given the rapid evolution of agentic protocols, security tooling, and the fact that we get a new Gemini model drop almost weekly lately, an annual renewal makes sense.\**
 
 ### Part 1: Question Pool Dynamic
 
