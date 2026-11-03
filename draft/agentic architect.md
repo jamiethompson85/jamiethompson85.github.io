@@ -85,7 +85,7 @@ Whether you are answering architectural questions in the exam, or implementing r
 To clear this domain, you should be comfortable with:
 
 - **End-to-End Architectural Integration:** Understand how user-facing interfaces (such as the Gemini Enterprise app or custom web front-ends) link down into the agent runtime. Know how conversational agents, tool extensions, and grounded search collaborate, and where the architectural boundary sits between low-code configuration and custom code implementations.
-- **Conversational Flow & CX State Management:** Review how state-based multi-turn dialogues are structured in Agent Studio / CX consoles. Be clear on how pages, transition routes, conditional event handlers, and fallback flows operate to guide user intent and handle unexpected inputs.
+- **Conversational Flow & CX State Management:** Review how state-based multi-turn dialogues are structured in Agent Designer / CX Agent Studio consoles. Be clear on how pages, transition routes, conditional event handlers, and fallback flows operate to guide user intent and handle unexpected inputs.
 - **Enterprise Grounding & Data Stores:** Know how to configure managed data stores across structured, unstructured, and multimodal repositories (text documents, audio, and video). Understand how chunking strategies, semantic search, and metadata filtering prevent hallucinations and keep responses strictly grounded.
 - **Tool Extensions & API Contracts:** Understand how low-code agents invoke external business logic. Review how OpenAPI schemas define tool contracts, how authentication is passed to downstream APIs, and how Agent Gateway enforces ingress and egress policies around tool invocation.
 
