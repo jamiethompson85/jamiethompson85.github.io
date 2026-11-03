@@ -91,11 +91,11 @@ To clear this domain, you should be comfortable with:
 
 ### 2. Using Coding Agents for Application Development (~17%)
 
-This domain shifts the focus from building user-facing conversational apps to developer tooling and engineering autonomy, specifically leveraging Google Antigravity and Claude Code on Google Cloud to refactor code, optimise execution runtimes, and patch application-layer vulnerabilities.
+This domain shifts the focus from building user-facing conversational apps to developer tooling and engineering autonomy, specifically using Google Antigravity and Claude Code on Google Cloud to refactor code, optimise execution runtimes, and patch application-layer vulnerabilities.
 
 To clear this section, make sure you understand:
 
-- **Antigravity Customisation (Rules vs. Skills):** Know how to govern agent behavior across workspace, directory, and global scopes. Rules enforce non-negotiable architectural boundaries and coding constraints (e.g., via `AGENTS.md` or `.agents/rules/`), whereas Skills, plugins, extension hooks, and subagents provide reusable, procedural task workflows.
+- **Antigravity Customisation (Rules vs. Skills):** Know how to govern agent behaviour across workspace, directory, and global scopes. Rules enforce non-negotiable architectural boundaries and coding constraints (e.g., via `AGENTS.md` or `.agents/rules/`), whereas Skills, plugins, extension hooks, and subagents provide reusable, procedural task workflows.
 - **Model Context Protocol (MCP) & Tool Access:** Understand how coding agents connect to external environments, file systems, databases, and enterprise services through standard MCP client/server integrations.
 - **Execution Sandboxing & Isolation:** Recognise the security risks of autonomous dynamic execution. Be clear on when and how coding agents must be confined to isolated execution environments, such as GKE Agent Sandboxes, Cloud Workstations, or Antigravity's hosted sandboxes, to run untrusted shell scripts and dynamic tests safely.
 - **Enterprise Tooling with Agents CLI:** Understand how to augment Antigravity using the Agents CLI to script, scale, govern, and optimise coding agents consistently across a team.
@@ -111,18 +111,18 @@ Section 3 represents a third of the entire syllabus. You need to know how to str
 
 ### 4. Evaluating and Deploying Agentic Workflows (~22%)
 
-Traditional software assertions break down when dealing with non-deterministic LLMs. You need to know how to measure agent behavior systematically.
+Deterministic unit tests won't cut it when you're evaluating probabilistic model outputs, you need systematic evaluation frameworks
 
 - **Tool Trajectory Evaluation:** Evaluating the final text response of an agent is insufficient. You must evaluate the trajectory, verifying that the agent invoked the correct sequence of tools, passed valid argument schemas, and reached the resolution without entering looping cycles.
 - **Handling Live Data Drift in Evals:** A frequent challenge with agent evaluation suites is that testing against live APIs causes tests to fail due to changing production data rather than logic bugs. Understand how to design resilient evaluation pipelines using mock data layers, synthetic fixtures, or LLM-as-a-judge patterns to evaluate decision-making independently of live API churn.
-- **Context Caching:** Long system prompts, complex tool schemas, and multi-turn histories balloon latency and costs. Review how context caching dramatically reduces inference costs and time-to-first-token by caching shared, immutable prompt prefixes.
+- **Context Caching:** With long system prompts and extensive tool schemas, context caching is essential to keep latency and billable token counts under control. Focus on how immutable prompt prefixes are cached.
 - **OpenTelemetry (OTel):** Know how to instrument agent runtimes with distributed tracing to track end-to-end latency across reasoning loops, vector retrieval, and external tool calls.
 
 ### 5. Securing and Governing Agentic Workflows (~15%)
 
 Security is the most critical design constraint when moving agents from internal prototypes to production systems.
 
-- **Agent Gateway Topology:** Understand where Agent Gateway sits in your network architecture. Know how to configure ingress (protecting your agent from untrusted client calls) and egress (restricting which external APIs, databases, or MCP tools the agent can invoke).
+- **Agent Gateway Topology:** Treat Agent Gateway as your security perimeter. Be ready to configure both ingress (shielding the runtime from untrusted callers) and egress (strictly scoping the external APIs, databases, or MCP tools the agent can reach).
 - **Model Armor & Content Safety:** Study how Model Armor hooks into the gateway pipeline. Understand how to configure templates to catch prompt injection, detect jailbreak attempts, and block unsafe content before user inputs reach the model.
 - **Sensitive Data Protection (SDP):** Know how SDP combines with Model Armor to dynamically mask, tokenise, or redact PII before it gets logged in telemetry or forwarded to downstream tools.
 - **Delegated Authorisation (User OAuth vs. Service Account):** Pay close attention to credential delegation. When an agent calls an external API, it should rarely use a broad, ambient service account identity. Instead, it should execute the tool using the end user's delegated OAuth token, ensuring the agent cannot execute actions the calling user does not have permission to perform.
@@ -165,7 +165,7 @@ I really liked the format of this exam. Combining a comprehensive theory test wi
 
 While a solid grasp of the theory is essential, the breadth of topics covered means you cannot rely on reading documentation alone. You need genuine hands-on experience across the stack. That means writing custom agents and multi-agent topologies in ADK, configuring security controls like Agent Gateway and delegated auth, and working through the operational realities of taking an agent to production.
 
-Above all, pay close attention to evaluations. Understanding how to systematically measure tool trajectories, detect looping behaviours, and implement robust evaluation patterns is critical before deploying autonomous systems into enterprise environments.
+Above all, pay close attention to evaluations. Understanding how to measure tool trajectories, detect looping behaviours, and implement reliable evaluation patterns is critical before deploying autonomous systems into enterprise environments.
 
 If you sat the beta as well, or you’re gearing up to take the exam once it lands in General Availability, let me know your thoughts or drop any questions in the comments below!
 
