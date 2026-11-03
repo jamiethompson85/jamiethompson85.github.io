@@ -18,7 +18,7 @@ In September, I sat the beta exam for Google Cloud’s latest credential: the **
 
 Google has taken a fundamentally new direction with this track. Rather than relying solely on traditional multiple-choice questions, this is Google Cloud’s first **hybrid certification**. Earning the badge requires clearing two distinct stages: a proctored theoretical exam (Part 1), followed by a hands-on lab assessment delivered through Google Skills (Part 2).
 
-Having built applications using Google’s Agent Development Kit (ADK), working daily across the Gemini Enterprise ecosystem in my day job, and using Antigravity regularly in my own workflows, I wanted to see how Google approached evaluating enterprise agent architecture. 
+Between building applications with Google’s Agent Development Kit (ADK), working across the Gemini Enterprise ecosystem in my day job, and using Antigravity regularly, I was keen to see how my hands-on experience stacked up against Google's expectations. 
 
 After completing the proctored exam and subsequently clearing the challenge labs, I am now **officially certified Google Cloud Professional Agentic Architect**, taking me to **14 active Google Cloud certifications** in total. 
 
