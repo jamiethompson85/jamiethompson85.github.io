@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "Google Cloud Professional Agentic Architect Exam Guide: Passing the Exam & Challenge Labs"
-excerpt: "My journey becoming officially certified as a Google Cloud Professional Agentic Architect. A complete breakdown of Google's first hybrid exam: passing the 3-hour Part 1 proctored exam and clearing the Part 2 hands-on challenge labs."
+excerpt: "My journey becoming officially certified as a Google Cloud Professional Agentic Architect. A complete breakdown of Google's first hybrid exam: passing the 3-hour theory proctored exam and clearing the hands-on challenge labs."
 subtitle: "From Theoretical Architecture to Hands-On Lab Implementation"
-description: "A comprehensive, architect-level guide for the Google Cloud Professional Agentic Architect certification. Details the full journey across the 3-hour Part 1 exam (beta), navigating CertMetrics to launch Part 2, passing the hands-on challenge labs on skills.google, and key architectural domains across ADK, Antigravity, and Gemini Enterprise."
+description: "A comprehensive, architect-level guide for the Google Cloud Professional Agentic Architect certification. Details the full journey across the 3-hour theory exam (beta), passing the hands-on challenge labs on skills.google, and key architectural domains across ADK, Antigravity, and Gemini Enterprise."
 thumbnail-img: /assets/img/pcaa/pcaa.png
 share-img: /assets/img/pcaa/pcaa.png
 readtime: true
-share-title: "How to Pass the Google Cloud Professional Agentic Architect Certification (Part 1 & 2 Guide)"
-share-description: "Field notes and hands-on guide for Google Cloud's new Professional Agentic Architect hybrid certification. Practical insights on passing the Part 1 exam, navigating CertMetrics, and completing the Part 2 challenge labs on skills.google."
+share-title: "How to Pass the Google Cloud Professional Agentic Architect Certification (Exam Theory & Hands-on Challenge Labs Guide)"
+share-description: "Field notes and hands-on guide for Google Cloud's new Professional Agentic Architect hybrid certification. Practical insights on passing the theory exam, and completing the hands-on challenge labs on skills.google."
 tags: [Google Cloud, PCAA, Agentic AI, ADK, Antigravity, Gemini Enterprise, Agent Studio, Agent Gateway, Model Armor, Challenge Labs, Certification, Exam Guide]
 ---
 
@@ -20,10 +20,9 @@ Google has taken a fundamentally new direction with this track. Rather than rely
 
 Having built applications using Google’s Agent Development Kit (ADK), working daily across the Gemini Enterprise ecosystem in my day job, and using Antigravity regularly in my own workflows, I wanted to see how Google approached evaluating enterprise agent architecture. 
 
-After completing the proctored exam and subsequently clearing the challenge labs, I am now **officially certified Google Cloud Professional Agentic Architect**, taking me to 14 active Google Cloud certifications in total. 
+After completing the proctored exam and subsequently clearing the challenge labs, I am now **officially certified Google Cloud Professional Agentic Architect**, taking me to **14 active Google Cloud certifications** in total. 
 
-
-Here is the complete breakdown of how the hybrid format works, the OnVUE testing experience, navigating the transition from Part 1 to Part 2, and what to expect when you step into the live challenge labs.
+Here is the breakdown of how the hybrid format works, the OnVUE testing experience, navigating the transition from Part 1 to Part 2, and what to expect when you step into the live challenge labs.
 
 ---
 
@@ -31,7 +30,7 @@ Here is the complete breakdown of how the hybrid format works, the OnVUE testing
 
 With no local test centres nearby, remote proctoring has been my default for years. If you’ve taken Google Cloud certifications previously, you’ll be well accustomed to Kryterion’s Webassessor portal and Sentinel software. Sitting Part 1 of this exam was my first experience with Pearson VUE’s OnVUE platform following Google’s delivery migration, and the operational differences were noticeable from the start:
 
-* **Mobile-first check-in vs. Sentinel camera snaps:** The check-in flow on OnVUE is significantly more modern than the old Webassessor routine. Instead of trying to hold your passport up to a laptop webcam inside Sentinel, OnVUE sends a link to your smartphone to upload your ID, take a headshot selfie, and snap four clear photos covering every angle of your room.
+* **Mobile-first check-in flow:** OnVUE offloads identity and environment verification directly to your phone. Once you launch the session on your laptop, you scan a QR code to capture high-res photos of your ID, snap a verification selfie, and submit four clear angle shots of your workspace (front, back, left, right) before placing the phone out of arm's reach.
 * **Rescheduling flexibility:** Client deliverables ramped up right before my initial test date, forcing me to push my slot back. OnVUE’s rescheduling was remarkably painless compared to Webassessor—there was wide availability across alternative time slots, and the system let me adjust the booking right up to the start time without friction.
 * **The queue and proctor sweep:** I logged in 15 minutes ahead of my scheduled window to run automated system, mic, and webcam checks. Once my phone photos were submitted, I entered a queue at position 13, taking just under 15 minutes for a proctor to connect. While Webassessor leaned heavily on background biometric profiles, OnVUE proctors are much more hands-on—requiring me to lift my laptop for an active 360-degree sweep of the entire room, including the space underneath the desk and behind the laptop screen, before unlocking the test.
 * **The clean-desk reality:** While the delivery platform has changed, the remote testing discipline hasn't. The strict clean-desk policy hasn’t changed: second monitors must be unplugged and turned away, paper and clutter completely cleared, and your workspace kept entirely bare throughout the session.
