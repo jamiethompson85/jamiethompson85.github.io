@@ -22,7 +22,7 @@ Between building applications with Google’s Agent Development Kit (ADK), worki
 
 After completing the proctored exam and subsequently clearing the challenge labs, I am now **officially certified as a Google Cloud Professional Agentic Architect**, taking me to **14 active Google Cloud certifications** in total.
 
-Here is the breakdown of how the hybrid format works, the OnVUE testing experience, navigating the transition from Part 1 to Part 2, and what to expect when you step into the live challenge labs.
+Here is the breakdown of the OnVUE testing setup, what the Part 1 question dynamic felt like, the core architectural domains you need to master, and what to expect when you transition into the live challenge labs for Part 2.
 
 ---
 
@@ -37,7 +37,7 @@ With no local test centres nearby, remote proctoring has been my default for yea
 
 ---
 
-## Part 1: The Proctored Exam & The Beta Dynamic
+## Exam Structure & The Beta Dynamic
 
 Because this was a beta, the format differed slightly from what the final General Availability (GA) exam will look like:
 
@@ -52,7 +52,7 @@ Because this was a beta, the format differed slightly from what the final Genera
 
 *\*Note: Unlike standard Google Cloud certifications that grant you two years of peace, this badge is only valid for **1 year**. Given the rapid evolution of agentic protocols, security tooling, and the fact that we get a new Gemini model drop almost weekly lately, an annual renewal makes total sense—a two-year-old agent architecture in this ecosystem might as well belong in a museum.\**
 
-### The Exam Experience: Question Pool Dynamic
+### Part 1: Question Pool Dynamic
 
 With an uncalibrated beta question pool, the questions largely fell into two styles:
 
@@ -60,36 +60,6 @@ With an uncalibrated beta question pool, the questions largely fell into two sty
 2. **Obvious eliminations:** Questions where several distractors flagrantly violate basic Google Cloud security principles. You can cross them off immediately if an option suggests controlling hard security via system prompts, assigning excessive service account roles, or bypassing code sandboxing.
 
 Pacing felt comfortable. With 75 questions across 180 minutes, you have roughly 2.4 minutes per question. I wrapped up Part 1 with about 40 minutes remaining, even after reviewing flagged questions. For GA, Professional Certification exams are usually ~50 questions across 120 minutes.
-
----
-
-## The Transition: From Part 1 to Part 2 via CertMetrics
-
-While I expect automated email notifications will be in place once the certification rolls out to General Availability, that wasn't the case during the beta run—I never actually received an email confirming I had cleared the theoretical exam.
-
-If you've completed Part 1 and find yourself waiting around for an inbox ping, don't wait on it. Head straight to the source:
-
-1. Log directly into the **Google Cloud CertMetrics** portal.
-2. Check your exam history to see if your result has updated to a pass.
-3. Once your passing status is recorded, you will see the option to launch Part 2 of the certification.
-4. Clicking that link routes you straight into your assigned hands-on assessment track on **skills.google**.
-
----
-
-## Part 2: The Hands-On Challenge Labs
-
-Once you launch Part 2 on skills.google, you enter the practical evaluation phase.
-
-### Lab Structure & Rules
-- **3 Challenge Labs Presented — Pass Any 2:** You are presented with a selection of three distinct challenge labs. To achieve certification, you need to successfully **pass two of them**.
-- **100% Completion Bar:** Just like standard Google Cloud challenge labs, there is no partial credit. Passing a lab requires achieving a **100% score**, progressing through all milestone assessment checks.
-- **Lab Durations:** Google’s estimated completion times ranged from **45 minutes up to 1 hour 30 minutes** depending on the lab complexity. However, the actual allotted lab timer is greater than this, giving you plenty of time if you need to troubleshoot or wait for services to initialize (although this wasn’t an issue for my labs).
-- **Standard Challenge Lab Format:** If you have completed challenge labs on skills.google before, the process is the same: an objective brief, architecture constraints, and an automated tracking script that evaluates your environment as you complete each phase.
-
-### Practical Tips for the Challenge Labs
-- **Exact Naming Is Non-Negotiable:** Like every challenge lab on skills.google, the automated background grading scripts look for exact string matches. Whether you are provisioning services in the console or running scripts, copy and paste the resource names, IDs, and variables directly from the lab brief. A single typo will fail a milestone check even if the underlying build is functioning.
-- **Respect Propagation Time:** Avoid hitting "Check My Progress" the millisecond a resource shows as created. Cloud control planes and service bindings can take a minute or two to settle across the environment. Rushing the verification check can result in a false-negative score.
-- **Read the Whole Brief First:** It's tempting to jump straight into the first objective, but later tasks often impose constraints on earlier setups. Spend the first five minutes reading through all phases of the scenario so you don't build yourself into a corner that requires re-deploying resources on the clock.
 
 ---
 
@@ -160,9 +130,35 @@ Security is the most critical design constraint when moving agents from internal
 - **Sensitive Data Protection (SDP):** Know how SDP combines with Model Armor to dynamically mask, tokenize, or redact PII before it gets logged in telemetry or forwarded to downstream tools.
 - **Delegated Authorization (User OAuth vs. Service Account):** Pay close attention to credential delegation. When an agent calls an external API, it should rarely use a broad, ambient service account identity. Instead, it should execute the tool using the **end user's delegated OAuth token**, ensuring the agent cannot execute actions the calling user does not have permission to perform.
 
-### 6. Edge and Hybrid Models (Gemma)
+---
 
-While Gemini handles large-scale cloud reasoning, understand when to deploy lightweight open models like **Gemma** at the edge or on local hardware. Focus on how to secure local runtimes, protect model weights, and enforce local tool-execution boundaries.
+## The Transition: From Part 1 to Part 2 via CertMetrics
+
+Once you've cleared the architectural theory, you enter the operational handoff to the hands-on labs. While I expect automated email notifications will be in place once the certification rolls out to General Availability, that wasn't the case during the beta run—I never actually received an email confirming I had cleared the theoretical exam.
+
+If you've completed Part 1 and find yourself waiting around for an inbox ping, don't wait on it. Head straight to the source:
+
+1. Log directly into the **Google Cloud CertMetrics** portal.
+2. Check your exam history to see if your result has updated to a pass.
+3. Once your passing status is recorded, you will see the option to launch Part 2 of the certification.
+4. Clicking that link routes you straight into your assigned hands-on assessment track on **skills.google**.
+
+---
+
+## Part 2: The Hands-On Challenge Labs
+
+Once you launch Part 2 on skills.google, you enter the practical evaluation phase.
+
+### Lab Structure & Rules
+- **3 Challenge Labs Presented — Pass Any 2:** You are presented with a selection of three distinct challenge labs. To achieve certification, you need to successfully **pass two of them**.
+- **100% Completion Bar:** Just like standard Google Cloud challenge labs, there is no partial credit. Passing a lab requires achieving a **100% score**, progressing through all milestone assessment checks.
+- **Lab Durations:** Google’s estimated completion times ranged from **45 minutes up to 1 hour 30 minutes** depending on the lab complexity. However, the actual allotted lab timer is greater than this, giving you plenty of time if you need to troubleshoot or wait for services to initialize (although this wasn’t an issue for my labs).
+- **Standard Challenge Lab Format:** If you have completed challenge labs on skills.google before, the process is the same: an objective brief, architecture constraints, and an automated tracking script that evaluates your environment as you complete each phase.
+
+### Practical Tips for the Challenge Labs
+- **Exact Naming Is Non-Negotiable:** Like every challenge lab on skills.google, the automated background grading scripts look for exact string matches. Whether you are provisioning services in the console or running scripts, copy and paste the resource names, IDs, and variables directly from the lab brief. A single typo will fail a milestone check even if the underlying build is functioning.
+- **Respect Propagation Time:** Avoid hitting "Check My Progress" the millisecond a resource shows as created. Cloud control planes and service bindings can take a minute or two to settle across the environment. Rushing the verification check can result in a false-negative score.
+- **Read the Whole Brief First:** It's tempting to jump straight into the first objective, but later tasks often impose constraints on earlier setups. Spend the first five minutes reading through all phases of the scenario so you don't build yourself into a corner that requires re-deploying resources on the clock.
 
 ---
 
