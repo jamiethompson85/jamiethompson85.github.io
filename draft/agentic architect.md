@@ -78,7 +78,7 @@ The technical requirements for both parts map directly across five documented do
 
 ## Core Technical Themes to Master
 
-Whether you are answering architectural questions in Part 1 or implementing resources in Part 2, the following technical themes form the backbone of the credential:
+Whether you are answering architectural questions in the exam, or implementing resources in hands-on labs, the following technical themes form the backbone of the credential:
 
 ### 1. The Gemini Enterprise Ecosystem & Low-Code Agents (~13%)
 
