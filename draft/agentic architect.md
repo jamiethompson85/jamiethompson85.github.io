@@ -14,7 +14,7 @@ tags: [Google Cloud, PCAA, Agentic AI, ADK, Antigravity, Gemini Enterprise, Agen
 
 # Google Cloud Professional Agentic Architect Exam Guide
 
-In September, I sat the brand-new beta for Google Cloud’s latest credential: the **Professional Agentic Architect**. 
+In September, I sat the beta exam for Google Cloud’s latest credential: the **Professional Agentic Architect**.
 
 Google has taken a fundamentally new direction with this track. Rather than relying solely on traditional multiple-choice questions, this is Google Cloud’s first **hybrid certification**. Earning the badge requires clearing two distinct stages: a proctored theoretical exam (Part 1), followed by a hands-on lab assessment delivered through Google Skills (Part 2).
 
