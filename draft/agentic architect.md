@@ -129,6 +129,17 @@ Security is the most critical design constraint when moving agents from internal
 
 ---
 
+## Recommended Preparation & Study Resources
+
+Because this certification is brand new, the most effective preparation will come from working directly with Google's official materials and getting hands-on in the console and code:
+
+- **The Official Exam Guide:** Start by reviewing the [Professional Agentic Architect Exam Guide](https://services.google.com/fh/files/misc/professional_agentic_architect_exam_guide_english.pdf). Use the five domains as a personal gap analysis to identify which services or runtime patterns you haven't worked with hands-on.
+- **Official Sample Questions:** Work through the [official sample questions](https://cloud.google.com/learn/certification/agentic-architect) published on Google Cloud's certification hub. Even though it is a small set, it gives you a clear baseline of how Google frames scenario questions, distractor patterns, and technical tradeoffs.
+- **Professional Agentic Architect Learning Path:** Make your way through the [Professional Agentic Architect path on skills.google](https://www.skills.google/paths/4525). I didn't have the time to complete the entire path end-to-end before my beta booking, but I worked through a handful of the core modules beforehand. It is remarkably thorough, goes deep into real implementation patterns, and I highly recommend working through it if you want structured coverage of the full syllabus.
+- **Hands-On Code Frameworks:** Spend dedicated time inside the open-source Agent Development Kit (ADK) repository. Build out custom multi-agent topologies, trace how state and memory keys flow between agents, and write local trajectory evaluation tests before sitting Part 1 or tackling the Part 2 labs.
+
+---
+
 ## The Transition: From Part 1 to Part 2 via CertMetrics
 
 Once you've cleared the architectural theory, you enter the operational handoff to the hands-on labs. While I expect automated email notifications will be in place once the certification rolls out to General Availability, that wasn't the case during the beta run, I never actually received an email confirming I had cleared the theoretical exam.
