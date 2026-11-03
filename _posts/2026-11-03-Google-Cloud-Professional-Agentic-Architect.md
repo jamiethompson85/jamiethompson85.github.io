@@ -9,7 +9,7 @@ share-img: /assets/img/paa/professional-agentic-architect-certification.png
 readtime: true
 share-title: "How to Pass the Google Cloud Professional Agentic Architect Certification (Exam Theory & Hands-on Challenge Labs Guide)"
 share-description: "Field notes and hands-on guide for Google Cloud's new Professional Agentic Architect hybrid certification. Practical insights on passing the theory exam, and completing the hands-on challenge labs on skills.google."
-tags: [Google Cloud, PAA, Agentic AI, ADK, Antigravity, Gemini Enterprise, Agent Studio, Agent Gateway, Model Armor, Challenge Labs, Certification, Exam Guide]
+tags: [Google Cloud, GCP, Professional Agentic Architect, PAA, Exam Guide, Certification, Challenge Labs, Agentic AI, ADK, Antigravity, Gemini Enterprise]
 ---
 
 # Google Cloud Professional Agentic Architect Exam Guide
