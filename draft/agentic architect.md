@@ -91,20 +91,20 @@ To clear this domain, you should be comfortable with:
 
 ### 2. Using Coding Agents for Application Development (~17%)
 
-This domain shifts the focus from building user-facing conversational apps to developer tooling and engineering autonomy—specifically leveraging **Google Antigravity** and **Claude Code on Google Cloud** to refactor code, optimize execution runtimes, and patch application-layer vulnerabilities.
+This domain shifts the focus from building user-facing conversational apps to developer tooling and engineering autonomy- specifically leveraging **Google Antigravity** and **Claude Code on Google Cloud** to refactor code, optimise execution runtimes, and patch application-layer vulnerabilities.
 
 To clear this section, make sure you understand:
 
-- **Antigravity Customization (Rules vs. Skills):** Know how to govern agent behavior across workspace, directory, and global scopes. **Rules** enforce non-negotiable architectural boundaries and coding constraints (e.g., via `AGENTS.md` or `.agents/rules/`), whereas **Skills**, plugins, extension hooks, and subagents provide reusable, procedural task workflows.
+- **Antigravity Customisation (Rules vs. Skills):** Know how to govern agent behavior across workspace, directory, and global scopes. **Rules** enforce non-negotiable architectural boundaries and coding constraints (e.g., via `AGENTS.md` or `.agents/rules/`), whereas **Skills**, plugins, extension hooks, and subagents provide reusable, procedural task workflows.
 - **Model Context Protocol (MCP) & Tool Access:** Understand how coding agents connect to external environments, file systems, databases, and enterprise services through standard MCP client/server integrations.
-- **Execution Sandboxing & Isolation:** Recognize the security risks of autonomous dynamic execution. Be clear on when and how coding agents must be confined to isolated execution environments—such as GKE Agent Sandboxes, Cloud Workstations, or Antigravity's hosted sandboxes—to run untrusted shell scripts and dynamic tests safely.
-- **Enterprise Tooling with Agents CLI:** Understand how to augment Antigravity using the Agents CLI to script, scale, govern, and optimize coding agents consistently across a team.
+- **Execution Sandboxing & Isolation:** Recognise the security risks of autonomous dynamic execution. Be clear on when and how coding agents must be confined to isolated execution environments—such as GKE Agent Sandboxes, Cloud Workstations, or Antigravity's hosted sandboxes—to run untrusted shell scripts and dynamic tests safely.
+- **Enterprise Tooling with Agents CLI:** Understand how to augment Antigravity using the Agents CLI to script, scale, govern, and optimise coding agents consistently across a team.
 
 ### 3. Custom Agent Architecture & ADK (~33%)
 
 Section 3 represents a third of the entire syllabus. You need to know how to structure and code multi-agent systems using the **Agent Development Kit (ADK)**.
 
-- **Multi-Agent Topologies:** Understand the architectural differences between a centralized orchestrator (supervisor delegating tasks to specialized sub-agents) and decentralized handoffs using Agent-to-Agent (A2A) protocols across different domain teams.
+- **Multi-Agent Topologies:** Understand the architectural differences between a centralised orchestrator (supervisor delegating tasks to specialised sub-agents) and decentralised handoffs using Agent-to-Agent (A2A) protocols across different domain teams.
 - **State Management and Keys:** Know how state flows through an agent runtime. Review how **output keys** and **state prefixes** are configured so that parallel sub-agents don’t accidentally overwrite shared context or stomp on conversational history.
 - **Session State vs. Long-Term Memory:** Be clear on the operational boundary between short-term conversational turns (sessions) and durable user context. Understand how **Memory Bank** extracts and persists semantic facts across distinct user interactions.
 - **Agent Workload Identity:** Review how cryptographic identities are assigned to autonomous runtimes. Understand where **SPIFFE-based identities** and Principal Access Boundaries (PAB) fit when an agent needs to prove its identity to access backend cloud infrastructure.
@@ -124,8 +124,8 @@ Security is the most critical design constraint when moving agents from internal
 
 - **Agent Gateway Topology:** Understand where Agent Gateway sits in your network architecture. Know how to configure ingress (protecting your agent from untrusted client calls) and egress (restricting which external APIs, databases, or MCP tools the agent can invoke).
 - **Model Armor & Content Safety:** Study how Model Armor hooks into the gateway pipeline. Understand how to configure templates to catch prompt injection, detect jailbreak attempts, and block unsafe content before user inputs reach the model.
-- **Sensitive Data Protection (SDP):** Know how SDP combines with Model Armor to dynamically mask, tokenize, or redact PII before it gets logged in telemetry or forwarded to downstream tools.
-- **Delegated Authorization (User OAuth vs. Service Account):** Pay close attention to credential delegation. When an agent calls an external API, it should rarely use a broad, ambient service account identity. Instead, it should execute the tool using the **end user's delegated OAuth token**, ensuring the agent cannot execute actions the calling user does not have permission to perform.
+- **Sensitive Data Protection (SDP):** Know how SDP combines with Model Armor to dynamically mask, tokenise, or redact PII before it gets logged in telemetry or forwarded to downstream tools.
+- **Delegated Authorisation (User OAuth vs. Service Account):** Pay close attention to credential delegation. When an agent calls an external API, it should rarely use a broad, ambient service account identity. Instead, it should execute the tool using the **end user's delegated OAuth token**, ensuring the agent cannot execute actions the calling user does not have permission to perform.
 
 ---
 
@@ -149,7 +149,7 @@ Once you launch Part 2 on skills.google, you enter the practical evaluation phas
 ### Lab Structure & Rules
 - **3 Challenge Labs Presented — Pass Any 2:** You are presented with a selection of three distinct challenge labs. To achieve certification, you need to successfully **pass two of them**.
 - **100% Completion Bar:** Just like standard Google Cloud challenge labs, there is no partial credit. Passing a lab requires achieving a **100% score**, progressing through all milestone assessment checks.
-- **Lab Durations:** Google’s estimated completion times ranged from **45 minutes up to 1 hour 30 minutes** depending on the lab complexity. However, the actual allotted lab timer is greater than this, giving you plenty of time if you need to troubleshoot or wait for services to initialize (although this wasn’t an issue for my labs).
+- **Lab Durations:** Google’s estimated completion times ranged from **45 minutes up to 1 hour 30 minutes** depending on the lab complexity. However, the actual allotted lab timer is greater than this, giving you plenty of time if you need to troubleshoot or wait for services to initialise (although this wasn’t an issue for my labs).
 - **Standard Challenge Lab Format:** If you have completed challenge labs on skills.google before, the process is the same: an objective brief, architecture constraints, and an automated tracking script that evaluates your environment as you complete each phase.
 
 ### Practical Tips for the Challenge Labs
