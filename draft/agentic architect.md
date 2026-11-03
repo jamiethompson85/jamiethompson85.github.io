@@ -121,21 +121,16 @@ To clear this domain, you should be comfortable with:
 * **Enterprise Grounding & Data Stores:** Know how to configure managed data stores across structured, unstructured, and multimodal repositories (text documents, audio, and video). Understand how chunking strategies, semantic search, and metadata filtering prevent hallucinations and keep responses strictly grounded.
 * **Tool Extensions & API Contracts:** Understand how low-code agents invoke external business logic. Review how OpenAPI schemas define tool contracts, how authentication is passed to downstream APIs, and how Agent Gateway enforces ingress and egress policies around tool invocation.
 
-### 2. Coding Agents & Development Platforms: Google Antigravity (~17%)
+### 2. Using Coding Agents for Application Development (~17%)
 
-* **ADK vs. Antigravity:** ADK is the programmatic code framework used to build and wire agent logic in your application. **Google Antigravity** is Google’s agentic development platform where autonomous agents plan, write, execute, and verify software.
-* **Rules vs. Skills:** In Antigravity, know how to guide agent behavior. **Rules** are project constraints and invariants (often defined in `AGENTS.md` or `.agents/rules/` to enforce coding styles and architectural boundaries), while **Skills** are reusable, multi-step procedural task workflows.
+This domain shifts the focus from building user-facing conversational apps to developer tooling and engineering autonomy—specifically leveraging **Google Antigravity** and **Claude Code on Google Cloud** to refactor code, optimize execution runtimes, and patch application-layer vulnerabilities.
 
-> **Antigravity Rule Pattern (`AGENTS.md`):**
-> ```markdown
-> # Project Invariants
-> - Execution Boundary: Shell commands and dynamic tests must run exclusively in containerized sandboxes.
-> - Tool Calling: Never invoke external mutation APIs without explicit human confirmation.
-> - Schema Contract: All MCP tool parameter payloads must be strictly validated before dispatch.
-> ```
+To clear this section, make sure you understand:
 
-* **Scoping:** Understand how configurations apply across different boundaries—locally within a specific directory, across an entire workspace, or globally across a development environment.
-* **Sandboxing & Model Context Protocol (MCP):** Know when coding agents must execute inside secure sandboxes (such as Cloud Workstations or GKE Agent Sandboxes) to isolate untrusted shell scripts. Understand how MCP standardizes the way agents interface with external file systems, databases, and developer tools.
+* **Antigravity Customization (Rules vs. Skills):** Know how to govern agent behavior across workspace, directory, and global scopes. **Rules** enforce non-negotiable architectural boundaries and coding constraints (e.g., via `AGENTS.md` or `.agents/rules/`), whereas **Skills**, plugins, extension hooks, and subagents provide reusable, procedural task workflows.
+* **Model Context Protocol (MCP) & Tool Access:** Understand how coding agents connect to external environments, file systems, databases, and enterprise services through standard MCP client/server integrations.
+* **Execution Sandboxing & Isolation:** Recognize the security risks of autonomous dynamic execution. Be clear on when and how coding agents must be confined to isolated execution environments—such as GKE Agent Sandboxes, Cloud Workstations, or Antigravity's hosted sandboxes—to run untrusted shell scripts and dynamic tests safely.
+* **Enterprise Tooling with Agents CLI:** Understand how to augment Antigravity using the Agents CLI to script, scale, govern, and optimize coding agents consistently across a team.
 
 ### 3. Custom Agent Architecture & ADK (~33%)
 Section 3 represents a third of the entire syllabus. You need to know how to structure and code multi-agent systems using the **Agent Development Kit (ADK)**.
