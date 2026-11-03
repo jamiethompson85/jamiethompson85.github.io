@@ -4,8 +4,8 @@ title: "Google Cloud Professional Agentic Architect Exam Guide: Passing the Exam
 excerpt: "My journey becoming officially certified as a Google Cloud Professional Agentic Architect. A complete breakdown of Google's first hybrid exam: passing the 3-hour theory proctored exam and clearing the hands-on challenge labs."
 subtitle: "From Theoretical Architecture to Hands-On Lab Implementation"
 description: "A comprehensive, architect-level guide for the Google Cloud Professional Agentic Architect certification. Details the full journey across the 3-hour theory exam (beta), passing the hands-on challenge labs on skills.google, and key architectural domains across ADK, Antigravity, and Gemini Enterprise."
-thumbnail-img: /assets/img/pcaa/pcaa.png
-share-img: /assets/img/pcaa/pcaa.png
+thumbnail-img: /assets/img/pcaa/professional-agentic-architect-certification.png
+share-img: /assets/img/pcaa/professional-agentic-architect-certification.png
 readtime: true
 share-title: "How to Pass the Google Cloud Professional Agentic Architect Certification (Exam Theory & Hands-on Challenge Labs Guide)"
 share-description: "Field notes and hands-on guide for Google Cloud's new Professional Agentic Architect hybrid certification. Practical insights on passing the theory exam, and completing the hands-on challenge labs on skills.google."
