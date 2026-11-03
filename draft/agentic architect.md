@@ -161,11 +161,11 @@ Once you launch Part 2 on skills.google, you enter the practical evaluation phas
 
 ## Final Thoughts
 
-I actually really liked the format of this exam. Pairing a comprehensive theory test with time-constrained, hands-on challenge labs makes total sense for this domain. It shifts the credential away from high-level slide architecture and anchors it squarely in the gritty details of implementing and productionising agentic solutions on Google Cloud from a true engineering perspective.
+I really liked the format of this exam. Combining a comprehensive theory test with time-constrained, hands-on challenge labs makes total sense for this domain. Rather than testing purely conceptual designs, it focuses directly on the practical engineering required to build, secure, and productionise agentic systems on Google Cloud.
 
-While having a solid grasp of the theory is obviously important, the sheer breadth of topics covered means you simply cannot fluke your way through on whitepapers alone. You need real, hands-on experience across the entire stack. That means writing custom agents and multi-agent topologies in ADK, getting comfortable with enterprise security controls like Agent Gateway and delegated auth, and understanding the practical realities of moving an agent into production.
+While a solid grasp of the theory is essential, the breadth of topics covered means you cannot rely on reading documentation alone. You need genuine hands-on experience across the stack. That means writing custom agents and multi-agent topologies in ADK, configuring security controls like Agent Gateway and delegated auth, and working through the operational realities of taking an agent to production.
 
-Above all, don't overlook evaluations. Knowing how to systematically measure tool trajectories, catch hallucinations or looping behaviours, and implement resilient evaluation patterns is critical before you let an autonomous system anywhere near an enterprise environment.
+Above all, pay close attention to evaluations. Understanding how to systematically measure tool trajectories, detect looping behaviours, and implement robust evaluation patterns is critical before deploying autonomous systems into enterprise environments.
 
 If you sat the beta as well, or you’re gearing up to take the exam once it lands in General Availability, let me know your thoughts or drop any questions in the comments below!
 
