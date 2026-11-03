@@ -16,7 +16,7 @@ tags: [Google Cloud, PAA, Agentic AI, ADK, Antigravity, Gemini Enterprise, Agent
 
 In September, I sat the beta exam for Google Cloud’s latest credential: the **Professional Agentic Architect**.
 
-Google has taken a fundamentally new direction with this track. Rather than relying solely on traditional multiple-choice questions, this is Google Cloud’s first **hybrid certification**. Earning the badge requires clearing two distinct stages: a proctored theoretical exam (Part 1), followed by a hands-on lab assessment delivered through Google Skills (Part 2).
+Google has taken a fundamentally new direction with this track. Rather than relying solely on traditional multiple-choice questions, this is Google Cloud’s first hybrid certification. Earning the badge requires clearing two distinct stages: a proctored theoretical exam (Part 1), followed by a hands-on lab assessment delivered through Google Skills (Part 2).
 
 Between building applications with Google’s Agent Development Kit (ADK), working across the Gemini Enterprise ecosystem in my day job, and using Antigravity regularly, I was keen to see how my hands-on experience stacked up against Google's expectations.
 
@@ -91,31 +91,31 @@ To clear this domain, you should be comfortable with:
 
 ### 2. Using Coding Agents for Application Development (~17%)
 
-This domain shifts the focus from building user-facing conversational apps to developer tooling and engineering autonomy, specifically leveraging **Google Antigravity** and **Claude Code on Google Cloud** to refactor code, optimise execution runtimes, and patch application-layer vulnerabilities.
+This domain shifts the focus from building user-facing conversational apps to developer tooling and engineering autonomy, specifically leveraging Google Antigravity and Claude Code on Google Cloud to refactor code, optimise execution runtimes, and patch application-layer vulnerabilities.
 
 To clear this section, make sure you understand:
 
-- **Antigravity Customisation (Rules vs. Skills):** Know how to govern agent behavior across workspace, directory, and global scopes. **Rules** enforce non-negotiable architectural boundaries and coding constraints (e.g., via `AGENTS.md` or `.agents/rules/`), whereas **Skills**, plugins, extension hooks, and subagents provide reusable, procedural task workflows.
+- **Antigravity Customisation (Rules vs. Skills):** Know how to govern agent behavior across workspace, directory, and global scopes. Rules enforce non-negotiable architectural boundaries and coding constraints (e.g., via `AGENTS.md` or `.agents/rules/`), whereas Skills, plugins, extension hooks, and subagents provide reusable, procedural task workflows.
 - **Model Context Protocol (MCP) & Tool Access:** Understand how coding agents connect to external environments, file systems, databases, and enterprise services through standard MCP client/server integrations.
 - **Execution Sandboxing & Isolation:** Recognise the security risks of autonomous dynamic execution. Be clear on when and how coding agents must be confined to isolated execution environments, such as GKE Agent Sandboxes, Cloud Workstations, or Antigravity's hosted sandboxes, to run untrusted shell scripts and dynamic tests safely.
 - **Enterprise Tooling with Agents CLI:** Understand how to augment Antigravity using the Agents CLI to script, scale, govern, and optimise coding agents consistently across a team.
 
 ### 3. Custom Agent Architecture & ADK (~33%)
 
-Section 3 represents a third of the entire syllabus. You need to know how to structure and code multi-agent systems using the **Agent Development Kit (ADK)**.
+Section 3 represents a third of the entire syllabus. You need to know how to structure and code multi-agent systems using the Agent Development Kit (ADK).
 
 - **Multi-Agent Topologies:** Understand the architectural differences between a centralised orchestrator (supervisor delegating tasks to specialised sub-agents) and decentralised handoffs using Agent-to-Agent (A2A) protocols across different domain teams.
-- **State Management and Keys:** Know how state flows through an agent runtime. Review how **output keys** and **state prefixes** are configured so that parallel sub-agents don’t accidentally overwrite shared context or stomp on conversational history.
-- **Session State vs. Long-Term Memory:** Be clear on the operational boundary between short-term conversational turns (sessions) and durable user context. Understand how **Memory Bank** extracts and persists semantic facts across distinct user interactions.
-- **Agent Workload Identity:** Review how cryptographic identities are assigned to autonomous runtimes. Understand where **SPIFFE-based identities** and Principal Access Boundaries (PAB) fit when an agent needs to prove its identity to access backend cloud infrastructure.
+- **State Management and Keys:** Know how state flows through an agent runtime. Review how output keys and state prefixes are configured so that parallel sub-agents don’t accidentally overwrite shared context or stomp on conversational history.
+- **Session State vs. Long-Term Memory:** Be clear on the operational boundary between short-term conversational turns (sessions) and durable user context. Understand how Memory Bank extracts and persists semantic facts across distinct user interactions.
+- **Agent Workload Identity:** Review how cryptographic identities are assigned to autonomous runtimes. Understand where SPIFFE-based identities and Principal Access Boundaries (PAB) fit when an agent needs to prove its identity to access backend cloud infrastructure.
 
 ### 4. Evaluating and Deploying Agentic Workflows (~22%)
 
 Traditional software assertions break down when dealing with non-deterministic LLMs. You need to know how to measure agent behavior systematically.
 
-- **Tool Trajectory Evaluation:** Evaluating the final text response of an agent is insufficient. You must evaluate the **trajectory**, verifying that the agent invoked the correct sequence of tools, passed valid argument schemas, and reached the resolution without entering looping cycles.
+- **Tool Trajectory Evaluation:** Evaluating the final text response of an agent is insufficient. You must evaluate the trajectory, verifying that the agent invoked the correct sequence of tools, passed valid argument schemas, and reached the resolution without entering looping cycles.
 - **Handling Live Data Drift in Evals:** A frequent challenge with agent evaluation suites is that testing against live APIs causes tests to fail due to changing production data rather than logic bugs. Understand how to design resilient evaluation pipelines using mock data layers, synthetic fixtures, or LLM-as-a-judge patterns to evaluate decision-making independently of live API churn.
-- **Context Caching:** Long system prompts, complex tool schemas, and multi-turn histories balloon latency and costs. Review how **context caching** dramatically reduces inference costs and time-to-first-token by caching shared, immutable prompt prefixes.
+- **Context Caching:** Long system prompts, complex tool schemas, and multi-turn histories balloon latency and costs. Review how context caching dramatically reduces inference costs and time-to-first-token by caching shared, immutable prompt prefixes.
 - **OpenTelemetry (OTel):** Know how to instrument agent runtimes with distributed tracing to track end-to-end latency across reasoning loops, vector retrieval, and external tool calls.
 
 ### 5. Securing and Governing Agentic Workflows (~15%)
@@ -125,7 +125,7 @@ Security is the most critical design constraint when moving agents from internal
 - **Agent Gateway Topology:** Understand where Agent Gateway sits in your network architecture. Know how to configure ingress (protecting your agent from untrusted client calls) and egress (restricting which external APIs, databases, or MCP tools the agent can invoke).
 - **Model Armor & Content Safety:** Study how Model Armor hooks into the gateway pipeline. Understand how to configure templates to catch prompt injection, detect jailbreak attempts, and block unsafe content before user inputs reach the model.
 - **Sensitive Data Protection (SDP):** Know how SDP combines with Model Armor to dynamically mask, tokenise, or redact PII before it gets logged in telemetry or forwarded to downstream tools.
-- **Delegated Authorisation (User OAuth vs. Service Account):** Pay close attention to credential delegation. When an agent calls an external API, it should rarely use a broad, ambient service account identity. Instead, it should execute the tool using the **end user's delegated OAuth token**, ensuring the agent cannot execute actions the calling user does not have permission to perform.
+- **Delegated Authorisation (User OAuth vs. Service Account):** Pay close attention to credential delegation. When an agent calls an external API, it should rarely use a broad, ambient service account identity. Instead, it should execute the tool using the end user's delegated OAuth token, ensuring the agent cannot execute actions the calling user does not have permission to perform.
 
 ---
 
@@ -133,12 +133,12 @@ Security is the most critical design constraint when moving agents from internal
 
 Once you've cleared the architectural theory, you enter the operational handoff to the hands-on labs. While I expect automated email notifications will be in place once the certification rolls out to General Availability, that wasn't the case during the beta run, I never actually received an email confirming I had cleared the theoretical exam.
 
-If you've completed Part 1 and find yourself waiting around for an inbox ping, don't wait on it. Head straight to the source:
+If you've completed Part 1 and find yourself waiting around for an email notification, don't wait on it. Head straight to the source:
 
-1. Log directly into the **Google Cloud CertMetrics** portal.
+1. Log directly into the [Google Cloud CertMetrics portal](https://cp.certmetrics.com/google/en/home/dashboard).
 2. Check your exam history to see if your result has updated to a pass.
 3. Once your passing status is recorded, you will see the option to launch Part 2 of the certification.
-4. Clicking that link routes you straight into your assigned hands-on assessment track on **skills.google**.
+4. Clicking that link routes you straight into your assigned hands-on assessment track on [skills.google](https://www.skills.google).
 
 ---
 
@@ -147,9 +147,9 @@ If you've completed Part 1 and find yourself waiting around for an inbox ping, d
 Once you launch Part 2 on skills.google, you enter the practical evaluation phase.
 
 ### Lab Structure & Rules
-- **3 Challenge Labs Presented -  Pass Any 2:** You are presented with a selection of three distinct challenge labs. To achieve certification, you need to successfully **pass two of them**.
-- **100% Completion Bar:** Just like standard Google Cloud challenge labs, there is no partial credit. Passing a lab requires achieving a **100% score**, progressing through all milestone assessment checks.
-- **Lab Durations:** Google’s estimated completion times ranged from **45 minutes up to 1 hour 30 minutes** depending on the lab complexity. However, the actual allotted lab timer is greater than this, giving you plenty of time if you need to troubleshoot or wait for services to initialise (although this wasn’t an issue for my labs).
+- **3 Challenge Labs Presented -  Pass Any 2:** You are presented with a selection of three distinct challenge labs. To achieve certification, you need to successfully pass two of them.
+- **100% Completion Bar:** Just like standard Google Cloud challenge labs, there is no partial credit. Passing a lab requires achieving a 100% score, progressing through all milestone assessment checks.
+- **Lab Durations:** Google’s estimated completion times ranged from 45 minutes up to 1 hour 30 minutes depending on the lab complexity. However, the actual allotted lab timer is greater than this, giving you plenty of time if you need to troubleshoot or wait for services to initialise (although this wasn’t an issue for my labs).
 - **Standard Challenge Lab Format:** If you have completed challenge labs on skills.google before, the process is the same: an objective brief, architecture constraints, and an automated tracking script that evaluates your environment as you complete each phase.
 
 ### Practical Tips for the Challenge Labs
