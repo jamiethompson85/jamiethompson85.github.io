@@ -58,7 +58,7 @@ With an uncalibrated beta question pool, the questions largely fell into two sty
 1. **System design problems:** Questions that test genuine design trade-offs across multi-agent handoffs, token management, and evaluation pipelines. The key is methodically stepping through the data path between the caller, gateway, agent runtime, and backend tools.
 2. **Obvious eliminations:** Questions where several distractors flagrantly violate basic Google Cloud security principles. You can cross them off immediately if an option suggests controlling hard security via system prompts, assigning excessive service account roles, or bypassing code sandboxing.
 
-Pacing felt comfortable. With 75 questions across 180 minutes, you have roughly 2.4 minutes per question. I wrapped up Part 1 with about 40 minutes remaining, even after reviewing flagged questions. For GA, Professional Certification exams are usually ~50 questions across 120 minutes.
+Pacing felt comfortable. With 75 questions across 180 minutes, you have roughly 2.4 minutes per question. I wrapped up the exam with about 40 minutes remaining, even after reviewing flagged questions. For GA, Professional Certification exams are usually ~50 questions across 120 minutes.
 
 ---
 
