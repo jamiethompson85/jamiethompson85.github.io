@@ -21,7 +21,7 @@ The current syllabus reflects how cloud-native applications are built on Google 
 
 ---
 
-## Exam overview
+## Exam Overview
 
 * **Format:** 50 to 60 multiple-choice and multiple-select questions
 * **Duration:** 2 hours (120 minutes)
@@ -39,7 +39,7 @@ The questions map across four main domains:
 | **3** | Configuring cloud-native applications for deployment | ~24% |
 | **4** | Integrating applications with Google Cloud services | ~21% |
 
-### How it compares to Cloud Architect and DevOps Engineer
+### How It Compares To Cloud Architect and DevOps Engineer
 
 If you have already sat the Professional Cloud Architect (PCA) exam, the biggest structural difference to bear in mind is that the Professional Cloud Developer exam has no case studies. You won't spend exam time reading multi-page business briefs before answering questions. Instead, the focus is much closer to the code and runtime configuration: service-to-service authentication, API gateways, database schema and caching trade-offs, and debugging broken container deployments.
 
@@ -47,7 +47,7 @@ There is also a fair amount of overlap with the Professional Cloud DevOps Engine
 
 ---
 
-## Where to focus your preparation
+## Where To Focus Your Preparation
 
 Reading the official exam guide from top to bottom can feel overwhelming because Google lists almost their entire compute and database catalogue.
 
@@ -55,7 +55,7 @@ Preparing for a Google Cloud Professional certification takes more than memorisi
 
 To make revision more manageable, I have grouped the core themes into the natural lifecycle of an application: design and integration, build security, deployment, and live debugging.
 
-### 1. Architecture, data flow, and API integration
+### 1. Architecture, Data Flow, and API Integration
 
 Compute selection is the starting point for most architectural decisions on Google Cloud. Cloud Run remains the default recommendation for stateless HTTP services and scale-to-zero background jobs where you want minimal operational overhead. Choose GKE Autopilot when your application needs standard Kubernetes APIs or custom networking without the burden of node management. Reserve GKE Standard for workloads requiring direct node control, specialised hardware, or custom OS kernels.
 
@@ -67,7 +67,7 @@ Once your compute runtime is set, focus on how data is stored, cached, and expos
 
 Asynchronous messaging is the other major design theme. Review when to invoke Cloud Run directly over HTTP versus placing Pub/Sub and Eventarc in the middle to handle traffic spikes, retries, and dead-letter queues. Where sequence matters in a data pipeline, understand how Pub/Sub message ordering keys work alongside exactly-once delivery before passing data to a database or a direct BigQuery subscription. Finally, be clear on the difference between Cloud Tasks (explicit point-to-point HTTP invocation where the producer controls dispatch rates and retry backoff) and Workflows (multi-step service orchestration with conditional branching and sequential API calls).
 
-### 2. Development environment, identity, and build security
+### 2. Development Environment, Identity, and Build Security
 
 AI-assisted tooling is now explicitly part of the syllabus across both the Google Cloud console and the local IDE. Make sure you understand the role of Gemini Cloud Assist in the console for investigating and troubleshooting cloud resources, alongside configuring IDEs (like VS Code, IntelliJ, or Cloud Workstations) with Cloud Code, AI coding assistants, and Model Context Protocol (MCP) servers to write code and generate unit tests. It is also worth checking the IAM and API prerequisites in the docs, such as enabling the Cloud AI Companion API and assigning the `roles/cloudaicompanion.user` role so developers have authorised access.
 
@@ -78,7 +78,7 @@ On the security side, two patterns apply across almost every Google Cloud worklo
 1. **Zero static service account keys:** Avoid any design that relies on exporting and storing JSON key files. On GKE, use Workload Identity Federation for GKE so pods assume Google Cloud IAM roles natively. On Cloud Run, attach a dedicated runtime service account with least-privilege permissions, and fetch sensitive application credentials at runtime from Secret Manager rather than hardcoding them in environment variables or container images.
 2. **Software supply chain security:** Binary Authorization is essential to understand end to end. Review how admission policies ensure that GKE or Cloud Run only deploys container images built by Cloud Build, stored in Artifact Registry, scanned for vulnerabilities by Artifact Analysis, and signed with a valid cryptographic attestation.
 
-### 3. Deployment and traffic management
+### 3. Deployment and Traffic Management
 
 You will want to be comfortable with Cloud Run revisions and traffic splitting. Practise routing a small slice of live traffic (such as 5% or 10%) to a newly deployed revision to verify stability in production, and know how to roll all traffic back to the previous healthy revision if you see elevated error rates.
 
@@ -88,7 +88,7 @@ On the Kubernetes side, review how Horizontal Pod Autoscaler (HPA) scales worklo
 * **A/B deployments** direct specific user groups (typically using HTTP headers or cookies) to different application variants to evaluate user behaviour and feature performance.
 * **Blue/Green deployments** maintain two identical production environments side by side to enable an immediate cutover at the load balancer or router (and a fast fallback if needed) without running mixed versions simultaneously.
 
-### 4. Observability and live debugging
+### 4. Observability and Live Debugging
 
 GKE and Cloud Run automatically collect container `stdout`/`stderr` logs and baseline infrastructure metrics via managed Cloud Operations agents. However, for custom distributed tracing across microservices, you need to instrument your application code using the vendor-neutral OpenTelemetry (OTel) SDK to export trace spans into Cloud Trace without locking into proprietary libraries.
 
@@ -98,18 +98,17 @@ Finally, review the Kubernetes pod lifecycle and how liveness, readiness, and st
 
 ---
 
-## Recommended study resources
+## Recommended Study Resources
 
 Depending on how much hands-on Google Cloud development you do day-to-day, I recommend a targeted approach rather than sitting through hours of generic video courses:
 
 * **[Google Cloud Professional Cloud Developer Exam Guide](https://services.google.com/fh/files/misc/professional_cloud_developer_exam_guide_english.pdf):** Start here. I used the guide to quickly scan the scope and spot any services I hadn't touched recently.
 * **Official Google Cloud Documentation & Architecture Guides:** Once you know your gaps, the official concept and how-to guides (especially for Cloud Run traffic splitting, Pub/Sub subscriber ordering, GKE Workload Identity, and Binary Authorization) are the best revision material available.
 * **[Google Cloud Skills Boost – Cloud Developer Learning Path](https://www.cloudskillsboost.google/paths/19):** I didn't complete the full learning path myself for this renewal, but it is great for picking out individual hands-on labs on services you are less familiar with (such as Eventarc triggers, Binary Authorization, or Cloud Monitoring alerting).
-* **[CloudBabble Certification Trackers](https://www.cloudbabble.co.uk):** Have a look at our companion guides covering the Professional Cloud Architect and Security Engineer exams.
 
 ---
 
-## Practical exam tips
+## Practical Exam Tips
 
 1. **Look for the primary constraint:** Watch out for qualifying requirements like *"lowest operational overhead"*, *"minimal code changes"*, *"open-source standards"*, or *"strictly ordered processing"*. These phrases point directly to the intended architectural pattern.
 2. **Eliminate anti-patterns first:** Multiple-choice questions often include options representing poor engineering practices, such as embedding static credentials inside container images or using polling instead of event triggers. Eliminate those straight away to focus on the realistic trade-offs.
@@ -119,7 +118,7 @@ Depending on how much hands-on Google Cloud development you do day-to-day, I rec
 
 Good luck with your preparation, and thanks for reading! Please feel free to share, [subscribe](https://www.cloudbabble.co.uk/subscribe) for updates, or follow me on [LinkedIn](https://linkedin.com/in/jamiethompson85).
 
-**Other Guides:**
+**Other Certification Guides:**
 If you are planning your Google Cloud certification journey or deciding which track to pursue next, check out my other exam breakdowns:
 
 - [Google Cloud Professional Agentic Architect Exam Guide](https://www.cloudbabble.co.uk/2026-11-03-Google-Cloud-Professional-Agentic-Architect/)
