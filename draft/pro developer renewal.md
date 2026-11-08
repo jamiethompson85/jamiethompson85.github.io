@@ -3,13 +3,13 @@ layout: post
 title: "Google Cloud Professional Cloud Developer Exam Guide: 2026 Renewal"
 subtitle: "Passing the Professional Cloud Developer Exam for the 3rd Time"
 excerpt: "My experience renewing the Google Cloud Professional Cloud Developer certification in October 2026 for the third time. A practical breakdown of the modern syllabus, compute patterns, observability, and key architectural themes."
-description: "A comprehensive preparation guide for the Google Cloud Professional Cloud Developer certification renewed in October 2026. Covers Cloud Run and GKE, event-driven architectures, OpenTelemetry observability, and Gemini Code Assist."
+description: "A comprehensive preparation guide for the Google Cloud Professional Cloud Developer certification renewed in October 2026. Covers Cloud Run and GKE, event-driven architectures, OpenTelemetry observability, Gemini Cloud Assist, and AI coding assistants."
 thumbnail-img: /assets/img/pcd/professional-cloud-developer-certification.png
 share-img: /assets/img/pcd/professional-cloud-developer-certification.png
 readtime: true
 share-title: "How to Pass the Google Cloud Professional Cloud Developer Exam (2026 Renewal Guide)"
-share-description: "Practical study notes and architectural breakdown for passing the Google Cloud Professional Cloud Developer certification in 2026, focusing on Cloud Run, GKE, Eventarc, and Gemini Code Assist."
-tags: [Google Cloud, GCP, Professional Cloud Developer, PCD, Certification, Exam Guide, Cloud Run, GKE, Kubernetes, Eventarc, PubSub, OpenTelemetry, Gemini Code Assist]
+share-description: "Practical study notes and architectural breakdown for passing the Google Cloud Professional Cloud Developer certification in 2026, focusing on Cloud Run, GKE, Eventarc, and Gemini Cloud Assist."
+tags: [Google Cloud, GCP, Professional Cloud Developer, PCD, Certification, Exam Guide, Cloud Run, GKE, Kubernetes, Eventarc, PubSub, OpenTelemetry, Gemini Cloud Assist, MCP]
 ---
 # Renewing the Google Cloud Professional Cloud Developer Exam (2026): 3rd Time Around!
 
@@ -17,7 +17,7 @@ Earlier this month, I sat my recertification and passed the **Google Cloud Profe
 
 Because I work with Google Cloud day-to-day, I didn't do a huge amount of preparation for this sitting. I read through the official exam guide to refresh my memory on the scope, felt confident enough to book the slot, and spent my revision time reading the Google Cloud product and architecture docs (along with picking out a few hands-on labs) for the areas I use less regularly.
 
-The current syllabus reflects how cloud-native applications are built on Google Cloud today: container runtimes on Cloud Run and GKE, event-driven architectures with Pub/Sub and Eventarc, OpenTelemetry observability, and AI-assisted development in the IDE with Gemini Code Assist. If you have your first sitting coming up or are due for your two-year renewal, here are my notes on the exam structure and the core architectural themes worth brushing up on.
+The current syllabus reflects how cloud-native applications are built on Google Cloud today: container runtimes on Cloud Run and GKE, event-driven architectures with Pub/Sub and Eventarc, OpenTelemetry observability, and AI-assisted workflows using **Gemini Cloud Assist** alongside IDE coding assistants and **MCP servers**. If you have your first sitting coming up or are due for your two-year renewal, here are my notes on the exam structure and the core architectural themes worth brushing up on.
 
 ---
 
@@ -43,13 +43,13 @@ The questions map across four main domains:
 
 If you have already sat the **Professional Cloud Architect (PCA)** exam, the biggest structural difference to bear in mind is that the Professional Cloud Developer exam has **no case studies**. You won't spend exam time reading multi-page business briefs before answering questions. Instead, the focus is much closer to the code and runtime configuration: service-to-service authentication, API gateways, database schema and caching trade-offs, and debugging broken container deployments.
 
-There is also a fair amount of overlap with the **Professional Cloud DevOps Engineer** certification around CI/CD pipelines, GKE deployment strategies, and Cloud Operations observability. However, while the DevOps exam leans into SRE practices, error budgets, and platform-wide reliability, the Developer exam stays focused on how you build, instrument, and integrate the application itself.
+There is also a fair amount of overlap with the **Professional Cloud DevOps Engineer** certification around CI/CD pipelines, GKE deployments, and Cloud Operations observability. However, while the DevOps exam leans into SRE practices, error budgets, and platform-level reliability, the Developer exam stays focused on how you build and integrate the application itself.
 
 ---
 
 ## Where to focus your preparation
 
-Reading the official exam guide from top to bottom can feel overwhelming because Google lists almost their entire serverless, container, and database catalogue.
+Reading the official exam guide from top to bottom can feel overwhelming because Google lists almost their entire compute and database catalogue.
 
 Preparing for a Google Cloud Professional certification takes more than memorising service definitions. You need to think like a lead developer making architectural trade-offs. Where does state live? How do microservices talk asynchronously without dropping data during a traffic spike? How do you troubleshoot a broken deployment without causing an outage?
 
@@ -67,11 +67,11 @@ Once your compute runtime is set, focus on how data is stored, cached, and expos
 
 Asynchronous messaging is the other major design theme. Review when to invoke Cloud Run directly over HTTP versus placing **Pub/Sub** and **Eventarc** in the middle to handle traffic spikes, retries, and dead-letter queues. Where sequence matters in a data pipeline, understand how Pub/Sub **message ordering keys** work alongside **exactly-once delivery** before passing data to a database or a direct BigQuery subscription. Finally, be clear on the difference between **Cloud Tasks** (explicit point-to-point HTTP invocation where the producer controls dispatch rates and retry backoff) and **Workflows** (multi-step service orchestration with conditional branching and sequential API calls).
 
-### 2. Development, identity, and build security
+### 2. Development environment, identity, and build security
 
-Developer productivity tools and AI assistance in the IDE are now explicitly part of the syllabus. With **Gemini Code Assist**, it is worth reviewing the practical onboarding steps in the docs: enabling the Cloud AI Companion API, assigning the `roles/cloudaicompanion.user` IAM role, and authenticating through the **Cloud Code** extension in VS Code or IntelliJ so the assistant can use local repository context to generate code and unit tests.
+AI-assisted tooling is now explicitly part of the syllabus across both the Google Cloud console and the local IDE. Make sure you understand the role of **Gemini Cloud Assist** in the console for investigating and troubleshooting cloud resources, alongside configuring IDEs (like VS Code, IntelliJ, or **Cloud Workstations**) with **Cloud Code**, **AI coding assistants**, and **Model Context Protocol (MCP) servers** to write code and generate unit tests. It is also worth checking the IAM and API prerequisites in the docs, such as enabling the Cloud AI Companion API and assigning the `roles/cloudaicompanion.user` role so developers have authorised access.
 
-For local development and testing, running integration tests against live cloud resources is slow and expensive. The exam guide specifically covers using the **Google Cloud CLI local emulators** (`gcloud beta emulators`) to mock services like Pub/Sub, Firestore, Spanner, and Bigtable on your local machine (or inside **Cloud Workstations**) before automated integration tests run in a **Cloud Build** pipeline.
+For local development and testing, running integration tests against live cloud resources is slow and expensive. The exam guide specifically covers using the **Google Cloud CLI local emulators** (`gcloud beta emulators`) to mock services like Pub/Sub, Firestore, Spanner, and Bigtable on your local machine (or inside **Cloud Shell** and **Cloud Workstations**) before automated integration tests run in a **Cloud Build** pipeline.
 
 On the security side, two patterns apply across almost every Google Cloud workload:
 
@@ -94,7 +94,7 @@ GKE and Cloud Run automatically collect container `stdout`/`stderr` logs and bas
 
 When troubleshooting live workloads, keep the distinction between **Cloud Trace** and **Log Analytics** clear. Cloud Trace is built for waterfall latency analysis and tracking down slow remote procedure calls across distributed services. Log Analytics (powered by BigQuery) is for running SQL queries over high-volume structured log archives, rather than interactive distributed tracing.
 
-Finally, review the Kubernetes pod lifecycle and how **liveness, readiness, and startup probes** influence pod restarts and load balancer routing. A failing readiness probe removes a pod from service endpoints without restarting it, whereas a failing liveness probe restarts the container. When a pod fails to start, inspecting container exit codes and logs alongside pod events (`kubectl describe pod`) will pinpoint configuration errors or failing startup hooks without guesswork. Pair this with **Cloud Monitoring** metric-based alert policies to route incident notifications out to email, Pub/Sub topics, or webhooks.
+Finally, review the Kubernetes pod lifecycle and how **liveness, readiness, and startup probes** influence pod restarts and load balancer routing. A failing readiness probe removes a pod from service endpoints without restarting it, whereas a failing liveness probe restarts the container. When a pod fails to start, inspecting container exit codes and logs alongside pod events (`kubectl describe pod`) will pinpoint configuration errors or failing startup hooks without guesswork. Pair this with **Cloud Monitoring** metric-based alert policies to route incident notifications out to email or webhooks.
 
 ---
 
@@ -105,7 +105,7 @@ Depending on how much hands-on Google Cloud development you do day-to-day, I rec
 * **[Google Cloud Professional Cloud Developer Exam Guide](https://services.google.com/fh/files/misc/professional_cloud_developer_exam_guide_english.pdf):** Start here. I used the guide to quickly scan the scope and spot any services I hadn't touched recently.
 * **Official Google Cloud Documentation & Architecture Guides:** Once you know your gaps, the official concept and how-to guides (especially for **Cloud Run traffic splitting**, **Pub/Sub subscriber ordering**, **GKE Workload Identity**, and **Binary Authorization**) are the best revision material available.
 * **[Google Cloud Skills Boost – Cloud Developer Learning Path](https://www.cloudskillsboost.google/paths/19):** I didn't complete the full learning path myself for this renewal, but it is great for picking out individual hands-on labs on services you are less familiar with (such as Eventarc triggers, Binary Authorization, or Cloud Monitoring alerting).
-* **[CloudBabble Certification Trackers](https://www.cloudbabble.co.uk):** Have a look at our companion guides covering the Professional Cloud Architect, DevOps Engineer, and Security Engineer exams.
+* **[CloudBabble Certification Trackers](https://www.cloudbabble.co.uk):** Have a look at our companion guides covering the Professional Cloud Architect and Security Engineer exams.
 
 ---
 
