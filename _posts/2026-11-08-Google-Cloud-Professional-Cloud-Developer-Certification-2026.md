@@ -34,10 +34,10 @@ The questions map across four main domains:
 
 | Section | Focus Area | Exam Weighting |
 | :--- | :--- | :--- |
-| **Section 1** | Designing highly scalable, secure, and reliable cloud-native applications | ~32% |
-| **Section 2** | Building and testing applications | ~23% |
-| **Section 3** | Configuring cloud-native applications for deployment | ~24% |
-| **Section 4** | Integrating applications with Google Cloud services | ~21% |
+| **1** | Designing highly scalable, secure, and reliable cloud-native applications | ~32% |
+| **2** | Building and testing applications | ~23% |
+| **3** | Configuring cloud-native applications for deployment | ~24% |
+| **4** | Integrating applications with Google Cloud services | ~21% |
 
 ### How it compares to Cloud Architect and DevOps Engineer
 
