@@ -187,8 +187,8 @@ Thanks for reading! Please feel free to share, [subscribe](https://www.cloudbabb
 **Other Guides:**
 If you are planning your Google Cloud certification journey or deciding which track to pursue next, check out my other exam breakdowns:
 
-- [Google Cloud Professional Cloud Developer Exam Guide (2026 Renewal)](https://www.cloudbabble.co.uk)
-- [Google Cloud Professional Database Engineer Exam Guide]([https://www.cloudbabble.co.uk](https://www.cloudbabble.co.uk/2026-01-05-google-cloud-professional-database-engineer-exam-guide/))
+- [Google Cloud Professional Cloud Developer Exam Guide (2026 Renewal)]((https://www.cloudbabble.co.uk/2026-11-08-Google-Cloud-Professional-Cloud-Developer-Certification-2026/)
+- [Google Cloud Professional Database Engineer Exam Guide]((https://www.cloudbabble.co.uk/2026-01-05-google-cloud-professional-database-engineer-exam-guide/)
 - [Google Cloud Generative AI Leader Certification (GAIL)](https://www.cloudbabble.co.uk/2025-05-14-GoogleCloudGenerativeAILeaderCertification/)
 - [Google Cloud Professional Cloud Architect (PCA) Renewal Certification](https://www.cloudbabble.co.uk/2025-11-18-Google-Cloud-Professional-Cloud-Architect-Exam-Guide-Renewal/)
 - [Google Cloud Professional Cloud DevOps Engineer](https://www.cloudbabble.co.uk/2025-12-05-GoogleCloudDevOpsEngineerExamGuide/)
