@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Inside Gemini Enterprise for CX: Untangling Google Cloud's Agent Ecosystem and CX Agent Studio"
+title: "Inside Gemini Enterprise for CX and CX Agent Studio"
 subtitle: "Cutting through Google's 'Gemini Enterprise' naming maze, how CX Agent Studio is architected under the hood, and where low-code hits its ceiling"
 excerpt: "An architect's introduction to Gemini Enterprise for Customer Experience (GECX) and CX Agent Studio. Untangling Google Cloud's agent ecosystem (Gemini Enterprise App, Agent Platform, ADK), core architecture, out-of-the-box multimodality, and the reality of moving from PoC to production."
 description: "A practical Google Cloud architecture guide to Gemini Enterprise for Customer Experience (GECX / GCX) and CX Agent Studio. Compares Gemini Enterprise App, Gemini Enterprise Agent Platform (formerly Vertex AI), Agent Runtime, and Google ADK, plus a breakdown of CX Agent Studio's multi-agent architecture, callbacks, guardrails, and Arc."
