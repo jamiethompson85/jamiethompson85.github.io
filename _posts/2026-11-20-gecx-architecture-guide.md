@@ -34,7 +34,7 @@ When a client says, *"We want to build an agent in Gemini Enterprise,"* my first
 Despite sharing the *Gemini Enterprise* name, Google's offerings split across three very distinct layers: Employee-Facing (B2E), Customer-Facing (B2C/B2B CX), and the Underlying AI & Agent Engineering Platform.
 
 ![Google Cloud: Gemini Enterprise & Agent Ecosystem](/assets/img/gecx/01-gemini-enterprise-ecosystem-gcp.png "Architecture diagram comparing Google Cloud's three Gemini Enterprise layers: Employee-Facing Gemini Enterprise App (formerly Agentspace), Customer-Facing Gemini Enterprise for CX (GECX) and CX Agent Studio, and the underlying Gemini Enterprise Agent Platform (formerly Vertex AI) with Google ADK, Agent Runtime, Model Garden, and Agent Search.")
-**Figure 1:** High-level view of how Gemini Enterprise App (B2E), Gemini Enterprise for CX / CX Agent Studio (B2C/B2B), and Gemini Enterprise Agent Platform (formerly Vertex AI) connect across Google Cloud.
+***Figure 1:** High-level view of how Gemini Enterprise App (B2E), Gemini Enterprise for CX / CX Agent Studio (B2C/B2B), and Gemini Enterprise Agent Platform (formerly Vertex AI) connect across Google Cloud.*
 
 Here is how I break these down when aligning with engineering and business teams:
 
@@ -80,7 +80,7 @@ Just to round out the picture when someone says *"the Gemini assistant"* in a me
 ### Architect's Quick Reference: Which One Does What?
 
 ![Which Gemini Enterprise Do You Actually Need?](/assets/img/gecx/03-which-gemini-enterprise-infographic.png "Comparison infographic titled 'Which Gemini Enterprise Do You Actually Need?' contrasting Gemini Enterprise App, GECX and CX Agent Studio, Gemini Enterprise Agent Platform, and Google ADK across target audience, build experience, and primary use cases.")
-**Figure 2:** Quick comparison of Google Cloud's four core Gemini Enterprise and agent development offerings by audience, build model, and use case.*
+***Figure 2:** Quick comparison of Google Cloud's four core Gemini Enterprise and agent development offerings by audience, build model, and use case.*
 
 
 | Product / Service | Primary Audience | Build Experience | Core Use Case |
@@ -112,7 +112,7 @@ CX Agent Studio sits right in the middle of that trade-off: Gemini's reasoning a
 When you open CX Agent Studio (or inspect the underlying `ces.v1` API resource model), everything is organised around a clean hierarchy.
 
 ![CX Agent Studio: Core Architecture](/assets/img/gecx/02-cx-agent-studio-architecture-gcp.png "Google Cloud architecture diagram of CX Agent Studio showing external deployments and channel profiles (Web Widget with chat, voice, and video, Telephony/CCaaS, WhatsApp, and Custom API) connecting into a GECX App container with global settings, guardrails, Cloud DLP redaction, VPC-SC egress allowlists, a Root Agent delegating via handoff rules to specialised Child Agents (including Remote Dialogflow CX and A2A), OpenAPI and Python tools, Agent Search data stores, Python lifecycle callbacks, and built-in evaluations.")
-**Figure 3:** Core architecture of CX Agent Studio, illustrating channel profiles, the GECX App container, multi-agent handoff rules, tools, Python callbacks, and built-in evaluations.*
+***Figure 3:** Core architecture of CX Agent Studio, illustrating channel profiles, the GECX App container, multi-agent handoff rules, tools, Python callbacks, and built-in evaluations.*
 
 At an architectural level, the platform breaks down into seven core building blocks:
 
