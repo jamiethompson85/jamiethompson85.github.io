@@ -1,17 +1,17 @@
 ---
 layout: post
-title: "Inside Gemini Enterprise for CX: Untangling Google Cloud's Agent Ecosystem and CX Agent Studio"
-subtitle: "Cutting through Google's 'Gemini Enterprise' naming maze, how CX Agent Studio is architected under the hood, and where low-code hits its ceiling"
+title: "Gemini Enterprise for CX & CX Agent Studio: Architecture Guide"
+subtitle: "Untangling Google Cloud's 'Gemini Enterprise' naming maze, how CX Agent Studio works under the hood, and where low-code hits its ceiling"
 excerpt: "An architect's introduction to Gemini Enterprise for Customer Experience (GECX) and CX Agent Studio. Untangling Google Cloud's agent ecosystem (Gemini Enterprise App, Agent Platform, ADK), core architecture, out-of-the-box multimodality, and the reality of moving from PoC to production."
-description: "A practical Google Cloud architecture guide to Gemini Enterprise for Customer Experience (GECX / GCX) and CX Agent Studio. Compares Gemini Enterprise App, Gemini Enterprise Agent Platform (formerly Vertex AI), Agent Runtime, and Google ADK, plus a breakdown of CX Agent Studio's multi-agent architecture, callbacks, guardrails, and Arc."
+description: "A Google Cloud architect's guide to Gemini Enterprise for CX (GECX) and CX Agent Studio: comparing Gemini Enterprise App, Agent Platform, ADK, and architecture."
 thumbnail-img: /assets/img/gecx/03-which-gemini-enterprise-infographic.png
 share-img: /assets/img/gecx/03-which-gemini-enterprise-infographic.png
 readtime: true
-share-title: "Inside Gemini Enterprise for CX: Untangling Google Cloud's Agent Ecosystem and CX Agent Studio"
+share-title: "Gemini Enterprise for CX & CX Agent Studio: Architecture Guide"
 share-description: "Which 'Gemini Enterprise' do you actually need? An architect's guide to GECX, CX Agent Studio, Gemini Enterprise App, Agent Platform, and Google ADK."
-tags: [Google Cloud, GCP, Gemini Enterprise, GECX, GCX, CX Agent Studio, Google ADK, Agent Runtime, Agent Search, Vertex AI, Conversational AI, Multi-Agent, MCP, A2A, Architecture]
+tags: [Google Cloud, Gemini Enterprise, Gemini Enterprise for CX, GECX, CX Agent Studio, Google ADK, Vertex AI, AI Agents, Architecture]
 ---
-# Inside Gemini Enterprise for CX: Untangling Google Cloud's Agent Ecosystem and CX Agent Studio
+# Gemini Enterprise for CX & CX Agent Studio: An Architect's Guide
 
 Over the past few months, I've been spending a lot of time working hands-on with Gemini Enterprise for Customer Experience (GECX) and CX Agent Studio, designing and building customer-facing AI assistants.
 
